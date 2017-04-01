@@ -11,49 +11,57 @@
 	
 	<h:body>
 		<h:form acceptcharset="ISO-8859-1">
-			Nome: <h:inputText pt:placeholder="Digite o nome"></h:inputText>
+			<h1>Cadastrar Usúario</h1>
+			• Nome: <h:inputText pt:placeholder="Digite o nome"></h:inputText>
 			<br/>
 			<br/>
-			Email: <h:inputText pt:placeholder="Digite o e-mail"></h:inputText>
+			• Email: <h:inputText pt:placeholder="Digite o e-mail"></h:inputText>
 			<br/>
 			<br/>
-			Senha:<h:inputText pt:placeholder="Digite a senha"></h:inputText>
+			• Senha:<h:inputText pt:placeholder="Digite a senha"></h:inputText>
 			<br/>
 			<br/>
-			Telefone:<h:inputText pt:placeholder="Digite o telefone"></h:inputText>
+			• Telefone:<h:inputText pt:placeholder="Digite o telefone"></h:inputText>
 			<br/>
 			<br/>
-			Data de Nascimento:<h:inputText pt:placeholder="Digite a data"></h:inputText>
+			• Data de Nascimento: // Fazendo ainda
 			<br/>
 			<br/>
-			Sexo:
+			• Sexo:
 			<h:selectOneRadio value="Sexo">
 			<f:selectItem itemValue="Masc" itemLabel="Masculino"/>
 			<f:selectItem itemValue="Fem" itemLabel="Feminino"/>
 			</h:selectOneRadio>
 			<br/>
-			RG:<h:inputText pt:placeholder="Digite o RG"></h:inputText>
+			• RG:<h:inputText pt:placeholder="Digite o RG"></h:inputText>
 			<br/>
 			<br/>
-			Endereço:<h:inputText pt:placeholder="Digite o endereço"></h:inputText>
+			• Endereço:
+			<br/>
+			→ <h:inputText pt:placeholder="Rua"></h:inputText>
+			<br/>
+			→ <h:inputText pt:placeholder="Número"></h:inputText>
+			<br/>
+			→ <h:inputText pt:placeholder="Bairro"></h:inputText>
+			<br/>
+			→ <h:inputText pt:placeholder="Cidade"></h:inputText>
+			<br/>
+			→ <h:inputText pt:placeholder="Estado"></h:inputText>
+			<br/>
+			→ <h:inputText pt:placeholder="País"></h:inputText>
 			<br/>
 			<br/>
-			Agencia:<h:selectOneMenu>
+			• Agencia:<h:selectOneMenu>
 			<f:selectItem itemValue="Agen" itemLabel="9412"></f:selectItem>
 			</h:selectOneMenu>
 			<br/>
 			<br/>
-			Pessoa:
+			• Pessoa:
 			<h:selectOneRadio value="Pessoa">
 			<f:selectItem itemValue="Jur" itemLabel="Juridica"/>
 			<f:selectItem itemValue="Fis" itemLabel="Fisica"/>
 			</h:selectOneRadio>
-			<br/>
-			<br>
-			</br>
-			<br>
-			</br>
-			<h:commandButton value="Gravar" action="#{mCategoriaBean.gravarCategoria(mCategoriaBean.categoria)}"></h:commandButton>
+			<h:commandButton value="Cadastrar" action="#{mCategoriaBean.gravarCategoria(mCategoriaBean.categoria)}"></h:commandButton>
 </h:form>
 </h:body>
 </html>
