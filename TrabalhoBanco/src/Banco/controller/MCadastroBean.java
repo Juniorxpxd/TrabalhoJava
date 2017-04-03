@@ -1,9 +1,9 @@
 package Banco.controller;
 
-import javax.annotation.ManagedBean;
+import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
-@ManagedBean(value = "MCadastroBean")
+@ManagedBean(name = "MCadastroBean" )
 public class MCadastroBean {
 
 }
