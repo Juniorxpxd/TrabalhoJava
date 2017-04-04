@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import Banco.model.Cadastro;
 
 public class CadastroDAO {
-	private static ArrayList<Cadastro> cadastro = new ArrayList<Cadastro>();
+	private static ArrayList<Cadastro> cadastros = new ArrayList<Cadastro>();
 	
 	public static void addCadastro(Cadastro c){
-		cadastro.add(c);
-		System.out.println("Número de registros: " + cadastro.size());
+		cadastros.add(c);
+		System.out.println("Número de registros: " + cadastros.size());
 	}
 	public static ArrayList<Cadastro> retornarLista(){
-		return cadastro;
+		return cadastros;
 	}
 }

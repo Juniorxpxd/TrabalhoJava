@@ -29,7 +29,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Ajuda <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Contato</a></li>
+            <li><a href="Contato.xhtml">Contato</a></li>
             <li><a href="#">SAC</a></li>
             <li><a href="#">Ouvidoria</a></li>
             <li class="divider"></li>
@@ -104,7 +104,7 @@
 			<f:selectItem itemValue="Jur" itemLabel="Juridica"/>
 			<f:selectItem itemValue="Fis" itemLabel="Fisica"/>
 			</h:selectOneRadio>
-			<h:commandButton value="Cadastrar" action="#"></h:commandButton>
+			<h:commandButton value="Cadastrar" action="#{mCadastroBean.gravarCadastro(mCadastroBean.cadastro)}"></h:commandButton>
 			</fieldset>
 	</h:form>
 </h:body>
