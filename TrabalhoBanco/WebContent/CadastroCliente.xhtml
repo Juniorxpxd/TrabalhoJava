@@ -1,113 +1,127 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	  xmlns:h="http://java.sun.com/jsf/html"
-	  xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
-	  xmlns:f= "http://java.sun.com/jsf/core"
-	  xmlns:b= "http://bootsfaces.net/ui"
-	  xmlns:p="http://primefaces.org/ui">
-	<h:head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<link rel="stylesheet" type="text/css" href="bootstrap.css"/>
-		<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
-		<script type="text/javascript" src="Script.js"></script>
-<title>Cadastro Cliente</title>
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:b="http://bootsfaces.net/ui" 
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="bootstrap.css" />
+	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="Script.js"></script>
+	<title>Cadastro Cliente</title>
 </h:head>
 <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="Index.xhtml">EvilMoney</a>
-    </div>
-   
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a href="#">Informações</a></li>
-        <li><a href="#">Cadastro</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Ajuda <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="Contato.xhtml">Contato</a></li>
-            <li><a href="#">SAC</a></li>
-            <li><a href="#">Ouvidoria</a></li>
-            <li class="divider"></li>
-            <li><a href="#">TESTE</a></li>
-            <li class="divider"></li>
-            <li><a href="#">TESTE 23211232</a></li>
-          </ul>
-        </li>
-      </ul>
-      <form class="navbar-form navbar-right" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Buscar"/>
-        </div>
-        <button type="submit" class="btn btn-default">Buscar</button>
-      </form>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="Login.xhtml">Login</a></li>
-      </ul>
-    </div>
-  </div>
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed"
+				data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="Index.xhtml">EvilMoney</a>
+		</div>
+
+		<div class="collapse navbar-collapse"
+			id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li><a href="#">Informações</a></li>
+				<li><a href="#">Cadastro</a></li>
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown" role="button" aria-expanded="false">Ajuda
+						<span class="caret"></span>
+				</a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="Contato.xhtml">Contato</a></li>
+						<li><a href="#">SAC</a></li>
+						<li><a href="#">Ouvidoria</a></li>
+						<li class="divider"></li>
+						<li><a href="#">TESTE</a></li>
+						<li class="divider"></li>
+						<li><a href="#">TESTE 23211232</a></li>
+					</ul></li>
+			</ul>
+			<form class="navbar-form navbar-right" role="search">
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="Buscar" />
+				</div>
+				<button type="submit" class="btn btn-default">Buscar</button>
+			</form>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="Login.xhtml">Login</a></li>
+			</ul>
+		</div>
+	</div>
 </nav>
-	<h:body>
-		<h:form acceptcharset="ISO-8859-1">
+<h:body>
+	<h:form acceptcharset="ISO-8859-1">
 		<fieldset>
 			<h1>Cadastrar Usúario</h1>
-			• Nome: <h:inputText id="Nome" pt:placeholder="Digite o nome"></h:inputText>
-			<br/>
-			<br/>
-			• Email: <h:inputText id="Email" pt:placeholder="Digite o e-mail"></h:inputText>
-			<br/>
-			<br/>
-			 <h:outputText value="• Senha: " />
-			 <p:password id="feedback" value="#{PasswordView.senha}" feedback="true" pt:placeholder="Digite a senha"/>
-			<br/>
-			<br/>
-			• Telefone:<h:inputText pt:placeholder="Digite o telefone"></h:inputText>
-			<br/>
-			<br/>
-			• Data de Nascimento: // Fazendo ainda
-			<br/>
-			<br/>
-			• Sexo:
-			<h:selectOneRadio value="Sexo">
-			<f:selectItem itemValue="Masc" itemLabel="Masculino"/>
-			<f:selectItem itemValue="Fem" itemLabel="Feminino"/>
-			</h:selectOneRadio>
-			<br/>
-			• RG:<h:inputText required="true" id="RG" pt:placeholder="RG"><f:validateLength minimun="15" maximum="20"/></h:inputText>
-			<br/>
-			<br/>
-			• Endereço:
-			<br/>
-			→ <h:inputText id="Rua" pt:placeholder="Rua"><f:validateLength minimun="10" maximum="100"/></h:inputText>
-			<br/>
-			→ <h:inputText pt:placeholder="Número"></h:inputText>
-			<br/>
-			→ <h:inputText pt:placeholder="Bairro"></h:inputText>
-			<br/>
-			→ <h:inputText pt:placeholder="Cidade"></h:inputText>
-			<br/>
-			→ <h:inputText pt:placeholder="Estado"></h:inputText>
-			<br/>
-			→ <h:inputText pt:placeholder="País"></h:inputText>
-			<br/>
-			<br/>
-			• Agencia:<h:selectOneMenu>
-			<f:selectItem itemValue="Agen" itemLabel="9412"></f:selectItem>
-			</h:selectOneMenu>
-			<br/>
-			<br/>
-			• Pessoa:
-			<h:selectOneRadio value="Pessoa">
-			<f:selectItem itemValue="Jur" itemLabel="Juridica"/>
-			<f:selectItem itemValue="Fis" itemLabel="Fisica"/>
-			</h:selectOneRadio>
-			<h:commandButton value="Cadastrar" action="#{mCadastroBean.gravarCadastro(mCadastroBean.cadastro)}"></h:commandButton>
-			</fieldset>
+			• Nome:
+			<p:inputText id="Nome" pt:placeholder="Digite o nome"></p:inputText>
+			<br /> <br /> • Email:
+			<p:inputText id="Email" pt:placeholder="Digite o e-mail"></p:inputText>
+			<br /> <br />
+			<h:outputText value="• Senha: "/>
+			<p:password id="senha" pt:placeholder="Digite a senha" />
+			<br /> <br /> • Telefone:
+			<p:inputText id="telefone" pt:placeholder="Digite o telefone"></p:inputText>
+			<br /> <br />
+			<h:outputText value="• Data:  FAZENDO AINDA" />
+			<br /> <br /> • Sexo:
+			<p:selectOneRadio value="Sexo">
+				<f:selectItem itemValue="Masc" itemLabel="Masculino" />
+				<f:selectItem itemValue="Fem" itemLabel="Feminino" />
+			</p:selectOneRadio>
+			<br /> • RG:
+			<p:inputText required="true" id="RG" pt:placeholder="RG">
+				<f:validateLength minimun="15" maximum="20" />
+			</p:inputText>
+			<br /> <br /> • Endereço: <br /> →
+			<p:inputText id="Rua" pt:placeholder="Rua">
+				<f:validateLength minimun="10" maximum="100" />
+			</p:inputText>
+			<br /> →
+			<p:inputText pt:placeholder="Número"></p:inputText>
+			<br /> →
+			<p:inputText pt:placeholder="Bairro"></p:inputText>
+			<br /> →
+			<p:inputText pt:placeholder="Cidade"></p:inputText>
+			<br /> →
+			<p:inputText pt:placeholder="Estado"></p:inputText>
+			<br /> →
+			<p:inputText pt:placeholder="País"></p:inputText>
+			<br /> <br /> 
+			
+			
+			
+			<p:messages autoUpdate="true" />
+   			<h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+   			<p:outputLabel for="agencia" value="• Agência:" />
+			<p:selectOneMenu id="agencia" value="#{selectOneMenuView.agencia}" style="width:125px">
+				<f:selectItem itemValue="Agencia1" itemLabel="9412"/>
+				<f:selectItem itemValue="Agencia2" itemLabel="5217"/>
+			</p:selectOneMenu>
+			</h:panelGrid>
+			
+			<p:dialog header="Values" modal="true" showEffect="bounce" widgetVar="dlg" resizable="false">
+       		<p:panelGrid columns="2" id="display" columnClasses="label,value">
+            <h:outputText value="Agencia:" />
+            <h:outputText value="#{selectOneMenuView.agencia}" />
+            </p:panelGrid>
+   			</p:dialog>
+			
+			
+			
+			<br /> <br /> • Pessoa:
+			<p:selectOneRadio value="Pessoa">
+				<f:selectItem itemValue="Jur" itemLabel="Juridica" />
+				<f:selectItem itemValue="Fis" itemLabel="Fisica" />
+			</p:selectOneRadio>
+			<p:commandButton value="Cadastrar" action="#{mCadastroBean.gravarCadastro(mCadastroBean.cadastro)}"></p:commandButton>
+		</fieldset>
 	</h:form>
 </h:body>
 </html>

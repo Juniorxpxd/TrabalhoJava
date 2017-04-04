@@ -8,9 +8,6 @@ public class Cadastro {
 	private String data;
 	private String sexo;
 	private String rg;
-	private Endereco endereço;
-	private Agencia agencia;
-	private Pessoa pessoa;
 	
 	public String getNome() {
 		return nome;
@@ -33,15 +30,6 @@ public class Cadastro {
 	public String getRg() {
 		return rg;
 	}
-	public Endereco getEndereço() {
-		return endereço;
-	}
-	public Agencia getAgencia() {
-		return agencia;
-	}
-	public Pessoa getPessoa() {
-		return pessoa;
-	}
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
@@ -62,14 +50,5 @@ public class Cadastro {
 	}
 	public void setRg(String rg) {
 		this.rg = rg;
-	}
-	public void setEndereço(Endereco endereço) {
-		this.endereço = endereço;
-	}
-	public void setAgencia(Agencia agencia) {
-		this.agencia = agencia;
-	}
-	public void setPessoa(Pessoa pessoa) {
-		this.pessoa = pessoa;
 	}
 }
