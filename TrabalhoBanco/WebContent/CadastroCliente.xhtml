@@ -4,7 +4,8 @@
 	  xmlns:h="http://java.sun.com/jsf/html"
 	  xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
 	  xmlns:f= "http://java.sun.com/jsf/core"
-	  xmlns:b= "http://bootsfaces.net/ui">
+	  xmlns:b= "http://bootsfaces.net/ui"
+	  xmlns:p="http://primefaces.org/ui">
 	<h:head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<link rel="stylesheet" type="text/css" href="bootstrap.css"/>
@@ -61,7 +62,8 @@
 			• Email: <h:inputText id="Email" pt:placeholder="Digite o e-mail"></h:inputText>
 			<br/>
 			<br/>
-			• Senha:<h:inputText id="Senha" pt:placeholder="Digite a senha"></h:inputText>
+			 <h:outputText value="• Senha: " />
+			 <p:password id="feedback" value="#{PasswordView.senha}" feedback="true" pt:placeholder="Digite a senha"/>
 			<br/>
 			<br/>
 			• Telefone:<h:inputText pt:placeholder="Digite o telefone"></h:inputText>
