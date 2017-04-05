@@ -8,7 +8,14 @@ public class Cadastro {
 	private String data;
 	private String sexo;
 	private String rg;
+	private Agencia agencia;
 	
+	public Agencia getAgencia() {
+		return agencia;
+	}
+	public void setAgencia(Agencia agencia) {
+		this.agencia = agencia;
+	}
 	public String getNome() {
 		return nome;
 	}
