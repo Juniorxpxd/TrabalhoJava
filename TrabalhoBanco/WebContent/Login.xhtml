@@ -4,70 +4,72 @@
 	  xmlns:h="http://java.sun.com/jsf/html"
 	  xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
 	  xmlns:f= "http://java.sun.com/jsf/core"
-	  xmlns:b= "http://bootsfaces.net/ui">
+	  xmlns:b= "http://bootsfaces.net/ui"
+	  xmlns:p="http://primefaces.org/ui">
 	<h:head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<link rel="stylesheet" type="text/css" href="bootstrap.css"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="bootstrap.css" />
+	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="Script.js"></script>
 		<title>Login</title>
 	</h:head>
 <body>
 <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="Index.xhtml">EvilMoney</a>
-    </div>
-   
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a href="#">Ajuda</a></li>
-        <li><a href="CadastroCliente.xhtml">Cadastro</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-      <form class="navbar-form navbar-right" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Buscar"/>
-        </div>
-        <button type="submit" class="btn btn-default">Buscar</button>
-      </form>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Login</a></li>
-      </ul>
-    </div>
-  </div>
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed"
+				data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="Index.xhtml">EvilMoney</a>
+		</div>
+
+		<div class="collapse navbar-collapse"
+			id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li><a href="#">Informações</a></li>
+				<li><a href="CadastroCliente.xhtml">Cadastro</a></li>
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown" role="button" aria-expanded="false">Ajuda
+						<span class="caret"></span>
+				</a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="Contato.xhtml">Contato</a></li>
+						<li><a href="#">SAC</a></li>
+						<li><a href="Ouvidoria.xhtml">Ouvidoria</a></li>
+					</ul></li>
+			</ul>
+			<form class="navbar-form navbar-right" role="search">
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="Buscar" />
+				</div>
+				<button type="submit" class="btn btn-default">Buscar</button>
+			</form>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="Login.xhtml">Login</a></li>
+			</ul>
+		</div>
+	</div>
 </nav>
 	<h:form>
 	<h1>Login</h1>
-		• Email: <h:inputText id="Email" pt:placeholder="Digite o e-mail"></h:inputText>
+		• Email: <p:inputText id="Email" pt:placeholder="Digite o e-mail"></p:inputText>
 		<br/>
 		<br/>
-		• Senha:<h:inputText id="Senha" pt:placeholder="Digite a senha"></h:inputText>
+		• Senha:<p:inputText id="Senha" pt:placeholder="Digite a senha"></p:inputText>
 		<br/>
 		<br/>
 		Ou
 		<br/>
 		<br/>
-		• Agência: <h:inputText id="Agencia" pt:placeholder="Digite a agência"></h:inputText>
+		• Agência: <p:inputText id="Agencia" pt:placeholder="Digite a agência"></p:inputText>
 		<br/>
 		<br/>
-		• Conta:<h:inputText id="Conta" pt:placeholder="Digite a conta"></h:inputText>
+		• Conta:<p:inputText id="Conta" pt:placeholder="Digite a conta"></p:inputText>
 		<br/>
 		<br/>
-		<h:commandButton value="Login" action="#"></h:commandButton>
+		<p:commandButton value="Login" action="#"></p:commandButton>
 	</h:form>
 </body>
 </html>
