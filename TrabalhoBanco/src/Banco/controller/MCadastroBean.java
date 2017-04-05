@@ -5,12 +5,14 @@ import java.util.ArrayList;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
+import Banco.model.Agencia;
 import Banco.model.Cadastro;
 import Banco.dal.CadastroDAO;
 
 @ManagedBean(name = "mCadastroBean")
 public class MCadastroBean {
 	private Cadastro cadastro = new Cadastro();
+	private Agencia cadastroAgencia = new Agencia();
 	private ArrayList<Cadastro> cadastros = new ArrayList<Cadastro>();
 
 	public ArrayList<Cadastro> getCadastros() {
@@ -19,6 +21,13 @@ public class MCadastroBean {
 			System.out.println(cad.getNome());
 		}
 		return cadastros;
+	}
+	
+	public Agencia getCadastroAgencia() {
+		return cadastroAgencia;
+	}
+	public void setCadastroAgencia(Agencia cadastroAgencia) {
+		this.cadastroAgencia = cadastroAgencia;
 	}
 
 	public void setCadastro(Cadastro cadastro) {
