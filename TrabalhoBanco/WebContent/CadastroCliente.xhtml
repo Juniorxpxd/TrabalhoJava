@@ -59,50 +59,58 @@
 	<h:form acceptcharset="ISO-8859-1">
 		<fieldset>
 			<h1>Cadastrar Usúario</h1>
-			• Nome:
-			<p:inputText id="Nome" required="true" pt:placeholder="Digite o nome"></p:inputText>
-			<br /> <br /> • Email:
-			<p:inputText id="Email" required="true" pt:placeholder="Digite o e-mail"></p:inputText>
-			<br /> <br />
+			<h:outputText value="• Nome: "/>
+			<p:inputText id="Nome" required="true" pt:placeholder="Digite o nome" value="#{mCadastroBean.cadastro.nome}"></p:inputText>
+			<br/> 
+			<br/> 
+			<h:outputText value="• Email: "/>
+			<p:inputText id="Email" required="true" pt:placeholder="Digite o e-mail" value="#{mCadastroBean.cadastro.email}"></p:inputText>
+			<br/> 
+			<br/>
 			<h:outputText value="• Senha: "/>
-			<p:password id="senha" required="true" pt:placeholder="Digite a senha" />
-			<br /> <br /> • Telefone:
-			<p:inputText id="telefone" pt:placeholder="Digite o telefone"></p:inputText>
-			<br /> <br />
-			<h:outputText value="• Data:  FAZENDO AINDA" required="true" />
-			<br /> <br /> • Sexo:
-			<p:selectOneRadio value="Sexo" required="true">
+			<p:password id="senha" required="true" pt:placeholder="Digite a senha" value="#{mCadastroBean.cadastro.senha}"/>
+			<br/> 
+			<br/> 
+			<h:outputText value="• Telefone: "/>
+			<p:inputText id="telefone" pt:placeholder="Digite o telefone" value="#{mCadastroBean.cadastro.telefone}"></p:inputText>
+			<br/> 
+			<br/>
+			<h:outputText value="• Data:  FAZENDO AINDA"/>
+			<br/> 
+			<br/> 
+			<h:outputText value="• Sexo: "/>
+			<p:selectOneRadio itemValue="Sexo" required="true" value="#{mCadastroBean.cadastro.sexo}">
 				<f:selectItem itemValue="Masc" itemLabel="Masculino" />
 				<f:selectItem itemValue="Fem" itemLabel="Feminino" />
 			</p:selectOneRadio>
-			<br /> • RG:
-			<p:inputText required="true" id="RG" pt:placeholder="RG">
+			<br/>
+			<h:outputText value="• RG: "/>
+			<p:inputText required="true" id="RG" pt:placeholder="RG" value="#{mCadastroBean.cadastro.rg}">
 				<f:validateLength minimun="15" maximum="20" />
 			</p:inputText>
-			<br /> <br /> • Endereço: <br /> →
-			<p:inputText required="true" id="Rua" pt:placeholder="Rua">
+			<br/> 
+			<br/> 
+			<h:outputText value="• Endereço: "/>
+			<br/> 
+			→<p:inputText id="Rua" pt:placeholder="Rua">
 				<f:validateLength minimun="10" maximum="100" />
 			</p:inputText>
-			<br /> →
-			<p:inputText required="true" pt:placeholder="Número"></p:inputText>
-			<br /> →
-			<p:inputText required="true" pt:placeholder="Bairro"></p:inputText>
-			<br /> →
-			<p:inputText required="true" pt:placeholder="Cidade"></p:inputText>
-			<br /> →
-			<p:inputText required="true" pt:placeholder="Estado"></p:inputText>
-			<br /> →
-			<p:inputText required="true" pt:placeholder="País"></p:inputText>
-			<br /> <br /> 
-			
+			<br/> →<p:inputText  pt:placeholder="Número"></p:inputText>
+			<br/> →<p:inputText  pt:placeholder="Bairro"></p:inputText>
+			<br/> →<p:inputText  pt:placeholder="Cidade"></p:inputText>
+			<br/> →<p:inputText  pt:placeholder="Estado"></p:inputText>
+			<br/> →<p:inputText  pt:placeholder="País"></p:inputText>
+			<br/> 
+			<br/> 
    			<p:outputLabel for="agencia" value="• Agência: " />
-			<h:selectOneMenu  id="agencia" required="true">
+			<h:selectOneMenu  id="agencia">
 				<f:selectItem itemValue="0" itemLabel="9412"></f:selectItem>
 				<f:selectItem itemValue="1" itemLabel="5217"></f:selectItem>
 			</h:selectOneMenu>
-	
-			<br /> <br /> • Pessoa:
-			<p:selectOneRadio value="Pessoa" required="true">
+			<br/> 
+			<br/> 
+			<h:outputText value="• Pessoa: "/>
+			<p:selectOneRadio value="Pessoa">
 				<f:selectItem itemValue="Jur" itemLabel="Juridica" />
 				<f:selectItem itemValue="Fis" itemLabel="Fisica" />
 			</p:selectOneRadio>
