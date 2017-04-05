@@ -36,7 +36,7 @@
 					<ul class="dropdown-menu" role="menu">
 						<li><a href="Contato.xhtml">Contato</a></li>
 						<li><a href="#">SAC</a></li>
-						<li><a href="#">Ouvidoria</a></li>
+						<li><a href="Ouvidoria.xhtml">Ouvidoria</a></li>
 						<li class="divider"></li>
 						<li><a href="#">TESTE</a></li>
 						<li class="divider"></li>
@@ -120,7 +120,7 @@
 				<f:selectItem itemValue="Jur" itemLabel="Juridica" />
 				<f:selectItem itemValue="Fis" itemLabel="Fisica" />
 			</p:selectOneRadio>
-			<p:commandButton value="Cadastrar" action="#{mCadastroBean.gravarCadastro(mCadastroBean.cadastro)}"></p:commandButton>
+			<h:commandButton value="Cadastrar" action="#{mCadastroBean.gravarCadastro(mCadastroBean.cadastro)}"></h:commandButton>
 		</fieldset>
 	</h:form>
 </h:body>
