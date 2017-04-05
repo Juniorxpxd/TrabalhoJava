@@ -92,19 +92,15 @@
 			<br/> 
 			<h:outputText value="• Endereço: "/>
 			<br/> 
-			→<p:inputText id="Rua" pt:placeholder="Rua"><f:validateLength minimun="10" maximum="100" /></p:inputText>
-			<br/> →<p:inputText  pt:placeholder="Número"></p:inputText>
-			<br/> →<p:inputText  pt:placeholder="Bairro"></p:inputText>
-			<br/> →<p:inputText  pt:placeholder="Cidade"></p:inputText>
-			<br/> →<p:inputText  pt:placeholder="Estado"></p:inputText>
-			<br/> →<p:inputText  pt:placeholder="País"></p:inputText>
+			→<p:inputText id="Rua" required="true" pt:placeholder="Rua"><f:validateLength minimun="10" maximum="100" value="#{mCadastroBean.cadastro.endereco}"/></p:inputText>
+			<br/> →<p:inputText  required="true" pt:placeholder="Número"></p:inputText>
+			<br/> →<p:inputText  required="true" pt:placeholder="Bairro" ></p:inputText>
+			<br/> →<p:inputText  required="true" pt:placeholder="Cidade" ></p:inputText>
+			<br/> →<p:inputText  required="true" pt:placeholder="Estado" ></p:inputText>
+			<br/> →<p:inputText  required="true" pt:placeholder="País" ></p:inputText>
 			<br/> 
 			<br/> 
-   			<p:outputLabel for="agencia" value="• Agência: " />
-			<h:selectOneMenu  itemValue="Agencia">
-				<f:selectItem itemValue="0" itemLabel="9412"></f:selectItem>
-				<f:selectItem itemValue="1" itemLabel="5217"></f:selectItem>
-			</h:selectOneMenu>
+   
 			<br/> 
 			<br/> 
 			<h:outputText value="• Pessoa: "/>

@@ -9,7 +9,14 @@ public class Cadastro {
 	private String sexo;
 	private String rg;
 	private Agencia agencia;
+	private Endereco endereco;
 	
+	public Endereco getEndereco() {
+		return endereco;
+	}
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
 	public Agencia getAgencia() {
 		return agencia;
 	}
