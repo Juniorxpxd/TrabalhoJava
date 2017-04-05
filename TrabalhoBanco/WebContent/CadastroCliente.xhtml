@@ -60,18 +60,18 @@
 		<fieldset>
 			<h1>Cadastrar Usúario</h1>
 			• Nome:
-			<p:inputText id="Nome" pt:placeholder="Digite o nome"></p:inputText>
+			<p:inputText id="Nome" required="true" pt:placeholder="Digite o nome"></p:inputText>
 			<br /> <br /> • Email:
-			<p:inputText id="Email" pt:placeholder="Digite o e-mail"></p:inputText>
+			<p:inputText id="Email" required="true" pt:placeholder="Digite o e-mail"></p:inputText>
 			<br /> <br />
 			<h:outputText value="• Senha: "/>
-			<p:password id="senha" pt:placeholder="Digite a senha" />
+			<p:password id="senha" required="true" pt:placeholder="Digite a senha" />
 			<br /> <br /> • Telefone:
 			<p:inputText id="telefone" pt:placeholder="Digite o telefone"></p:inputText>
 			<br /> <br />
-			<h:outputText value="• Data:  FAZENDO AINDA" />
+			<h:outputText value="• Data:  FAZENDO AINDA" required="true" />
 			<br /> <br /> • Sexo:
-			<p:selectOneRadio value="Sexo">
+			<p:selectOneRadio value="Sexo" required="true">
 				<f:selectItem itemValue="Masc" itemLabel="Masculino" />
 				<f:selectItem itemValue="Fem" itemLabel="Feminino" />
 			</p:selectOneRadio>
@@ -80,43 +80,29 @@
 				<f:validateLength minimun="15" maximum="20" />
 			</p:inputText>
 			<br /> <br /> • Endereço: <br /> →
-			<p:inputText id="Rua" pt:placeholder="Rua">
+			<p:inputText required="true" id="Rua" pt:placeholder="Rua">
 				<f:validateLength minimun="10" maximum="100" />
 			</p:inputText>
 			<br /> →
-			<p:inputText pt:placeholder="Número"></p:inputText>
+			<p:inputText required="true" pt:placeholder="Número"></p:inputText>
 			<br /> →
-			<p:inputText pt:placeholder="Bairro"></p:inputText>
+			<p:inputText required="true" pt:placeholder="Bairro"></p:inputText>
 			<br /> →
-			<p:inputText pt:placeholder="Cidade"></p:inputText>
+			<p:inputText required="true" pt:placeholder="Cidade"></p:inputText>
 			<br /> →
-			<p:inputText pt:placeholder="Estado"></p:inputText>
+			<p:inputText required="true" pt:placeholder="Estado"></p:inputText>
 			<br /> →
-			<p:inputText pt:placeholder="País"></p:inputText>
+			<p:inputText required="true" pt:placeholder="País"></p:inputText>
 			<br /> <br /> 
 			
-			
-			
-			<p:messages autoUpdate="true" />
-   			<h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
-   			<p:outputLabel for="agencia" value="• Agência:" />
-			<p:selectOneMenu id="agencia" value="#{selectOneMenuView.agencia}" style="width:125px">
-				<f:selectItem itemValue="Agencia1" itemLabel="9412"/>
-				<f:selectItem itemValue="Agencia2" itemLabel="5217"/>
-			</p:selectOneMenu>
-			</h:panelGrid>
-			
-			<p:dialog header="Values" modal="true" showEffect="bounce" widgetVar="dlg" resizable="false">
-       		<p:panelGrid columns="2" id="display" columnClasses="label,value">
-            <h:outputText value="Agencia:" />
-            <h:outputText value="#{selectOneMenuView.agencia}" />
-            </p:panelGrid>
-   			</p:dialog>
-			
-			
-			
+   			<p:outputLabel for="agencia" value="• Agência: " />
+			<h:selectOneMenu  id="agencia" required="true">
+				<f:selectItem itemValue="0" itemLabel="9412"></f:selectItem>
+				<f:selectItem itemValue="1" itemLabel="5217"></f:selectItem>
+			</h:selectOneMenu>
+	
 			<br /> <br /> • Pessoa:
-			<p:selectOneRadio value="Pessoa">
+			<p:selectOneRadio value="Pessoa" required="true">
 				<f:selectItem itemValue="Jur" itemLabel="Juridica" />
 				<f:selectItem itemValue="Fis" itemLabel="Fisica" />
 			</p:selectOneRadio>
