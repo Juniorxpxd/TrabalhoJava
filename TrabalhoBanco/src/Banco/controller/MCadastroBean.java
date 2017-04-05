@@ -35,6 +35,7 @@ public class MCadastroBean {
 
 	public String gravarCadastro(Cadastro c) {
 		CadastroDAO.addCadastro(c);
+		System.out.println("Nome: " + c.getNome() + " Email: " + c.getEmail() + " Senha: " + c.getSenha() + " Sexo: " + c.getSexo() + " Telefone: " + c.getTelefone());
 		return "Index.xhtml?faces-redirect=true";
 	}
 }
