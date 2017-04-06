@@ -2,6 +2,7 @@ package Banco.model;
 
 public class Endereco {
 	
+	private int idEnd;
 	private String rua;
 	private int numero;
 	private String bairro;
@@ -9,6 +10,13 @@ public class Endereco {
 	private String estado; 
 	private String pais;
 	
+	
+	public int getIdEnd() {
+		return idEnd;
+	}
+	public void setIdEnd(int idEnd) {
+		this.idEnd = idEnd;
+	}
 	public String getRua() {
 		return rua;
 	}
