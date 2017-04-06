@@ -55,61 +55,14 @@
 		</div>
 	</div>
 </nav>
-<h:body>
-	<h:form acceptcharset="ISO-8859-1">
-		<fieldset>
-			<h1>Cadastrar Usúario</h1>
-			<h:outputText value="• Nome: "/>
-			<p:inputText id="Nome" required="true" pt:placeholder="Digite o nome" value="#{mCadastroBean.cadastro.nome}"></p:inputText>
-			<br/> 
-			<br/> 
-			<h:outputText value="• Email: "/>
-			<p:inputText id="Email" required="true" pt:placeholder="Digite o e-mail" value="#{mCadastroBean.cadastro.email}"></p:inputText>
-			<br/> 
-			<br/>
-			<h:outputText value="• Senha: "/>
-			<p:password id="senha" required="true" pt:placeholder="Digite a senha" value="#{mCadastroBean.cadastro.senha}"/>
-			<br/> 
-			<br/> 
-			<h:outputText value="• Telefone: "/>
-			<p:inputText id="telefone" required="true" pt:placeholder="Digite o telefone" value="#{mCadastroBean.cadastro.telefone}"></p:inputText>
-			<br/> 
-			<br/>
-			<h:outputText value="• Data:  FAZENDO AINDA"/>
-			<br/> 
-			<br/> 
-			<h:outputText value="• Sexo: "/>
-			<p:selectOneRadio itemValue="Sexo" required="true" value="#{mCadastroBean.cadastro.sexo}">
-				<f:selectItem itemValue="Masc" itemLabel="Masculino" />
-				<f:selectItem itemValue="Fem" itemLabel="Feminino" />
-			</p:selectOneRadio>
-			<br/>
-			<h:outputText value="• RG: "/>
-			<p:inputText required="true" id="RG" pt:placeholder="RG" value="#{mCadastroBean.cadastro.rg}">
-				<f:validateLength minimun="15" maximum="20" />
-			</p:inputText>
-			<br/> 
-			<br/> 
-			<h:outputText value="• Endereço: "/>
-			<br/> 
-			→<p:inputText id="Rua" required="true" pt:placeholder="Rua"><f:validateLength minimun="10" maximum="100" value="#{mCadastroBean.cadastro.endereco}"/></p:inputText>
-			<br/> →<p:inputText  required="true" pt:placeholder="Número"></p:inputText>
-			<br/> →<p:inputText  required="true" pt:placeholder="Bairro" ></p:inputText>
-			<br/> →<p:inputText  required="true" pt:placeholder="Cidade" ></p:inputText>
-			<br/> →<p:inputText  required="true" pt:placeholder="Estado" ></p:inputText>
-			<br/> →<p:inputText  required="true" pt:placeholder="País" ></p:inputText>
-			<br/> 
-			<br/> 
-   
-			<br/> 
-			<br/> 
-			<h:outputText value="• Pessoa: "/>
+
+<h:outputText value="• Pessoa: "/>
 			<p:selectOneRadio value="Pessoa">
 				<f:selectItem itemValue="Jur" itemLabel="Juridica" />
 				<f:selectItem itemValue="Fis" itemLabel="Fisica" />
 			</p:selectOneRadio>
-			<h:commandButton value="Cadastrar" action="#{mCadastroBean.gravarCadastro(mCadastroBean.cadastro)}"></h:commandButton>
-		</fieldset>
-	</h:form>
-</h:body>
+						<h:commandButton value="Cadastrar" action="#{mCadastroBean.gravarCadastro(mCadastroBean.cadastro)}"></h:commandButton>
+			
+				
+
 </html>
