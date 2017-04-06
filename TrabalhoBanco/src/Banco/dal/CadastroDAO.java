@@ -8,7 +8,6 @@ public class CadastroDAO {
 	
 	public static void addCadastro(Cadastro c){
 		cadastros.add(c);
-		System.out.println("Número de registros: " + cadastros.size());
 	}
 	public static ArrayList<Cadastro> retornarLista(){
 		return cadastros;

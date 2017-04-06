@@ -92,15 +92,16 @@
 			<br/> 
 			<h:outputText value="• Endereço: "/>
 			<br/> 
-			→<p:inputText id="Rua" required="true" pt:placeholder="Rua"><f:validateLength minimun="10" maximum="100" value="#{mCadastroBean.cadastro.endereco}"/></p:inputText>
-			<br/> →<p:inputText  required="true" pt:placeholder="Número"></p:inputText>
+			<h:form>
+			→<p:inputText id="Rua" required="true" pt:placeholder="Rua"><f:validateLength minimun="10" maximum="100" value="#{mCadastroBean.endereco.rua}"/></p:inputText>
+			<br/> →<p:inputText  required="true" pt:placeholder="Número" value="#{mCadastroBean.endereco.numero}"></p:inputText>
 			<br/> →<p:inputText  required="true" pt:placeholder="Bairro" ></p:inputText>
 			<br/> →<p:inputText  required="true" pt:placeholder="Cidade" ></p:inputText>
 			<br/> →<p:inputText  required="true" pt:placeholder="Estado" ></p:inputText>
 			<br/> →<p:inputText  required="true" pt:placeholder="País" ></p:inputText>
 			<br/> 
 			<br/> 
-   
+  			</h:form>
 			<br/> 
 			<br/> 
 			<h:outputText value="• Pessoa: "/>

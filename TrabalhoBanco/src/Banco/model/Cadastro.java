@@ -1,7 +1,6 @@
 package Banco.model;
 
 public class Cadastro {
-	private int id;
 	private String nome;
 	private String email;
 	private String senha;
@@ -12,13 +11,6 @@ public class Cadastro {
 	private Agencia agencia;
 	private Endereco endereco;
 	
-	
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
 	public Endereco getEndereco() {
 		return endereco;
 	}
