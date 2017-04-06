@@ -11,6 +11,12 @@ public class Cadastro {
 	private String rg;
 	private Agencia agencia;
 	private Endereco endereco;
+	private String cpf;
+	private String cep;
+	private String renda;
+	private String cartao;
+	
+	
 	
 	
 	public int getId() {
@@ -72,5 +78,29 @@ public class Cadastro {
 	}
 	public void setRg(String rg) {
 		this.rg = rg;
+	}
+	public String getCpf() {
+		return cpf;
+	}
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+	public String getCep() {
+		return cep;
+	}
+	public void setCep(String cep) {
+		this.cep = cep;
+	}
+	public String getRenda() {
+		return renda;
+	}
+	public void setRenda(String renda) {
+		this.renda = renda;
+	}
+	public String getCartao() {
+		return cartao;
+	}
+	public void setCartao(String cartao) {
+		this.cartao = cartao;
 	}
 }
