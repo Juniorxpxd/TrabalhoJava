@@ -12,4 +12,13 @@ public class CadastroDAO {
 	public static ArrayList<Cadastro> retornarLista(){
 		return cadastros;
 	}
+	
+	public static Cadastro buscarCadastroPorID(int id){
+		for(Cadastro Cadastro: cadastros){
+			if(Cadastro.getId() == id){
+				return Cadastro;
+			}
+		}
+		return null;
+	}
 }

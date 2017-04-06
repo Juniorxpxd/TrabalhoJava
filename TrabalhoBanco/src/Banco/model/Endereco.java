@@ -8,7 +8,14 @@ public class Endereco {
 	private String cidade;
 	private String estado; 
 	private String pais;
+	private Cadastro cadastros;
 
+	public Cadastro getCadastros() {
+		return cadastros;
+	}
+	public void setCadastros(Cadastro cadastros) {
+		this.cadastros = cadastros;
+	}
 	public String getRua() {
 		return rua;
 	}

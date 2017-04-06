@@ -28,7 +28,7 @@
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 				<li><a href="#">Informações</a></li>
-				<li><a href="#">Cadastro</a></li>
+				<li><a href="CadastroCliente.xhtml">Cadastro</a></li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown" role="button" aria-expanded="false">Ajuda
 						<span class="caret"></span>
@@ -57,46 +57,25 @@
 </nav>
 <h:body>
 	<h:form acceptcharset="ISO-8859-1">
-		<fieldset>
-			<h1>Cadastrar Usúario</h1>
-			<h:outputText value="• Nome: "/>
-			<p:inputText id="Nome" required="true" pt:placeholder="Digite o nome" value="#{mCadastroBean.cadastro.nome}"></p:inputText>
+	<fieldset>
+			<h:outputText value="• Endereço: "/> 
+			<br/> 
+			<h:selectOneMenu value="#{mEnderecoBean.idCad}">
+			<f:selectItem itemLabel=" -- Selecione -- " itemValue="0">
+			</f:selectItem>
+			<f:selectItems value="#{mCadastroBean.cadastro}" var="cadastro" itemLabel="#{cadastro.nome}"  itemValue="#{cadastro.id}">
+			</f:selectItems>
+			</h:selectOneMenu>
+			→<p:inputText id="Rua" required="true" pt:placeholder="Rua"><f:validateLength minimun="10" maximum="100" value="#{mEnderecoBean.endereco.rua}"/></p:inputText>
+			<br/> →<p:inputText  required="true" pt:placeholder="Número" value="#{mEnderecoBean.endereco.numero}"></p:inputText>
+			<br/> →<p:inputText  required="true" pt:placeholder="Bairro" ></p:inputText>
+			<br/> →<p:inputText  required="true" pt:placeholder="Cidade" ></p:inputText>
+			<br/> →<p:inputText  required="true" pt:placeholder="Estado" ></p:inputText>
+			<br/> →<p:inputText  required="true" pt:placeholder="País" ></p:inputText>
 			<br/> 
 			<br/> 
-			<h:outputText value="• Email: "/>
-			<p:inputText id="Email" required="true" pt:placeholder="Digite o e-mail" value="#{mCadastroBean.cadastro.email}"></p:inputText>
-			<br/> 
-			<br/>
-			<h:outputText value="• Senha: "/>
-			<p:password id="senha" required="true" pt:placeholder="Digite a senha" value="#{mCadastroBean.cadastro.senha}"/>
-			<br/> 
-			<br/> 
-			<h:outputText value="• Telefone: "/>
-			<p:inputText id="telefone" required="true" pt:placeholder="Digite o telefone" value="#{mCadastroBean.cadastro.telefone}"></p:inputText>
-			<br/> 
-			<br/>
-			<h:outputText value="• Data:  FAZENDO AINDA"/>
-			<br/> 
-			<br/> 
-			<h:outputText value="• Sexo: "/>
-			<p:selectOneRadio itemValue="Sexo" required="true" value="#{mCadastroBean.cadastro.sexo}">
-				<f:selectItem itemValue="Masc" itemLabel="Masculino" />
-				<f:selectItem itemValue="Fem" itemLabel="Feminino" />
-			</p:selectOneRadio>
-			<br/>
-			<h:outputText value="• RG: "/>
-			<p:inputText required="true" id="RG" pt:placeholder="RG" value="#{mCadastroBean.cadastro.rg}">
-				<f:validateLength minimun="15" maximum="20" />
-			</p:inputText>
-			<br/> 
-			<br/> 
-			<h:outputText value="• Pessoa: "/>
-			<p:selectOneRadio value="Pessoa">
-				<f:selectItem itemValue="Jur" itemLabel="Juridica" />
-				<f:selectItem itemValue="Fis" itemLabel="Fisica" />
-			</p:selectOneRadio>
-			<h:commandButton value="Próximo Passo" action="#{mCadastroBean.gravarCadastro(mCadastroBean.cadastro)}"></h:commandButton>
-		</fieldset>
+			<h:commandButton value="Próximo Passo" action="#{mEnderecoBean.gravarEndereco(mEnderecoBean.endereco)}"></h:commandButton>
+	</fieldset>
 	</h:form>
-</h:body>
+	</h:body>
 </html>
