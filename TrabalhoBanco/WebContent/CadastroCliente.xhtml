@@ -38,7 +38,7 @@
 						<li><a href="SAC.xhtml">SAC</a></li>
 						<li><a href="Ouvidoria.xhtml">Ouvidoria</a></li>
 						<li class="divider"></li>
-						<li><a href="#">TESTE                                            </a></li>
+						<li><a href="#">TESTE</a></li>
 						<li class="divider"></li>
 						<li><a href="#">TESTE 23211232</a></li>
 					</ul></li>
@@ -75,7 +75,17 @@
 			<p:inputText id="telefone" required="true" pt:placeholder="Digite o telefone" value="#{mCadastroBean.cadastro.telefone}"></p:inputText>
 			<br/> 
 			<br/>
-			<h:outputText value="• Data:  FAZENDO AINDA"/>
+			<h:outputText value="• Data: "/>
+			<p:inputText id="data" required="true" pt:placeholder="Digite a data de nascimento" value="#{mCadastroBean.cadastro.data}"></p:inputText>
+			<br/> 
+			<br/> 
+			<h:outputText value="• Endereço: "/> 
+			<br/> →<p:inputText id="Rua" required="true" pt:placeholder="Rua"><f:validateLength minimun="10" maximum="100" value="#{mCadastroBean.endereco.rua}"/></p:inputText>
+			<br/> →<p:inputText  required="true" pt:placeholder="Número" ></p:inputText>
+			<br/> →<p:inputText  required="true" pt:placeholder="Bairro" ></p:inputText>
+			<br/> →<p:inputText  required="true" pt:placeholder="Cidade" ></p:inputText>
+			<br/> →<p:inputText  required="true" pt:placeholder="Estado" ></p:inputText>
+			<br/> →<p:inputText  required="true" pt:placeholder="País" ></p:inputText>
 			<br/> 
 			<br/> 
 			<h:outputText value="• Sexo: "/>
@@ -95,7 +105,7 @@
 				<f:selectItem itemValue="Jur" itemLabel="Juridica" />
 				<f:selectItem itemValue="Fis" itemLabel="Fisica" />
 			</p:selectOneRadio>
-			<h:commandButton value="Próximo Passo" action="#{mCadastroBean.gravarCadastro(mCadastroBean.cadastro)}"></h:commandButton>
+			<h:commandButton value="Próximo Passo" action="#{mCadastroBean.addCad(mCadastroBean.cadastro)}"></h:commandButton>
 		</fieldset>
 	</h:form>
 </h:body>
