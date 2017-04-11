@@ -2,20 +2,19 @@ package Banco.model;
 
 public class Endereco {
 
-	private int idEnd;
 	private String rua;
 	private String numero;
 	private String bairro;
 	private String cidade;
 	private String estado; 
 	private String pais;
-
+	private Cadastro cadastro;
 	
-	public int getIdEnd() {
-		return idEnd;
+	public Cadastro getCadastro() {
+		return cadastro;
 	}
-	public void setIdEnd(int idEnd) {
-		this.idEnd = idEnd;
+	public void setCadastro(Cadastro cadastro) {
+		this.cadastro = cadastro;
 	}
 	public String getRua() {
 		return rua;

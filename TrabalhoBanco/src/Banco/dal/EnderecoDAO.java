@@ -9,8 +9,4 @@ public class EnderecoDAO {
 	public static void adicionarEndereco(Endereco c){
 		enderecos.add(c);
 	}
-	
-	public static ArrayList<Endereco> retornarLista(){
-		return enderecos;
-	}
 }

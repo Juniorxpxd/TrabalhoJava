@@ -7,6 +7,7 @@ public class CadastroDAO {
 	private static ArrayList<Cadastro> cadastros = new ArrayList<Cadastro>();
 	
 	public static void addCadastro(Cadastro c){
+		c.setId(cadastros.size() + 1);
 		cadastros.add(c);
 	}
 	public static void removerCadastro(Cadastro c){

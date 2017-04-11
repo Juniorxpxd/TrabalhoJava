@@ -10,21 +10,14 @@ public class Cadastro {
 	private String data;
 	private String sexo;
 	private String rg;
-	private Endereco endereco;
-	
-	
+
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	public Endereco getEndereco() {
-		return endereco;
-	}
-	public void setEndereco(Endereco endereco) {
-		this.endereco = endereco;
-	}
+
 	public String getNome() {
 		return nome;
 	}
