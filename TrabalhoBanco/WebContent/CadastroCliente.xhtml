@@ -76,7 +76,7 @@
 			<br/> 
 			<br/>
 			<h:outputText value="• Data: "/>
-			<p:inputText id="data" required="true" pt:placeholder="Digite a data de nascimento" value="#{mCadastroBean.cadastro.data}"></p:inputText>
+			<p:inputText id="data" required="true" pt:placeholder="Data de nascimento" value="#{mCadastroBean.cadastro.data}"></p:inputText>
 			<br/> 
 			<br/> 
 			<h:outputText value="• Sexo: "/>
@@ -92,7 +92,7 @@
 			<br/> 
 			<br/> 
 			<h:outputText value="• Pessoa: "/>
-			<p:selectOneRadio value="Pessoa">
+			<p:selectOneRadio value="Pessoa" required="true">
 				<f:selectItem itemValue="Jur" itemLabel="Juridica" />
 				<f:selectItem itemValue="Fis" itemLabel="Fisica" />
 			</p:selectOneRadio>
