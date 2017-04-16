@@ -1,21 +1,31 @@
 package Banco.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Cadastro")
 public class Cadastro {
 	
-	private int id;
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int idCad;
 	private String nome;
 	private String email;
 	private String senha;
 	private String telefone;
-	private String data;
+	private String datanasc;
 	private String sexo;
 	private String rg;
 
-	public int getId() {
-		return id;
+	public int getIdCad() {
+		return idCad;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setIdCad(int idCad) {
+		this.idCad = idCad;
 	}
 
 	public String getNome() {
@@ -30,8 +40,8 @@ public class Cadastro {
 	public String getTelefone() {
 		return telefone;
 	}
-	public String getData() {
-		return data;
+	public String getDataNasc() {
+		return datanasc;
 	}
 	public String getSexo() {
 		return sexo;
@@ -51,8 +61,8 @@ public class Cadastro {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
-	public void setData(String data) {
-		this.data = data;
+	public void setDataNasc(String datanasc) {
+		this.datanasc = datanasc;
 	}
 	public void setSexo(String sexo) {
 		this.sexo = sexo;

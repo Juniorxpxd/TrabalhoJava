@@ -76,13 +76,13 @@
 			<br/> 
 			<br/>
 			<h:outputText value="• Data: "/>
-			<p:inputText id="data" required="true" pt:placeholder="Data de nascimento" value="#{mCadastroBean.cadastro.data}"></p:inputText>
+			<p:inputText id="datanasc" pt:placeholder="Data de nascimento" value="#{mCadastroBean.cadastro.dataNasc}"></p:inputText>
 			<br/> 
 			<br/> 
 			<h:outputText value="• Sexo: "/>
 			<p:selectOneRadio itemValue="Sexo" required="true" value="#{mCadastroBean.cadastro.sexo}">
-				<f:selectItem itemValue="Masc" itemLabel="Masculino" />
-				<f:selectItem itemValue="Fem" itemLabel="Feminino" />
+				<f:selectItem itemValue="Masculino" itemLabel="Masculino" />
+				<f:selectItem itemValue="Feminino" itemLabel="Feminino" />
 			</p:selectOneRadio>
 			<br/>
 			<h:outputText value="• RG: "/>
@@ -90,7 +90,7 @@
 				<f:validateLength minimun="15" maximum="20" />
 			</p:inputText>
 			<br/> 
-			<br/> asas
+			<br/>
 			<h:outputText value="• Pessoa: "/>
 			<p:selectOneRadio value="Pessoa" required="true">
 				<f:selectItem itemValue="Jur" itemLabel="Juridica" />

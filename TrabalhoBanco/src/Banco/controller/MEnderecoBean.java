@@ -35,8 +35,6 @@ public class MEnderecoBean {
 	}
 	
 	public String gravarEndereco(Endereco e){
-		Cadastro c = CadastroDAO.buscarCadastroPorID(idCad);
-		e.setCadastro(c);
 		EnderecoDAO.adicionarEndereco(e);
 		System.out.println("Rua: " + e.getRua() + " Número: " + e.getNumero() + " Bairro: " + e.getBairro() + " Cidade: " + e.getCidade() + " Estado: " + e.getEstado() + " País: " + e.getPais());
 		return "Index.xhtml?faces-redirect=true";
