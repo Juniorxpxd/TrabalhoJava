@@ -2,12 +2,8 @@ package Banco.dal;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-
 import Banco.model.Cadastro;
 
 public class CadastroDAO {
@@ -30,6 +26,12 @@ public class CadastroDAO {
 		List<Cadastro> lista = q.getResultList();
 		em.close();
 		return lista;
-		
+	}
+	public static void alterarCadastro(Cadastro c){
+		for (int i = 0; i < cadastros.size(); i++) {
+			if(cadastros.get(i).getIdCad() == c.getIdCad()){
+				cadastros.set(i, c);
+			}
+		}
 	}
 }
