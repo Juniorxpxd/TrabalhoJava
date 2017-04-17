@@ -2,8 +2,11 @@ package Banco.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpServletRequest;
 
 import Banco.dal.CadastroDAO;
 import Banco.model.Cadastro;
@@ -28,6 +31,9 @@ public class MCadastroBean {
 	
 	public String addCad(Cadastro c){
 		CadastroDAO.addCadastro(c);
+		HttpServletRequest req = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
+		System.out.println(req.getParameter("id"));
 		return "Endereco.xhtml?faces-redirect=true";
 	}
+
 }
