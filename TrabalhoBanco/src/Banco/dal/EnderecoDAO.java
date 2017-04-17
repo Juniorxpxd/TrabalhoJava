@@ -26,6 +26,12 @@ public class EnderecoDAO {
 		List<Endereco> lista = q.getResultList();
 		em.close();
 		return lista;
-		
+	}
+	public static void alterarEndereco(Endereco e){
+		for (int i = 0; i < enderecos.size(); i++) {
+			if(enderecos.get(i).getIdEnd() == e.getIdEnd()){
+				enderecos.set(i, e);
+			}
+		}
 	}
 }
