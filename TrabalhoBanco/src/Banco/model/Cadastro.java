@@ -27,7 +27,6 @@ public class Cadastro {
 	public void setIdCad(int idCad) {
 		this.idCad = idCad;
 	}
-
 	public String getNome() {
 		return nome;
 	}

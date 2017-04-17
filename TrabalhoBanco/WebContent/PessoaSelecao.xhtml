@@ -11,7 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="bootstrap.css" />
 	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="Script.js"></script>
-	<title>Cadastro Cliente</title>
+	<title>Cadastro de indentidade</title>
 </h:head>
 <nav class="navbar navbar-default">
 	<div class="container-fluid">
@@ -38,7 +38,7 @@
 						<li><a href="SAC.xhtml">SAC</a></li>
 						<li><a href="Ouvidoria.xhtml">Ouvidoria</a></li>
 						<li class="divider"></li>
-						<li><a href="#">TESTE                                            </a></li>
+						<li><a href="#">TESTE</a></li>
 						<li class="divider"></li>
 						<li><a href="#">TESTE 23211232</a></li>
 					</ul></li>
@@ -55,14 +55,17 @@
 		</div>
 	</div>
 </nav>
-
-<h:outputText value="• Pessoa: "/>
-			<p:selectOneRadio value="Pessoa">
-				<f:selectItem itemValue="Jur" itemLabel="Juridica" />
-				<f:selectItem itemValue="Fis" itemLabel="Fisica" />
+<h:body>
+	<h:form acceptcharset="ISO-8859-1">
+		<fieldset>
+		<h1>Cadastrar CPF/CNPJ</h1>
+			<h:outputText value="• Você é uma pessoa: "/> 
+			<p:selectOneRadio value="Pessoa" required="true">
+				<f:selectItem itemValue="Juridica" itemLabel="Juridica" />
+				<f:selectItem itemValue="Fisica" itemLabel="Fisica" />
 			</p:selectOneRadio>
-						<h:commandButton value="Cadastrar" action="#{mCadastroBean.gravarCadastro(mCadastroBean.cadastro)}"></h:commandButton>
-			
-				
-
+			<h:commandButton value="Próximo Passo"></h:commandButton>
+		</fieldset>
+	</h:form>
+</h:body>
 </html>
