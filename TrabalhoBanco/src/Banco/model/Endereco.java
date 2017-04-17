@@ -19,7 +19,13 @@ public class Endereco {
 	private String cidade;
 	private String estado; 
 	private String pais;
-	
+
+	public int getIdEnd() {
+		return idEnd;
+	}
+	public void setIdEnd(int idEnd) {
+		this.idEnd = idEnd;
+	}
 	public String getRua() {
 		return rua;
 	}

@@ -58,6 +58,7 @@
 <h:body>
 	<h:form acceptcharset="ISO-8859-1">
 	<fieldset>
+		<h1>Cadastrar Endereço</h1>
 			<h:outputText value="• Endereço: "/> 
 			<br/> →<p:inputText id="Rua" required="true" pt:placeholder="Rua" value="#{mEnderecoBean.endereco.rua}"><f:validateLength minimun="10" maximum="100"/></p:inputText>
 			<br/> →<p:inputText id="Num" required="true" pt:placeholder="Número" value="#{mEnderecoBean.endereco.numero}"></p:inputText>
@@ -67,7 +68,8 @@
 			<br/> →<p:inputText id="Pais" required="true" pt:placeholder="País" value="#{mEnderecoBean.endereco.pais}"></p:inputText>
 			<br/>
 			<br/> 
-			<h:commandButton value="Próximo Passo" action="#{mEnderecoBean.gravarEndereco(mEnderecoBean.endereco)}"></h:commandButton>
+			<h:inputHidden value="#{mCadastroBean.cadastro.idCad}"></h:inputHidden>
+			<h:commandButton value="Próximo Passo" action="#{mEnderecoBean.gravarEndereco(mEnderecoBean.endereco)}"><f:param name="idCad" value="#{param['idCad']}"></f:param></h:commandButton>
 	</fieldset>
 	</h:form>
 	</h:body>

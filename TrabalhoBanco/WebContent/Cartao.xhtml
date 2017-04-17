@@ -55,32 +55,22 @@
 		</div>
 	</div>
 </nav>
-
 <h:body>
 	<h:form acceptcharset="ISO-8859-1">
 		<fieldset>
 			<h1>Cadastrar Cartão</h1>
-			<h:outputText value="• Cpf: "/>
-			<p:inputText id="cpf" required="true" pt:placeholder="Insira seu cpf" value="#{mCadastroBean.cadastro.cpf}"></p:inputText>
-			</fieldset>
-			</h:form>
-			</h:body>
-			<br/>
-			<br/> 
-			<h:outputText value="• Cep: "/>
-			<p:inputText id="cep" required="true" pt:placeholder="Insira o cep" value="#{mCadastroBean.cadastro.cep}"></p:inputText>
-			<br/> 
-			<br/> 
 			<h:outputText value="• Renda: "/>
-			<p:inputText id="renda" required="true" pt:placeholder="Digite a sua renda" value="#{mCadastroBean.cadastro.renda}"></p:inputText>
+			<p:inputText id="renda" required="true" pt:placeholder="Digite a sua renda" value=""></p:inputText>
 			<br/> 
 			<br/> 
 			<h:outputText value="• Tipo do cartao: "/>
-			<p:selectOneRadio itemValue="Cartao" required="true" value="#{mCadastroBean.cadastro.cartao}">
-				<f:selectItem itemValue="Cred" itemLabel="Credito" />
-				<f:selectItem itemValue="Debi" itemLabel="Debito" />
+			<p:selectOneRadio itemValue="Cartão" required="true" value="">
+				<f:selectItem itemValue="Crédito" itemLabel="Credito" />
+				<f:selectItem itemValue="Débito" itemLabel="Debito" />
 			</p:selectOneRadio>
 			<br/>
-			<h:commandButton value="Cadastrar" action="#{mCadastroBean.gravarCadastro(mCadastroBean.cadastro)}"></h:commandButton>
-
+			<h:commandButton value="Cadastrar"></h:commandButton>
+		</fieldset>
+	</h:form>
+</h:body>
 </html>

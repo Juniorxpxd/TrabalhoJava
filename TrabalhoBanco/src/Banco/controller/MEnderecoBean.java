@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import Banco.dal.EnderecoDAO;
 import Banco.model.Endereco;
 
@@ -11,7 +15,6 @@ import Banco.model.Endereco;
 public class MEnderecoBean {
 	private Endereco endereco = new Endereco();
 	private List<Endereco> enderecos = new ArrayList<Endereco>();
-	private int idCad;
 	
 	public Endereco getEndereco() {
 		return endereco;
@@ -19,21 +22,15 @@ public class MEnderecoBean {
 	public List<Endereco> getEnderecos() {
 		return enderecos;
 	}
-	public int getIdCad() {
-		return idCad;
-	}
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
 	public void setEnderecos(List<Endereco> enderecos) {
 		this.enderecos = enderecos;
 	}
-	public void setIdCad(int idCad) {
-		this.idCad = idCad;
-	}
-	
 	public String gravarEndereco(Endereco e){
 		EnderecoDAO.adicionarEndereco(e);
+		HttpServletResponse res = (HttpServletResponse)FacesContext.getCurrentInstance().getExternalContext().getResponse();
 		return "Index.xhtml?faces-redirect=true";
 	}
 	
