@@ -1,9 +1,16 @@
 package Banco.model;
 
 public class Agencia {
+	private int idAgen;
 	private int agencia;
 	private int conta;
 	
+	public int getIdAgen() {
+		return idAgen;
+	}
+	public void setIdAgen(int idAgen) {
+		this.idAgen = idAgen;
+	}
 	public int getAgencia() {
 		return agencia;
 	}
