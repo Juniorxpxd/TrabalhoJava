@@ -1,21 +1,25 @@
 package Banco.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Cadastro.Endereco")
 public class Endereco {
 
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int idEnd;
 	private String rua;
 	private String numero;
 	private String bairro;
 	private String cidade;
 	private String estado; 
 	private String pais;
-	private Cadastro cadastro;
 	
-	public Cadastro getCadastro() {
-		return cadastro;
-	}
-	public void setCadastro(Cadastro cadastro) {
-		this.cadastro = cadastro;
-	}
 	public String getRua() {
 		return rua;
 	}
@@ -52,9 +56,4 @@ public class Endereco {
 	public void setPais(String pais) {
 		this.pais = pais;
 	}
-	
-	
-	
-	
-
 }

@@ -28,6 +28,6 @@ public class MCadastroBean {
 	
 	public String addCad(Cadastro c){
 		CadastroDAO.addCadastro(c);
-		return "Index.xhtml?faces-redirect=true";
+		return "Endereco.xhtml?faces-redirect=true";
 	}
 }

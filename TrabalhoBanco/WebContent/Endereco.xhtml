@@ -60,11 +60,11 @@
 	<fieldset>
 			<h:outputText value="• Endereço: "/> 
 			<br/> →<p:inputText id="Rua" required="true" pt:placeholder="Rua" value="#{mEnderecoBean.endereco.rua}"><f:validateLength minimun="10" maximum="100"/></p:inputText>
-			<br/> →<p:inputText id="Num" required="true"required="true" pt:placeholder="Número" value="#{mEnderecoBean.endereco.numero}"></p:inputText>
-			<br/> →<p:inputText id="Bairro" required="true" required="true" pt:placeholder="Bairro" value="#{mEnderecoBean.endereco.bairro}"></p:inputText>
-			<br/> →<p:inputText id="Cidade" required="true" required="true" pt:placeholder="Cidade" value="#{mEnderecoBean.endereco.cidade}"></p:inputText>
-			<br/> →<p:inputText id="Estado" required="true" required="true" pt:placeholder="Estado" value="#{mEnderecoBean.endereco.estado}"></p:inputText>
-			<br/> →<p:inputText id="Pais" required="true" required="true" pt:placeholder="País" value="#{mEnderecoBean.endereco.pais}"></p:inputText>
+			<br/> →<p:inputText id="Num" required="true" pt:placeholder="Número" value="#{mEnderecoBean.endereco.numero}"></p:inputText>
+			<br/> →<p:inputText id="Bairro" required="true" pt:placeholder="Bairro" value="#{mEnderecoBean.endereco.bairro}"></p:inputText>
+			<br/> →<p:inputText id="Cidade" required="true" pt:placeholder="Cidade" value="#{mEnderecoBean.endereco.cidade}"></p:inputText>
+			<br/> →<p:inputText id="Estado" required="true" pt:placeholder="Estado" value="#{mEnderecoBean.endereco.estado}"></p:inputText>
+			<br/> →<p:inputText id="Pais" required="true" pt:placeholder="País" value="#{mEnderecoBean.endereco.pais}"></p:inputText>
 			<br/>
 			<br/> 
 			<h:commandButton value="Próximo Passo" action="#{mEnderecoBean.gravarEndereco(mEnderecoBean.endereco)}"></h:commandButton>
