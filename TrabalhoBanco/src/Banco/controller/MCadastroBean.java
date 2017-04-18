@@ -6,7 +6,6 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
-import javax.servlet.http.HttpServletRequest;
 
 import Banco.dal.CadastroDAO;
 import Banco.model.Cadastro;
@@ -31,7 +30,6 @@ public class MCadastroBean {
 	
 	public String addCad(Cadastro c){
 		CadastroDAO.addCadastro(c);
-		HttpServletRequest req = (HttpServletRequest)FacesContext.getCurrentInstance().getExternalContext().getRequest();
 		return "Endereco.xhtml?faces-redirect=true";
 	}
 }
