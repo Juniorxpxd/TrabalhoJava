@@ -5,10 +5,6 @@ import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
-<<<<<<< HEAD
-
-=======
->>>>>>> branch 'master' of https://github.com/Juniorxpxd/TrabalhoJava
 
 import Banco.dal.CadastroDAO;
 import Banco.dal.EnderecoDAO;
@@ -43,14 +39,6 @@ public class MEnderecoBean {
 		Cadastro c = CadastroDAO.buscarCadastroPorId(idCad);
 		e.setCadastro(c);
 		EnderecoDAO.adicionarEndereco(e);
-<<<<<<< HEAD
 		return "Pessoa.xhtml?faces-redirect=true";
-=======
-<<<<<<< HEAD
-
-=======
->>>>>>> branch 'master' of https://github.com/Juniorxpxd/TrabalhoJava
-		return "Index.xhtml?faces-redirect=true";
->>>>>>> branch 'master' of https://github.com/Juniorxpxd/TrabalhoJava
 	}
 }
