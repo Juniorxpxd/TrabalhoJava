@@ -35,11 +35,7 @@ public class CadastroDAO {
 		}
 	}
 	public static Cadastro buscarCadastroPorId(int id){
-		for (Cadastro cadastro : cadastros) {
-			if(cadastro.getIdCad() == id){
-				return cadastro;
-			}
-		}
-		return null;
+		EntityManager em = Conexao.getEntityManager();
+		return em.find(Cadastro.class, id);
 	}
 }
