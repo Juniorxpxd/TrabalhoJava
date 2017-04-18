@@ -5,7 +5,10 @@ import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/Juniorxpxd/TrabalhoJava
 
 import Banco.dal.EnderecoDAO;
 import Banco.model.Endereco;
@@ -29,7 +32,10 @@ public class MEnderecoBean {
 	}
 	public String gravarEndereco(Endereco e){
 		EnderecoDAO.adicionarEndereco(e);
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/Juniorxpxd/TrabalhoJava
 		return "Index.xhtml?faces-redirect=true";
 	}
 	

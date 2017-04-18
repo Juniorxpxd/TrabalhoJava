@@ -6,7 +6,10 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/Juniorxpxd/TrabalhoJava
 
 import Banco.dal.CadastroDAO;
 import Banco.model.Cadastro;
@@ -31,7 +34,10 @@ public class MCadastroBean {
 	
 	public String addCad(Cadastro c){
 		CadastroDAO.addCadastro(c);
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/Juniorxpxd/TrabalhoJava
 		return "Endereco.xhtml?faces-redirect=true";
 	}
 }
