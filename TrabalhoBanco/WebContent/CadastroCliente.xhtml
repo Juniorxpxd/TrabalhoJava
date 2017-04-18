@@ -4,7 +4,7 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:b="http://bootsfaces.net/ui" 
+	xmlns:b="http://bootsfaces.net/ui"
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -59,38 +59,46 @@
 	<h:form acceptcharset="ISO-8859-1">
 		<fieldset>
 			<h1>Cadastrar Usúario</h1>
-			<h:outputText value="• Nome: "/>
+			<b:icon name="glyphicon-user"/> 
+			<h:outputText value=" Nome: "/>
 			<p:inputText id="Nome" required="true" pt:placeholder="Digite o nome" value="#{mCadastroBean.cadastro.nome}"></p:inputText>
 			<br/> 
 			<br/> 
-			<h:outputText value="• Email: "/>
+			<b:icon name="glyphicon-user"/> 
+			<h:outputText value=" Email: "/>
 			<p:inputText id="Email" required="true" pt:placeholder="Digite o e-mail" value="#{mCadastroBean.cadastro.email}"></p:inputText>
 			<br/> 
 			<br/>
-			<h:outputText value="• Senha: "/>
+			<b:icon name="glyphicon-user"/> 
+			<h:outputText value=" Senha: "/>
 			<p:password id="senha" required="true" pt:placeholder="Digite a senha" value="#{mCadastroBean.cadastro.senha}"/>
 			<br/> 
 			<br/> 
-			<h:outputText value="• Telefone: "/>
+			<b:icon name="glyphicon-user"/> 
+			<h:outputText value=" Telefone: "/>
 			<p:inputText id="telefone" required="true" pt:placeholder="Digite o telefone" value="#{mCadastroBean.cadastro.telefone}"></p:inputText>
 			<br/> 
 			<br/>
-			<h:outputText value="• Data de Nascimento: "/>
+			<b:icon name="glyphicon-calendar"/> 
+			<h:outputText value=" Data de Nascimento: "/>
 			<p:inputText id="datanasc" required="true" pt:placeholder="Data de nascimento" value="#{mCadastroBean.cadastro.dataNasc}"></p:inputText>
 			<br/> 
 			<br/> 
-			<h:outputText value="• Sexo: "/>
+			<b:icon name="glyphicon-user"/> 
+			<h:outputText value=" Sexo: "/>
 			<p:selectOneRadio itemValue="Sexo" required="true" value="#{mCadastroBean.cadastro.sexo}">
 				<f:selectItem itemValue="Masculino" itemLabel="Masculino" />
 				<f:selectItem itemValue="Feminino" itemLabel="Feminino" />
 			</p:selectOneRadio>
 			<br/>
-			<h:outputText value="• RG: "/>
+			<b:icon name="glyphicon-user"/> 
+			<h:outputText value=" RG: "/>
 			<p:inputText required="true" id="RG" pt:placeholder="RG" value="#{mCadastroBean.cadastro.rg}">
 				<f:validateLength minimun="15" maximum="20" />
 			</p:inputText>
 			<br/> 
 			<br/>
+			<b:icon name="glyphicon-floppy-saved"/> 
 			<h:inputHidden value="#{mCadastroBean.cadastro.idCad}"></h:inputHidden>
 			<h:commandButton value="Próximo Passo" action="#{mCadastroBean.addCad(mCadastroBean.cadastro)}"><f:param name="idCad" value="#{param['idCad']}"></f:param></h:commandButton>
 		</fieldset>

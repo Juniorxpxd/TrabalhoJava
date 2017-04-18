@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+import javax.persistence.RollbackException;
+
 import Banco.model.Cadastro;
 
 public class CadastroDAO {
@@ -17,7 +19,15 @@ public class CadastroDAO {
 		em.close();
 	}
 	public static void removerCadastro(Cadastro c){
-		cadastros.remove(c);
+		try{
+		EntityManager em = Conexao.getEntityManager();
+		em.getTransaction().begin();
+		em.remove(c);
+		em.getTransaction().commit();
+		em.close()
+		}catch(RollbackException e){
+			System.out.println();
+		}
 	}
 	public static List<Cadastro> retornarLista(){
 		EntityManager em = Conexao.getEntityManager();
