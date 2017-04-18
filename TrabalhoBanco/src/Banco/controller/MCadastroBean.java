@@ -1,47 +1,37 @@
 package Banco.controller;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
+import javax.faces.event.ActionEvent;
+import javax.servlet.http.HttpServletRequest;
 
-import Banco.model.Cadastro;
-import Banco.model.Endereco;
 import Banco.dal.CadastroDAO;
+import Banco.model.Cadastro;
 
 @ManagedBean(name = "mCadastroBean")
 public class MCadastroBean {
 	private Cadastro cadastro = new Cadastro();
-	private Endereco endereco = new Endereco();
-	private ArrayList<Cadastro> cadastros = new ArrayList<Cadastro>();
-
-	public Endereco getEndereco() {
-		return endereco;
-	}
-
-	public void setEndereco(Endereco endereco) {
-		this.endereco = endereco;
-	}
-
-	public ArrayList<Cadastro> getCadastros() {
-		return CadastroDAO.retornarLista();
-	}
+	private List<Cadastro> cadastros = new ArrayList<Cadastro>();
 	
-	public void setCadastro(Cadastro cadastro) {
-		this.cadastro = cadastro;
-	}
-
 	public Cadastro getCadastro() {
 		return cadastro;
 	}
-
-	public void setCadastros(ArrayList<Cadastro> cadastros) {
+	public List<Cadastro> getCadastros() {
+		return CadastroDAO.retornarLista();
+	}
+	public void setCadastro(Cadastro cadastro) {
+		this.cadastro = cadastro;
+	}
+	public void setCadastros(List<Cadastro> cadastros) {
 		this.cadastros = cadastros;
 	}
 	
-	public String gravarCadastro(Cadastro c) {
+	public String addCad(Cadastro c){
 		CadastroDAO.addCadastro(c);
-		System.out.println("Nome: " + c.getNome() + " Email: " + c.getEmail() + " Senha: " + c.getSenha() + " Sexo: " + c.getSexo() + " Telefone: " + c.getTelefone());
+		HttpServletRequest req = (HttpServletRequest)FacesContext.getCurrentInstance().getExternalContext().getRequest();
 		return "Endereco.xhtml?faces-redirect=true";
 	}
 }

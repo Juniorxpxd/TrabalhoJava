@@ -58,23 +58,18 @@
 <h:body>
 	<h:form acceptcharset="ISO-8859-1">
 	<fieldset>
+		<h1>Cadastrar Endereço</h1>
 			<h:outputText value="• Endereço: "/> 
+			<br/> →<p:inputText id="Rua" required="true" pt:placeholder="Rua" value="#{mEnderecoBean.endereco.rua}"><f:validateLength minimun="10" maximum="100"/></p:inputText>
+			<br/> →<p:inputText id="Num" required="true" pt:placeholder="Número" value="#{mEnderecoBean.endereco.numero}"></p:inputText>
+			<br/> →<p:inputText id="Bairro" required="true" pt:placeholder="Bairro" value="#{mEnderecoBean.endereco.bairro}"></p:inputText>
+			<br/> →<p:inputText id="Cidade" required="true" pt:placeholder="Cidade" value="#{mEnderecoBean.endereco.cidade}"></p:inputText>
+			<br/> →<p:inputText id="Estado" required="true" pt:placeholder="Estado" value="#{mEnderecoBean.endereco.estado}"></p:inputText>
+			<br/> →<p:inputText id="Pais" required="true" pt:placeholder="País" value="#{mEnderecoBean.endereco.pais}"></p:inputText>
+			<br/>
 			<br/> 
-			<h:selectOneMenu value="#{mEnderecoBean.idCad}">
-			<f:selectItem itemLabel=" -- Selecione -- " itemValue="0">
-			</f:selectItem>
-			<f:selectItems value="#{mCadastroBean.cadastro}" var="cadastro" itemLabel="#{cadastro.nome}"  itemValue="#{cadastro.id}">
-			</f:selectItems>
-			</h:selectOneMenu>
-			→<p:inputText id="Rua" required="true" pt:placeholder="Rua"><f:validateLength minimun="10" maximum="100" value="#{mEnderecoBean.endereco.rua}"/></p:inputText>
-			<br/> →<p:inputText  required="true" pt:placeholder="Número" value="#{mEnderecoBean.endereco.numero}"></p:inputText>
-			<br/> →<p:inputText  required="true" pt:placeholder="Bairro" ></p:inputText>
-			<br/> →<p:inputText  required="true" pt:placeholder="Cidade" ></p:inputText>
-			<br/> →<p:inputText  required="true" pt:placeholder="Estado" ></p:inputText>
-			<br/> →<p:inputText  required="true" pt:placeholder="País" ></p:inputText>
-			<br/> 
-			<br/> 
-			<h:commandButton value="Próximo Passo" action="#{mEnderecoBean.gravarEndereco(mEnderecoBean.endereco)}"></h:commandButton>
+			<h:inputHidden value="#{mCadastroBean.cadastro.idCad}"></h:inputHidden>
+			<h:commandButton value="Próximo Passo" action="#{mEnderecoBean.gravarEndereco(mEnderecoBean.endereco)}"><f:param name="idCad" value="#{param['idCad']}"></f:param></h:commandButton>
 	</fieldset>
 	</h:form>
 	</h:body>

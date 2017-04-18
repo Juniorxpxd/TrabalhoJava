@@ -1,45 +1,36 @@
 package Banco.controller;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
-import Banco.dal.CadastroDAO;
 import Banco.dal.EnderecoDAO;
-import Banco.model.Cadastro;
 import Banco.model.Endereco;
 
-@ManagedBean(name = "mCadastroBean")
+@ManagedBean(name = "mEnderecoBean")
 public class MEnderecoBean {
 	private Endereco endereco = new Endereco();
-	private ArrayList<Endereco> enderecos = new ArrayList<Endereco>();
-	private int idCad;
+	private List<Endereco> enderecos = new ArrayList<Endereco>();
 	
 	public Endereco getEndereco() {
 		return endereco;
 	}
-	public ArrayList<Endereco> getEnderecos() {
+	public List<Endereco> getEnderecos() {
 		return enderecos;
-	}
-	public int getIdCad() {
-		return idCad;
 	}
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
-	public void setEnderecos(ArrayList<Endereco> enderecos) {
+	public void setEnderecos(List<Endereco> enderecos) {
 		this.enderecos = enderecos;
 	}
-	public void setIdCad(int idCad) {
-		this.idCad = idCad;
-	}
-	
 	public String gravarEndereco(Endereco e){
-		Cadastro c = CadastroDAO.buscarCadastroPorID(idCad);
-		e.setCadastros(c);
 		EnderecoDAO.adicionarEndereco(e);
-		System.out.println(" Rua: " + e.getRua());
+		HttpServletResponse res = (HttpServletResponse)FacesContext.getCurrentInstance().getExternalContext().getResponse();
 		return "Index.xhtml?faces-redirect=true";
 	}
 	

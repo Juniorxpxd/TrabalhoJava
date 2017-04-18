@@ -38,7 +38,7 @@
 						<li><a href="SAC.xhtml">SAC</a></li>
 						<li><a href="Ouvidoria.xhtml">Ouvidoria</a></li>
 						<li class="divider"></li>
-						<li><a href="#">TESTE                                            </a></li>
+						<li><a href="#">TESTE</a></li>
 						<li class="divider"></li>
 						<li><a href="#">TESTE 23211232</a></li>
 					</ul></li>
@@ -75,13 +75,14 @@
 			<p:inputText id="telefone" required="true" pt:placeholder="Digite o telefone" value="#{mCadastroBean.cadastro.telefone}"></p:inputText>
 			<br/> 
 			<br/>
-			<h:outputText value="• Data:  FAZENDO AINDA"/>
+			<h:outputText value="• Data de Nascimento: "/>
+			<p:inputText id="datanasc" required="true" pt:placeholder="Data de nascimento" value="#{mCadastroBean.cadastro.dataNasc}"></p:inputText>
 			<br/> 
 			<br/> 
 			<h:outputText value="• Sexo: "/>
 			<p:selectOneRadio itemValue="Sexo" required="true" value="#{mCadastroBean.cadastro.sexo}">
-				<f:selectItem itemValue="Masc" itemLabel="Masculino" />
-				<f:selectItem itemValue="Fem" itemLabel="Feminino" />
+				<f:selectItem itemValue="Masculino" itemLabel="Masculino" />
+				<f:selectItem itemValue="Feminino" itemLabel="Feminino" />
 			</p:selectOneRadio>
 			<br/>
 			<h:outputText value="• RG: "/>
@@ -89,13 +90,9 @@
 				<f:validateLength minimun="15" maximum="20" />
 			</p:inputText>
 			<br/> 
-			<br/> 
-			<h:outputText value="• Pessoa: "/>
-			<p:selectOneRadio value="Pessoa">
-				<f:selectItem itemValue="Jur" itemLabel="Juridica" />
-				<f:selectItem itemValue="Fis" itemLabel="Fisica" />
-			</p:selectOneRadio>
-			<h:commandButton value="Próximo Passo" action="#{mCadastroBean.gravarCadastro(mCadastroBean.cadastro)}"></h:commandButton>
+			<br/>
+			<h:inputHidden value="#{mCadastroBean.cadastro.idCad}"></h:inputHidden>
+			<h:commandButton value="Próximo Passo" action="#{mCadastroBean.addCad(mCadastroBean.cadastro)}"><f:param name="idCad" value="#{param['idCad']}"></f:param></h:commandButton>
 		</fieldset>
 	</h:form>
 </h:body>
