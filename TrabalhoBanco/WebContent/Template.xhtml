@@ -7,16 +7,16 @@
 	  xmlns:b= "http://bootsfaces.net/ui"
 	  xmlns:p="http://primefaces.org/ui"
 	  xmlns:ui="http://java.sun.com/jsf/facelets">
-	<h:head>
+<h:head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<link rel="stylesheet" type="text/css" href="bootstrap.css"/>
 		<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
 		<script type="text/javascript" src="Script.js"></script>
-		<title>Banco EvilMoney</title>
-	</h:head>
-<body>
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
+	<title>Template</title>
+</h:head>
+<h:body>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
@@ -54,25 +54,13 @@
     </div>
   </div>
 </nav>
-<h:form acceptcharset="ISO-8859-1">
-	<ui:composition template="Template.xhtml">
-		<ui:define name="conteudo">
-		<fieldset>
-			<h1>Contato</h1>
-			• E-mail:
-			<p:inputText id="email" pt:placeholder="Digite o e-mail"></p:inputText>
-			<br /> <br />
-			
-			• Descrição:
-			<p:inputTextarea id="descricao" pt:placeholder="Esqueva sua descrição"></p:inputTextarea>
-			<br /> <br />
-			• Telefone:
-			<p:inputText id="telefone" pt:placeholder="Digite o telefone"></p:inputText>
-			<br /> <br />
-			<p:commandButton value="Enviar" action="#"></p:commandButton>
-			</fieldset>
-		</ui:define>
-	</ui:composition>
-</h:form>	
-</body>
+	<div id="conteudo" style="margin: 30px">
+	<!--  Conteúdo dinâmico das oáginas que vão utilizar o template -->
+		<ui:insert name="conteudo"></ui:insert>
+	</div>
+	<hr/>
+	<footer>
+		<p:outputLabel value="Desenvolvido por Irineu"></p:outputLabel>
+	</footer>
+</h:body>
 </html>

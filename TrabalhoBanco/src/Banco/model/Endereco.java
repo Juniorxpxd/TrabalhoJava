@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -19,7 +20,17 @@ public class Endereco {
 	private String cidade;
 	private String estado; 
 	private String pais;
+	@OneToOne
+	private Cadastro cadastro;
 
+	
+
+	public Cadastro getCadastro() {
+		return cadastro;
+	}
+	public void setCadastro(Cadastro cadastro) {
+		this.cadastro = cadastro;
+	}
 	public int getIdEnd() {
 		return idEnd;
 	}

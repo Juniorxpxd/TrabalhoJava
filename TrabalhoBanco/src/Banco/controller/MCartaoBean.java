@@ -1,5 +1,33 @@
 package Banco.controller;
 
-public class MCartaoBean {
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.faces.bean.ManagedBean;
+
+import Banco.dal.CartaoDAO;
+import Banco.model.Cartao;
+
+@ManagedBean(name = "mCartaoBean")
+public class MCartaoBean {
+	private Cartao cartao = new Cartao();
+	private List<Cartao> cartoes = new ArrayList<Cartao>();
+	
+	public Cartao getCartao() {
+		return cartao;
+	}
+	public List<Cartao> getCartoes() {
+		return cartoes;
+	}
+	public void setCartao(Cartao cartao) {
+		this.cartao = cartao;
+	}
+	public void setCartoes(List<Cartao> cartoes) {
+		this.cartoes = cartoes;
+	}
+	
+	public String gravarCartao(Cartao c){
+		CartaoDAO.adicionarCartao(c);
+		return "Index.xhtml?faces-redirect=true";
+	}
 }

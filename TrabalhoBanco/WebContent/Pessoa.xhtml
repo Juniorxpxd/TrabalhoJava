@@ -60,11 +60,21 @@
 		<fieldset>
 		<h1>Cadastrar CPF/CNPJ</h1>
 			<h:outputText value="• Você é uma pessoa: "/> 
-			<p:selectOneRadio value="Pessoa" required="true">
+			<p:selectOneRadio itemValue="Pessoa" required="true" value="#{mPessoaBean.pessoa.pessoa}">
 				<f:selectItem itemValue="Juridica" itemLabel="Juridica" />
 				<f:selectItem itemValue="Fisica" itemLabel="Fisica" />
 			</p:selectOneRadio>
-			<h:commandButton value="Próximo Passo"></h:commandButton>
+			<br/> 
+			<br/>
+			<h:outputText value="• Se for Juridica CNPJ: "/>
+			<p:inputText id="juridica" pt:placeholder="Pessoa Juridica" value="#{mPessoaBean.pessoa.juridica}"></p:inputText>
+			<br/> 
+			<br/> 
+			<h:outputText value="• Se for Fisica CPF: "/>
+			<p:inputText id="fisica" pt:placeholder="Pessoa Fisica" value="#{mPessoaBean.pessoa.fisica}"></p:inputText>
+			<br/>
+			<br/>
+			<h:commandButton value="Próximo Passo" action="#{mPessoaBean.gravarPessoa(mPessoaBean.pessoa)}"></h:commandButton>
 		</fieldset>
 	</h:form>
 </h:body>

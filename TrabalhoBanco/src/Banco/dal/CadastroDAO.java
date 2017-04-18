@@ -34,4 +34,12 @@ public class CadastroDAO {
 			}
 		}
 	}
+	public static Cadastro buscarCadastroPorId(int id){
+		for (Cadastro cadastro : cadastros) {
+			if(cadastro.getIdCad() == id){
+				return cadastro;
+			}
+		}
+		return null;
+	}
 }
