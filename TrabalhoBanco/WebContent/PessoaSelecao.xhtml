@@ -57,9 +57,11 @@
 </nav>
 
 <h:outputText value="• Pessoa: "/>
-			<p:selectOneRadio value="Pessoa">
-				<f:selectItem itemValue="Jur" itemLabel="Juridica" />
+			<p:selectOneRadio value="Pessoa" id="pessoa">
+				<f:selectItem itemValue="Jur" itemLabel="Juridica"></f:selectItem>
 				<f:selectItem itemValue="Fis" itemLabel="Fisica" />
+				<f:ajax event="click" execute="@this" render="teste"></f:ajax>
+				<h:inputText id="teste"></h:inputText>
 			</p:selectOneRadio>
 						<h:commandButton value="Cadastrar" action="#{mCadastroBean.gravarCadastro(mCadastroBean.cadastro)}"></h:commandButton>
 			

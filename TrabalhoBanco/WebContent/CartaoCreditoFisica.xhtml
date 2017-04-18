@@ -59,12 +59,13 @@
 <h:body>
 	<h:form acceptcharset="ISO-8859-1">
 		<fieldset>
-			<h1>Cadastrar Cartão</h1>
-			<h:outputText value="• Cpf: "/>
-			<p:inputText id="cpf" required="true" pt:placeholder="Insira seu cpf" value="#{mCadastroBean.cadastro.cpf}"></p:inputText>
-			</fieldset>
-			</h:form>
-			</h:body>
+			<h1>Cadastrar Cartão de Credito Fisica</h1>
+			<h:outputText value="• RG: "/>
+			<p:inputText id="rg" required="true" pt:placeholder="Insira o seu RG" value="#{mCadastroBean.cadastro.rg}"></p:inputText>
+			<br/> 
+			<br/> 
+			<h:outputText value="• CPF: "/>
+			<p:inputText id="cpf" required="true" pt:placeholder="Insira o seu CPF" value="#{mCadastroBean.cadastro.cpf}"></p:inputText>
 			<br/>
 			<br/> 
 			<h:outputText value="• Cep: "/>
@@ -75,12 +76,10 @@
 			<p:inputText id="renda" required="true" pt:placeholder="Digite a sua renda" value="#{mCadastroBean.cadastro.renda}"></p:inputText>
 			<br/> 
 			<br/> 
-			<h:outputText value="• Tipo do cartao: "/>
-			<p:selectOneRadio itemValue="Cartao" required="true" value="#{mCadastroBean.cadastro.cartao}">
-				<f:selectItem itemValue="Cred" itemLabel="Credito" />
-				<f:selectItem itemValue="Debi" itemLabel="Debito" />
-			</p:selectOneRadio>
+			
 			<br/>
 			<h:commandButton value="Cadastrar" action="#{mCadastroBean.gravarCadastro(mCadastroBean.cadastro)}"></h:commandButton>
-
+</fieldset>
+</h:form>
+</h:body>
 </html>
