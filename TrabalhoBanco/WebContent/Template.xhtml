@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+	
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Template</title>
+	
+</h:head>
+<h:body>
+<nav>
+<p:menubar>
+ <p:submenu label="Cadastrar">
+   <p:menuitem value="Categoria" url="CadastrarCategoria.xhtml"></p:menuitem>
+   <p:menuitem value="Produto" url="CadastrarProduto.xhtml"></p:menuitem>
+   
+      </p:submenu>
+       <p:submenu label="Listar">
+   <p:menuitem value="Categoria" url="#">
+   <p:menuitem value="Produto" url="#">
+   </p:menuitem>
+   </p:menuitem>
+   
+       </p:submenu>
+
+</p:menubar>
+
+</nav>
+
+<div id="conteudo" style="margin: 70px"></div>
+<!-- Conteudo dinamico das paginas que vao permitir usar o template -->
+<ui:insert name="conteudo">
+</ui:insert>
+
+
+<hr/>
+<footer>
+<p:outputLabel value="Desenvolvido por Petterson jung"></p:outputLabel>
+</footer>
+
+
+
+</h:body>
+</html>

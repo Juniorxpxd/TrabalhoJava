@@ -5,8 +5,7 @@ import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+
 
 import Banco.dal.EnderecoDAO;
 import Banco.model.Endereco;
@@ -30,7 +29,7 @@ public class MEnderecoBean {
 	}
 	public String gravarEndereco(Endereco e){
 		EnderecoDAO.adicionarEndereco(e);
-		HttpServletResponse res = (HttpServletResponse)FacesContext.getCurrentInstance().getExternalContext().getResponse();
+
 		return "Index.xhtml?faces-redirect=true";
 	}
 	
