@@ -56,4 +56,8 @@ public class MCadastroBean {
 			   return "AreaCliente.xhtml?faces-redirect=true";
 		   }
 	}
+	public String logout(){
+		FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+        return "Index.xhtml?faces-redirect=true";
+	}
 }
