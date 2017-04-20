@@ -5,14 +5,23 @@ import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 
+import Banco.dal.CadastroDAO;
 import Banco.dal.PessoaDAO;
+import Banco.model.Cadastro;
 import Banco.model.Pessoa;
 
 @ManagedBean(name = "mPessoaBean")
 public class MPessoaBean {
 	private Pessoa pessoa = new Pessoa();
 	private List<Pessoa> pessoas = new ArrayList<Pessoa>();
+	private int idCad;
 	
+	public int getIdCad() {
+		return idCad;
+	}
+	public void setIdCad(int idCad) {
+		this.idCad = idCad;
+	}
 	public Pessoa getPessoa() {
 		return pessoa;
 	}
@@ -27,6 +36,8 @@ public class MPessoaBean {
 	}
 	
 	public String gravarPessoa(Pessoa p){
+		Cadastro c = CadastroDAO.buscarCadastroPorId(idCad);
+		p.setCadastro(c);
 		PessoaDAO.adicionarPessoa(p);
 		return "Cartao.xhtml?faces-redirect=true";
 	}

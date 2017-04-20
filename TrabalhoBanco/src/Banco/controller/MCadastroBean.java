@@ -7,14 +7,23 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 
+import Banco.dal.AgenciaDAO;
 import Banco.dal.CadastroDAO;
+import Banco.model.Agencia;
 import Banco.model.Cadastro;
 
 @ManagedBean(name = "mCadastroBean")
 public class MCadastroBean {
 	private Cadastro cadastro = new Cadastro();
 	private List<Cadastro> cadastros = new ArrayList<Cadastro>();
-	
+	private int idAgen;
+
+	public int getIdAgen() {
+		return idAgen;
+	}
+	public void setIdAgen(int idAgen) {
+		this.idAgen = idAgen;
+	}
 	public Cadastro getCadastro() {
 		return cadastro;
 	}
@@ -28,8 +37,10 @@ public class MCadastroBean {
 		this.cadastros = cadastros;
 	}
 	
-	public String addCad(Cadastro c){
-		CadastroDAO.addCadastro(c);
+	public String gravarCadastro(Cadastro c){
+		Agencia a = AgenciaDAO.buscarAgenciaPorId(idAgen);
+		c.setAgencia(a);
+		CadastroDAO.adicionarCadastro(c);
 		return "Endereco.xhtml?faces-redirect=true";
 	}
 }

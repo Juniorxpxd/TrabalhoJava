@@ -10,8 +10,7 @@ import Banco.model.Cadastro;
 
 public class CadastroDAO {
 	private static ArrayList<Cadastro> cadastros = new ArrayList<Cadastro>();
-	
-	public static void addCadastro(Cadastro c){
+	public static void adicionarCadastro(Cadastro c){
 		EntityManager em = Conexao.getEntityManager();
 		em.getTransaction().begin();
 		em.persist(c);
@@ -20,14 +19,14 @@ public class CadastroDAO {
 	}
 	public static void removerCadastro(Cadastro c){
 		try{
-		EntityManager em = Conexao.getEntityManager();
-		em.getTransaction().begin();
-		em.remove(c);
-		em.getTransaction().commit();
-		em.close()
-		}catch(RollbackException e){
-			System.out.println();
-		}
+			EntityManager em = Conexao.getEntityManager();
+			em.getTransaction().begin();
+			em.remove(c);
+			em.getTransaction().commit();
+			em.close();
+			}catch(RollbackException e){
+				System.out.println();
+			}
 	}
 	public static List<Cadastro> retornarLista(){
 		EntityManager em = Conexao.getEntityManager();

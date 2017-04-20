@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -20,7 +21,15 @@ public class Cadastro{
 	private String datanasc;
 	private String sexo;
 	private String rg;
-
+	@ManyToOne
+	private Agencia agencia;
+	
+	public Agencia getAgencia() {
+		return agencia;
+	}
+	public void setAgencia(Agencia agencia) {
+		this.agencia = agencia;
+	}
 	public int getIdCad() {
 		return idCad;
 	}

@@ -57,15 +57,19 @@
 	</div>
 </nav>
 <h:form acceptcharset="ISO-8859-1">
+			<h:outputText value="• Nome da Agência: "/>
+			<p:inputText id="nome" required="true" pt:placeholder="Digite o nome da agência" value="#{mAgenciaBean.agencia.nome}"></p:inputText>
+			<br/> 
+			<br/> 
 			<h:outputText value="• Agência: "/>
-			<p:inputText id="agencia" required="true" pt:placeholder="Digite o nome da agência" value="#{mCadastroBean.cadastroAgencia.agencia}"></p:inputText>
+			<p:inputText id="agencia" required="true" pt:placeholder="Digite a agência" value="#{mAgenciaBean.agencia.agencia}"></p:inputText>
 			<br/> 
 			<br/> 
 			<h:outputText value="• Conta: "/>
-			<p:inputText id="conta" required="true" pt:placeholder="Digite a conta" value="#{mCadastroBean.cadastroAgencia.conta}"></p:inputText>
+			<p:inputText id="conta" pt:placeholder="Digite a conta" value="#{mAgenciaBean.agencia.conta}"></p:inputText>
 			<br/>
 			<br/> 
-			<p:commandButton value="Gravar" action="#{mCadastroBean.gravarAgencia(mCadastroBean.agencia)}"></p:commandButton>
+			<h:commandButton value="Gravar" action="#{mAgenciaBean.gravarAgencia(mAgenciaBean.agencia)}"></h:commandButton>
 </h:form>
 </body>
 </html>

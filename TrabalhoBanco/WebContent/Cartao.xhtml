@@ -59,17 +59,23 @@
 	<h:form acceptcharset="ISO-8859-1">
 		<fieldset>
 			<h1>Cadastrar Cartão</h1>
+			<h:selectOneMenu value="#{mCartaoBean.idCad}">
+			<f:selectItem itemLabel="Selecione o cadastro" itemValue="0"></f:selectItem>
+			<f:selectItems value="#{mCadastroBean.cadastros}" var="cadastro" itemLabel="#{cadastro.nome}" itemValue="#{cadastro.idCad}"></f:selectItems>
+			</h:selectOneMenu>
+			<br/> 
+			<br/>
 			<h:outputText value="• Renda: "/>
-			<p:inputText id="renda" required="true" pt:placeholder="Digite a sua renda" value=""></p:inputText>
+			<p:inputText id="renda" required="true" pt:placeholder="Digite a sua renda" value="#{mCartaoBean.cartao.renda}"></p:inputText>
 			<br/> 
 			<br/> 
 			<h:outputText value="• Tipo do cartao: "/>
-			<p:selectOneRadio itemValue="Cartão" required="true" value="">
-				<f:selectItem itemValue="Crédito" itemLabel="Credito" />
-				<f:selectItem itemValue="Débito" itemLabel="Debito" />
+			<p:selectOneRadio itemValue="Cartao" value="#{mCartaoBean.cartao.tipoCartao}">
+				<f:selectItem itemValue="Credito" itemLabel="Credito" />
+				<f:selectItem itemValue="Debito" itemLabel="Debito" />
 			</p:selectOneRadio>
 			<br/>
-			<h:commandButton value="Cadastrar"></h:commandButton>
+			<h:commandButton value="Cadastrar" action="#{mCartaoBean.gravarCartao(mCartaoBean.cartao)}"></h:commandButton>
 		</fieldset>
 	</h:form>
 </h:body>

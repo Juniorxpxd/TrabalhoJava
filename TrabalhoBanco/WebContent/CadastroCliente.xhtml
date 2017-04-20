@@ -98,9 +98,14 @@
 			</p:inputText>
 			<br/> 
 			<br/>
-			<b:icon name="glyphicon-floppy-saved"/> 
-			<h:inputHidden value="#{mCadastroBean.cadastro.idCad}"></h:inputHidden>
-			<h:commandButton value="Próximo Passo" action="#{mCadastroBean.addCad(mCadastroBean.cadastro)}"><f:param name="idCad" value="#{param['idCad']}"></f:param></h:commandButton>
+			<b:icon name="glyphicon-briefcase"/> 
+			<h:selectOneMenu value="#{mCadastroBean.idAgen}">
+			<f:selectItem itemLabel="Selecione uma Agência" itemValue="0"></f:selectItem>
+			<f:selectItems value="#{mAgenciaBean.agencias}" var="agencia" itemLabel="#{agencia.nome} - #{agencia.agencia}" itemValue="#{agencia.idAgen}"></f:selectItems>
+			</h:selectOneMenu>
+			<br/> 
+			<br/>
+			<h:commandButton value="Próximo Passo" action="#{mCadastroBean.gravarCadastro(mCadastroBean.cadastro)}"></h:commandButton>
 		</fieldset>
 	</h:form>
 </h:body>

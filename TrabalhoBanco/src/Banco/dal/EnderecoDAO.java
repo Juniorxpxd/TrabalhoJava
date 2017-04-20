@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+import javax.persistence.RollbackException;
+
 import Banco.model.Endereco;
 
 public class EnderecoDAO {
@@ -17,7 +19,15 @@ public class EnderecoDAO {
 		em.close();
 	}
 	public static void removerEndereco(Endereco e){
-		enderecos.remove(e);
+		try{
+			EntityManager em = Conexao.getEntityManager();
+			em.getTransaction().begin();
+			em.remove(e);
+			em.getTransaction().commit();
+			em.close();
+			}catch(RollbackException c){
+				System.out.println(c.toString());
+			}
 	}
 	public static List<Endereco> retornarLista(){
 		EntityManager em = Conexao.getEntityManager();

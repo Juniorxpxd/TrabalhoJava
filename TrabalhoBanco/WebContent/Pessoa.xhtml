@@ -59,6 +59,16 @@
 	<h:form acceptcharset="ISO-8859-1">
 		<fieldset>
 		<h1>Cadastrar CPF/CNPJ</h1>
+			<h:selectOneMenu value="#{mPessoaBean.idCad}">
+			<f:selectItem itemLabel=" -- Selecione -- " itemValue="0">
+			</f:selectItem>
+			<f:selectItems value="#{mCadastroBean.cadastros}"
+				var="cadastro" itemLabel="#{cadastro.nome}" 
+				itemValue="#{cadastro.idCad}">
+			</f:selectItems>
+			</h:selectOneMenu>
+			<br/> 
+			<br/>
 			<h:outputText value="• Você é uma pessoa: "/> 
 			<p:selectOneRadio itemValue="Pessoa" required="true" value="#{mPessoaBean.pessoa.pessoa}">
 				<f:selectItem itemValue="Juridica" itemLabel="Juridica" />

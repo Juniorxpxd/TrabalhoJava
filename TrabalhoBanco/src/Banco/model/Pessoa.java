@@ -4,10 +4,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Cadastro.Pessoa")
+@Table(name = "Pessoa")
 public class Pessoa {
 
 	@Id
@@ -16,7 +17,15 @@ public class Pessoa {
 	private String pessoa;
 	private String juridica;
 	private String fisica;
+	@OneToOne
+	private Cadastro cadastro;
 	
+	public Cadastro getCadastro() {
+		return cadastro;
+	}
+	public void setCadastro(Cadastro cadastro) {
+		this.cadastro = cadastro;
+	}
 	public int getIdPes() {
 		return idPes;
 	}

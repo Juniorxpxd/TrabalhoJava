@@ -4,34 +4,44 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Cadastro.Cartao")
+@Table(name = "Cartao")
 public class Cartao {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idCar;
-	private float renda;
-	private String cartao;
-	
+	private String renda;
+	private String tipoCartao;
+	@OneToOne
+	private Cadastro cadastro;
+
+	public Cadastro getCadastro() {
+		return cadastro;
+	}
+	public void setCadastro(Cadastro cadastro) {
+		this.cadastro = cadastro;
+	}
 	public int getIdCar() {
 		return idCar;
 	}
 	public void setIdCar(int idCar) {
 		this.idCar = idCar;
 	}
-	public float getRenda() {
+	public String getRenda() {
 		return renda;
 	}
-	public void setRenda(float renda) {
+	public void setRenda(String renda) {
 		this.renda = renda;
 	}
-	public String getCartao() {
-		return cartao;
+	public String getTipoCartao() {
+		return tipoCartao;
 	}
-	public void setCartao(String cartao) {
-		this.cartao = cartao;
+	public void setTipoCartao(String tipoCartao) {
+		this.tipoCartao = tipoCartao;
 	}
+
 }

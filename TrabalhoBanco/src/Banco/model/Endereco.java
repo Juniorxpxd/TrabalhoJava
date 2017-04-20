@@ -8,7 +8,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Cadastro.Endereco")
+@Table(name = "Endereco")
 public class Endereco {
 
 	@Id
@@ -23,19 +23,18 @@ public class Endereco {
 	@OneToOne
 	private Cadastro cadastro;
 
-	
 
-	public Cadastro getCadastro() {
-		return cadastro;
-	}
-	public void setCadastro(Cadastro cadastro) {
-		this.cadastro = cadastro;
-	}
 	public int getIdEnd() {
 		return idEnd;
 	}
 	public void setIdEnd(int idEnd) {
 		this.idEnd = idEnd;
+	}
+	public Cadastro getCadastro() {
+		return cadastro;
+	}
+	public void setCadastro(Cadastro cadastro) {
+		this.cadastro = cadastro;
 	}
 	public String getRua() {
 		return rua;

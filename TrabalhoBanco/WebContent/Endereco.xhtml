@@ -38,7 +38,7 @@
 						<li><a href="SAC.xhtml">SAC</a></li>
 						<li><a href="Ouvidoria.xhtml">Ouvidoria</a></li>
 						<li class="divider"></li>
-						<li><a href="#">TESTE                                            </a></li>
+						<li><a href="#">TESTE</a></li>
 						<li class="divider"></li>
 						<li><a href="#">TESTE 23211232</a></li>
 					</ul></li>
@@ -60,12 +60,8 @@
 	<fieldset>
 		<h1>Cadastrar Endereço</h1>
 		<h:selectOneMenu value="#{mEnderecoBean.idCad}">
-			<f:selectItem itemLabel=" -- Selecione -- " itemValue="0">
-			</f:selectItem>
-			<f:selectItems value="#{mCadastroBean.cadastros}"
-				var="cadastro" itemLabel="#{cadastro.nome}" 
-				itemValue="#{cadastro.idCad}">
-			</f:selectItems>
+			<f:selectItem itemLabel="Selecione o cadastro" itemValue="0"></f:selectItem>
+			<f:selectItems value="#{mCadastroBean.cadastros}" var="cadastro" itemLabel="#{cadastro.nome}" itemValue="#{cadastro.idCad}"></f:selectItems>
 		</h:selectOneMenu>
 		<br/>
 		<br/>
@@ -78,8 +74,7 @@
 			<br/> →<p:inputText id="Pais" required="true" pt:placeholder="País" value="#{mEnderecoBean.endereco.pais}"></p:inputText>
 			<br/>
 			<br/> 
-			<h:inputHidden value="#{mCadastroBean.cadastro.idCad}"></h:inputHidden>
-			<h:commandButton value="Próximo Passo" action="#{mEnderecoBean.gravarEndereco(mEnderecoBean.endereco)}"><f:param name="idCad" value="#{param['idCad']}"></f:param></h:commandButton>
+			<h:commandButton value="Próximo Passo" action="#{mEnderecoBean.gravarEndereco(mEnderecoBean.endereco)}"></h:commandButton>
 	</fieldset>
 	</h:form>
 	</h:body>
