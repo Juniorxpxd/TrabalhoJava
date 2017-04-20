@@ -3,6 +3,7 @@ package Banco.dal;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.Query;
 import javax.persistence.RollbackException;
 
@@ -46,5 +47,15 @@ public class CadastroDAO {
 	public static Cadastro buscarCadastroPorId(int id){
 		EntityManager em = Conexao.getEntityManager();
 		return em.find(Cadastro.class, id);
+	}
+	
+	public static Cadastro getCadastro(String email, String senha){
+		try{
+			EntityManager em = Conexao.getEntityManager();
+			Cadastro cadastro = (Cadastro) em.createQuery("SELECT c FROM Cadastro c where c.email = :email and c.senha = :senha").setParameter("email", email).setParameter("senha", senha).getSingleResult();
+		return cadastro;
+		}catch (NoResultException e){
+			 return null;
+		}
 	}
 }

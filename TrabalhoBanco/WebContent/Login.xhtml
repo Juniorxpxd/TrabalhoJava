@@ -54,13 +54,16 @@
 </nav>
 	<h:form>
 	<h1>Login</h1>
-		• Email: <p:inputText id="Email" pt:placeholder="Digite o e-mail"></p:inputText>
+		<p:messages id="messages" />
+		<p:outputLabel for="Email" value="Email:" />
+		• Email: <p:inputText id="Email" value="#{mCadastroBean.cadastro.email}" pt:placeholder="Digite o e-mail"></p:inputText>
 		<br/>
 		<br/>
-		• Senha:<p:inputText id="Senha" pt:placeholder="Digite a senha"></p:inputText>
+		<p:outputLabel for="Senha" value="Senha:" />
+		• Senha:<p:inputText id="Senha" value="#{mCadastroBean.cadastro.senha}" pt:placeholder="Digite a senha"></p:inputText>
 		<br/>
 		<br/>
-	<p:commandButton value="Login" action="#"></p:commandButton>
+	<p:commandButton value="Login" action="#{mCadastroBean.enviar}" ajax="false"></p:commandButton>
 	</h:form>
 		Ou
 	<h:form>
