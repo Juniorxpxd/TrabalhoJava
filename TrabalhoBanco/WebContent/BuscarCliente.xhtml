@@ -7,16 +7,16 @@
 	  xmlns:b= "http://bootsfaces.net/ui"
 	  xmlns:p="http://primefaces.org/ui"
 	  xmlns:ui="http://java.sun.com/jsf/facelets">
-<h:head>
+	<h:head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<link rel="stylesheet" type="text/css" href="bootstrap.css"/>
 		<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
 		<script type="text/javascript" src="Script.js"></script>
-	<title>Template</title>
-</h:head>
-<h:body>
-	<nav class="navbar navbar-default">
-		<div class="container-fluid">
+		<title>Banco EvilMoney</title>
+	</h:head>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
@@ -24,7 +24,6 @@
       </button>
       <a class="navbar-brand" href="#">EvilMoney</a>
     </div>
-   
  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="#">Informações</a></li>
@@ -54,13 +53,13 @@
     </div>
   </div>
 </nav>
-	<div id="conteudo" style="margin: 30px">
-	<!--  Conteúdo dinâmico das oáginas que vão utilizar o template -->
-		<ui:insert name="conteudo"></ui:insert>
-	</div>
-	<hr/>
-	<footer>
-		<p:outputLabel value="Desenvolvido por Osvaldo e Petterson"></p:outputLabel>
-	</footer>
-</h:body>
+	<h:form acceptcharset="ISO-8859-1">
+	<b:icon name="glyphicon-search"/> 
+	<p:inputText id="clientes" pt:placeholder="Buscar cliente"></p:inputText>
+	<br/>
+	<br/>
+	<p:commandButton value="Buscar"></p:commandButton>
+	<p:commandButton value="Retornar" action="Administrador.xhtml"></p:commandButton>
+	</h:form>
+</body>
 </html>

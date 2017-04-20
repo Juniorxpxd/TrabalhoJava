@@ -1,11 +1,16 @@
 package Banco.model;
 
+import java.util.Date;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "Cadastro")
@@ -13,9 +18,12 @@ public class Cadastro{
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="idCad", nullable=false, unique=true)
 	private int idCad;
 	private String nome;
+	@Column(name="email", nullable=false, unique=true)
 	private String email;
+	@Column(name="senha", nullable=false, unique=false)
 	private String senha;
 	private String telefone;
 	private String datanasc;
@@ -78,4 +86,5 @@ public class Cadastro{
 	public void setRg(String rg) {
 		this.rg = rg;
 	}
+	
 }

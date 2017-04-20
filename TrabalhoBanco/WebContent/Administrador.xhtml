@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:b="http://bootsfaces.net/ui" 
-	xmlns:p="http://primefaces.org/ui">
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	  xmlns:f= "http://java.sun.com/jsf/core"
+	  xmlns:b= "http://bootsfaces.net/ui"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="bootstrap.css" />
@@ -57,32 +58,43 @@
 	</div>
 </nav>
 	<h:form acceptcharset="ISO-8859-1">
-			<h1>• Ir para</h1>
-			<br/>   
-			<ul>
-		<li><a href="Agencia.xhtml">Cadastrar Agência</a></li>
-			<br/>					
-		<li><a href="#">Buscar Clientes</a></li>
-			<br/>
-		<li><a href="#">Buscar Endereços</a></li>
-			<br/>
-		<li><a href="#">Buscar Cartões</a></li>
-			<br/>
-		<li><a href="#">Buscar CPF/CNPJ</a></li>
-			<br/>
-		<li><a href="#">Buscar Agências</a></li>
-			<br/>
-		<li><a href="#">Deletar Clientes</a></li>
-			<br/>
-		<li><a href="#">Deletar Endereços</a></li>
-			<br/>
-		<li><a href="#">Deletar Cartões</a></li>
-			<br/>
-		<li><a href="#">Deletar CPF/CNPJ</a></li>
-			<br/>
-		<li><a href="#">Deletar Agências</a></li>
-			<br/>
-			</ul>								
+	<ui:composition template="Template.xhtml">
+		<ui:define name="conteudo">
+		<h1>• Ir para</h1>
+		<nav>
+	<p:menubar>
+		<p:submenu label="Alterar">
+			<p:menuitem value="Cliente" url="BuscarCliente.xhtml"/>
+			<p:menuitem value="Endereços" url="#"/>
+			<p:menuitem value="Cartões" url="#"/>
+			<p:menuitem value="CPF/CNPJ" url="#"/>
+			<p:menuitem value="Agências" url="#"/>
+		</p:submenu>
+		<p:submenu label="Buscar">
+			<p:menuitem value="Cliente" url="#"/>
+			<p:menuitem value="Endereços" url="#"/>
+			<p:menuitem value="Cartões" url="#"/>
+			<p:menuitem value="CPF/CNPJ" url="#"/>
+			<p:menuitem value="Agências" url="#"/>
+		</p:submenu>
+		<p:submenu label="Deletar">
+			<p:menuitem value="Cliente" url="#"/>
+			<p:menuitem value="Endereços" url="#"/>
+			<p:menuitem value="Cartões" url="#"/>
+			<p:menuitem value="CPF/CNPJ" url="#"/>
+			<p:menuitem value="Agências" url="#"/>
+		</p:submenu>
+		<p:submenu label="Cadastrar">
+		<p:menuitem value="Agências" url="Agencia.xhtml"></p:menuitem>
+		</p:submenu>
+		<p:submenu label="Inserir Dados">
+		<p:menuitem value="Saldo" url="#"></p:menuitem>
+		<p:menuitem value="Conta" url="#"></p:menuitem>
+		</p:submenu>
+	</p:menubar>
+	</nav>	
+	</ui:define>
+	</ui:composition>				
 		</h:form>
 	</h:body>
 </html>

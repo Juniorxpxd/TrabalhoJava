@@ -2,45 +2,46 @@ package Banco.dal;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import javax.persistence.RollbackException;
 
-import Banco.model.Endereco;
+import Banco.model.Saldo;
 
-public class EnderecoDAO {
-	private static ArrayList<Endereco> enderecos = new ArrayList<Endereco>();
+public class SaldoDAO {
+private static ArrayList<Saldo> saldos = new ArrayList<Saldo>();
 	
-	public static void adicionarEndereco(Endereco e){
+	public static void adicionarSaldo(Saldo s){
 		EntityManager em = Conexao.getEntityManager();
 		em.getTransaction().begin();
-		em.persist(e);
+		em.persist(s);
 		em.getTransaction().commit();
 		em.close();
 	}
-	public static void removerEndereco(Endereco e){
+	public static void removerSaldo(Saldo s){
 		try{
 			EntityManager em = Conexao.getEntityManager();
 			em.getTransaction().begin();
-			em.remove(e);
+			em.remove(s);
 			em.getTransaction().commit();
 			em.close();
 			}catch(RollbackException c){
 				System.out.println(c.toString());
 			}
 	}
-	public static List<Endereco> retornarLista(){
+	public static List<Saldo> retornarLista(){
 		EntityManager em = Conexao.getEntityManager();
 		em.getTransaction().begin();
-		Query q = em.createQuery("SELECT e FROM Endereco e");
-		List<Endereco> lista = q.getResultList();
+		Query q = em.createQuery("SELECT s FROM Saldo s");
+		List<Saldo> lista = q.getResultList();
 		em.close();
 		return lista;
 	}
-	public static void alterarEndereco(Endereco e){
-		for (int i = 0; i < enderecos.size(); i++) {
-			if(enderecos.get(i).getIdEnd() == e.getIdEnd()){
-				enderecos.set(i, e);
+	public static void alterarSaldo(Saldo s){
+		for (int i = 0; i < saldos.size(); i++) {
+			if(saldos.get(i).getIdSaldo() == s.getIdSaldo()){
+				saldos.set(i, s);
 			}
 		}
 	}

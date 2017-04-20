@@ -3,6 +3,7 @@ package Banco.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
@@ -16,6 +17,7 @@ import Banco.model.Cadastro;
 public class MCadastroBean {
 	private Cadastro cadastro = new Cadastro();
 	private List<Cadastro> cadastros = new ArrayList<Cadastro>();
+	private CadastroDAO cadastroDAO = new CadastroDAO();
 	private int idAgen;
 
 	public int getIdAgen() {
@@ -42,5 +44,20 @@ public class MCadastroBean {
 		c.setAgencia(a);
 		CadastroDAO.adicionarCadastro(c);
 		return "Endereco.xhtml?faces-redirect=true";
+	}
+	
+	public String enviar(){
+		cadastro = CadastroDAO.getCadastro(cadastro.getEmail(), cadastro.getSenha());
+		if(cadastro == null){
+			cadastro = new Cadastro();
+			FacesContext.getCurrentInstance().addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Usuário não encontrado!","Erro no Login!"));
+		       return null;
+		   } else {
+			   return "AreaCliente.xhtml?faces-redirect=true";
+		   }
+	}
+	public String logout(){
+		FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+        return "Index.xhtml?faces-redirect=true";
 	}
 }
