@@ -54,6 +54,7 @@
 </nav>
 	<h:form>
 	<h1>Login</h1>
+	<p:panelGrid colums="1" style="margin-left: 10px; margin-bottom:20px" >
 		<p:messages id="messages" />
 		<p:outputLabel for="Email" value="• Email:" />
 		<p:inputText id="Email" value="#{mCadastroBean.cadastro.email}" pt:placeholder="Digite o e-mail"></p:inputText>
@@ -65,10 +66,12 @@
 		<br/>
 		<b:icon name="glyphicon-log-in"></b:icon>
 	<p:commandButton value="Login" action="#{mCadastroBean.enviar}" ajax="false"></p:commandButton>
+	</p:panelGrid>
 	</h:form>
 	<br/>
 		Ou login por Agência e Conta
 	<h:form>
+	<p:panelGrid colums="2" style="margin-left: 10px; margin-bottom:20px" >
 		<p:messages id="messages2" />
 		<p:outputLabel for="Agencia" value="• Agência:"/>
 		<p:inputText id="Agencia" pt:placeholder="Digite a agência"></p:inputText>
@@ -78,11 +81,14 @@
 		<p:inputText id="Conta" pt:placeholder="Digite a conta"></p:inputText>
 		<br/>
 		<br/>
+		<b:icon name="glyphicon-log-in"></b:icon>
 		<p:commandButton value="Login" action="#"></p:commandButton>
+		</p:panelGrid>
 	</h:form>
 	<br/>
 	Ou login por Administrador
 		<h:form>
+		<p:panelGrid colums="3" style="margin-left: 10px; margin-bottom:20px" >
 		<p:messages id="messages3" />
 		<p:outputLabel for="Email" value="• Email:" />
 		• Email: <p:inputText id="Email" pt:placeholder="Digite o email"></p:inputText>
@@ -91,7 +97,9 @@
 		• Senha:<p:inputText id="Senha" pt:placeholder="Digite a senha"></p:inputText>
 		<br/>
 		<br/>
+		<b:icon name="glyphicon-log-in"></b:icon>
 		<p:commandButton value="Login" action="#"></p:commandButton>
+		</p:panelGrid>
 	</h:form>
 </body>
 </html>
