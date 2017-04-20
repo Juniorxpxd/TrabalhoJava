@@ -59,8 +59,25 @@
 <h:form acceptcharset="ISO-8859-1">
 <fieldset>
 <h1>Efetuar pagamentos</h1>
-			<h:outputText value=" "/>
-			<p:inputText id="emprestimo" required="true" pt:placeholder="" value="#{mCadastroBean.cadastro.emprestimo}"></p:inputText>
+			<h:outputText value=" codigo de barras"/>
+			<p:inputText id="codbarras" required="true" pt:placeholder="Codigo de barras" value="#{mCadastroBean.cadastro.codbarras}"></p:inputText>
+			<br/> 
+			<br/>
+			<h:outputText value=" Data de Vencimento: "/>
+			<p:inputText id="datavenci" required="true" pt:placeholder="Data de vencimento" value="#{mCadastroBean.cadastro.dataVenci}"></p:inputText><br/> 
+			<br/>
+			<h:outputText value=" valor de pagmaneto"/>
+			<p:inputText id="valorpag" required="true" pt:placeholder="Valor do pagamento" value="#{mCadastroBean.cadastro.ValorPag}"></p:inputText>
+			<br/> 
+			<br/>
+			<h:outputText value=" Identificacao de pagamento"/>
+			<p:inputText id="idpag" required="true" pt:placeholder="Identificacao de pagamento" value="#{mCadastroBean.cadastro.idpag}"></p:inputText> 
+			<br/> 
+			<br/>
+			<h:outputText value="Agendar pagamento: "/>
+			<p:inputText id="agenpag" required="true" pt:placeholder="Agendar pagamento" value="#{mCadastroBean.cadastro.agenPag}"></p:inputText><br/> 
+			<br/>
+			<br/>
 			</fieldset>
 			</h:form>
 			</h:body>
