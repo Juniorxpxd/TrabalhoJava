@@ -31,7 +31,6 @@ public class CadastroDAO {
 	}
 	public static List<Cadastro> retornarLista(){
 		EntityManager em = Conexao.getEntityManager();
-		em.getTransaction().begin();
 		Query q = em.createQuery("SELECT c FROM Cadastro c");
 		List<Cadastro> lista = q.getResultList();
 		em.close();

@@ -55,5 +55,5 @@ public class MCadastroBean {
 		   } else {
 			   return "AreaCliente.xhtml?faces-redirect=true";
 		   }
-		}
+	}
 }
