@@ -13,7 +13,7 @@ public class Saldo {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idSaldo;
-	private double saldo;
+	private double saldo = 50;
 	@OneToOne
 	private Cadastro cadastro;
 	
