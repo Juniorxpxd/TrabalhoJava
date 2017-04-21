@@ -11,14 +11,9 @@
 	<link rel="stylesheet" type="text/css" href="bootstrap.css" />
 	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="Script.js"></script>
-<<<<<<< HEAD
-	<title>Área do Cliente</title>
-</h:head>
-<h:body>
-=======
 	<title>Saldo</title>
 </h:head>
->>>>>>> branch 'master' of https://github.com/Juniorxpxd/TrabalhoJava
+<h:body>
 <nav class="navbar navbar-default">
 	<div class="container-fluid">
 		<div class="navbar-header">
@@ -35,10 +30,7 @@
 			<ul class="nav navbar-nav">
 				<li><a href="#">Informações</a></li>
 				<li><a href="#">Cadastro</a></li>
-				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown" role="button" aria-expanded="false">Ajuda
-						<span class="caret"></span>
-				</a>
+				<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Ajuda<span class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
 						<li><a href="Contato.xhtml">Contato</a></li>
 						<li><a href="SAC.xhtml">SAC</a></li>
@@ -46,7 +38,7 @@
 						<li class="divider"></li>
 						<li><a href="#">TESTE</a></li>
 						<li class="divider"></li>
-						<li><a href="#">TESTE 23211232</a></li>
+						<li><a href="#">TESTE</a></li>
 					</ul></li>
 			</ul>
 			<form class="navbar-form navbar-right" role="search">
@@ -61,27 +53,20 @@
 		</div>
 	</div>
 </nav>
-<<<<<<< HEAD
 <h:form acceptcharset="ISO-8859-1">
-
 <fieldset>
 			<h1>Saldo Cliente</h1>
-			<h:outputText value=" Saldo total: "/>
-			<p:inputText id="saldo" required="true" pt:placeholder="" value="#{mCadastroBean.cadastro.saldo}"></p:inputText>
-			</fieldset>
+			<h:selectOneMenu value="#{mCartaoBean.idCad}">
+			<f:selectItem itemLabel="Selecione o cadastro" itemValue="0"></f:selectItem>
+			<f:selectItems value="#{mCadastroBean.cadastros}" var="cadastro" itemLabel="#{cadastro.nome}" itemValue="#{cadastro.idCad}"></f:selectItems>
+			</h:selectOneMenu>
+			<br/>
+			<br/> 
+			<p:inputText id="saldo" required="true" pt:placeholder="" value="#{mSaldoBean.saldo.saldo}"></p:inputText>
 			<br/> 
 			<br/> 
-</h:form>
-</h:body>
-</html>
-=======
-<h:body>
-	<h:form acceptcharset="ISO-8859-1">
-		<fieldset>
-		<h1>Cadastrar Cartão</h1>
-			<h:outputText itemValue="Saldo" value="#{mSaldoBean.saldo.saldo}"></h:outputText>
+			<p:commandButton value="Adicionar Saldo" action="#{mSaldoBean.gravarSaldo(mSaldoBean.saldo)}"></p:commandButton>
 		</fieldset>
 	</h:form>
 </h:body>
 </html>
->>>>>>> branch 'master' of https://github.com/Juniorxpxd/TrabalhoJava
