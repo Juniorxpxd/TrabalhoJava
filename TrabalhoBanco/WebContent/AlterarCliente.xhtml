@@ -53,13 +53,45 @@
     </div>
   </div>
 </nav>
-	<h:form acceptcharset="ISO-8859-1">
-	<b:icon name="glyphicon-search"/> 
-	<p:inputText id="clientes" pt:placeholder="Buscar cliente"></p:inputText>
+	<h:form acceptcharset="ISO-8859-1" id="Cadastro">
+	<h:panelGrid columns="1">
+	<h:inputHidden value="#{mCadastroBean.cadastro.idCad}"></h:inputHidden>
+	<p:outputLabel value="Nome: "></p:outputLabel>
+	<p:inputText pt:placeholder="Digite o nome" value="#{mCadastroBean.cadastro.nome}"></p:inputText>
 	<br/>
 	<br/>
-	<p:commandButton value="Buscar"></p:commandButton>
+	<p:outputLabel value="Email: "></p:outputLabel>
+	<p:inputText pt:placeholder="Digite o nome" value="#{mCadastroBean.cadastro.email}"></p:inputText>
+	<br/>
+	<br/>
+	<p:outputLabel value="Senha: "></p:outputLabel>
+	<p:inputText pt:placeholder="Digite o nome" value="#{mCadastroBean.cadastro.senha}"></p:inputText>
+	<br/>
+	<br/>
+	<p:outputLabel value="Telefone: "></p:outputLabel>
+	<p:inputText pt:placeholder="Digite o nome" value="#{mCadastroBean.cadastro.telefone}"></p:inputText>
+	<br/>
+	<br/>
+	<p:outputLabel value="Data Nascimento: "></p:outputLabel>
+	<p:inputText pt:placeholder="Digite o nome" value="#{mCadastroBean.cadastro.dataNasc}"></p:inputText>
+	<br/>
+	<br/>
+	<p:outputLabel value="Sexo: "></p:outputLabel>
+	<p:selectOneRadio itemValue="Sexo" required="true" value="#{mCadastroBean.cadastro.sexo}">
+				<f:selectItem itemValue="Masculino" itemLabel="Masculino" />
+				<f:selectItem itemValue="Feminino" itemLabel="Feminino" />
+	</p:selectOneRadio>
+	<br/>
+	<br/>
+	<p:outputLabel value="RG: "></p:outputLabel>
+	<p:inputText pt:placeholder="Digite o nome" value="#{mCadastroBean.cadastro.rg}"></p:inputText>
+	<br/>
+	<br/>
+	<p:commandButton value="Alterar" action="#{mCadastroBean.alterarCadastro(mCadastroBean.cadastro)}"></p:commandButton>
+	<br/>
+	<br/>
 	<p:commandButton value="Retornar" action="Administrador.xhtml?faces-redirect=true"></p:commandButton>
+	</h:panelGrid>
 	</h:form>
 </body>
 </html>

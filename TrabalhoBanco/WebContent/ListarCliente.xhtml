@@ -54,32 +54,34 @@
   </div>
 </nav>
 	<h:form acceptcharset="ISO-8859-1" id="Cadastro">
-	<p:dataTable  value="#{mCadastroBean.cadastros}" var="cadastro" >
+	<p:dataTable  value="#{mCadastroBean.cadastros}" var="cadastroCliente" >
 	<p:column><f:facet name="header">Nome</f:facet>
-	<h:outputText value="#{cadastro.nome}"></h:outputText>
+	<h:outputText value="#{cadastroCliente.nome}"></h:outputText>
 	</p:column>
 	<p:column><f:facet name="header">Email</f:facet>
-	<h:outputText value="#{cadastro.email}"></h:outputText>
+	<h:outputText value="#{cadastroCliente.email}"></h:outputText>
 	</p:column>
 	<p:column><f:facet name="header">Telefone</f:facet>
-	<h:outputText value="#{cadastro.telefone}"></h:outputText>
+	<h:outputText value="#{cadastroCliente.telefone}"></h:outputText>
 	</p:column>
 	<p:column><f:facet name="header">Data de Nascimento</f:facet>
-	<h:outputText value="#{cadastro.dataNasc}"></h:outputText>
+	<h:outputText value="#{cadastroCliente.dataNasc}"></h:outputText>
 	</p:column>
 	<p:column><f:facet name="header">Sexo</f:facet>
-	<h:outputText value="#{cadastro.sexo}"></h:outputText>
+	<h:outputText value="#{cadastroCliente.sexo}"></h:outputText>
 	</p:column>
 	<p:column><f:facet name="header">RG</f:facet>
-	<h:outputText value="#{cadastro.rg}"></h:outputText>
+	<h:outputText value="#{cadastroCliente.rg}"></h:outputText>
 	</p:column>
-	<p:column><f:facet name="header">Agencia</f:facet>
-	<h:outputText value="#{cadastro.agencia}"></h:outputText>
+	<br/>
+	<br/>
+	<p:column><f:facet name="header">Alterar</f:facet>
+	<p:commandLink  value="Alterar" action="#{mCadastroBean.enviarDadosParaAlterar(cadastroCliente)}"></p:commandLink>
 	</p:column>
 	<br/>
 	<br/>
 	<p:column><f:facet name="header">Retornar</f:facet>
-	<p:commandButton value="Retornar" action="Administrador.xhtml?faces-redirect=true"></p:commandButton>
+	<p:commandLink value="Retornar" action="Administrador.xhtml?faces-redirect=true"></p:commandLink>
 	</p:column>
 	</p:dataTable>
 	</h:form>
