@@ -26,7 +26,7 @@ public class MCartaoBean {
 		return cartao;
 	}
 	public List<Cartao> getCartoes() {
-		return cartoes;
+		return CartaoDAO.retornarLista();
 	}
 	public void setCartao(Cartao cartao) {
 		this.cartao = cartao;

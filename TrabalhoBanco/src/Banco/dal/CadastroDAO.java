@@ -7,6 +7,7 @@ import javax.persistence.NoResultException;
 import javax.persistence.Query;
 import javax.persistence.RollbackException;
 
+import Banco.model.Agencia;
 import Banco.model.Cadastro;
 
 public class CadastroDAO {

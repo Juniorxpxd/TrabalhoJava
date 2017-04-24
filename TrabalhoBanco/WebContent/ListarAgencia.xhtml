@@ -53,13 +53,20 @@
     </div>
   </div>
 </nav>
-	<h:form acceptcharset="ISO-8859-1">
-	<b:icon name="glyphicon-search"/> 
-	<p:inputText id="clientes" pt:placeholder="Buscar cliente"></p:inputText>
+	<h:form acceptcharset="ISO-8859-1" id="Agencia">
+	<p:dataTable  value="#{mAgenciaBean.agencias}" var="agencia" >
+	<p:column><f:facet name="header">Nome da Agencia</f:facet>
+	<h:outputText value="#{agencia.nome}"></h:outputText>
+	</p:column>
+	<p:column><f:facet name="header">Agencia</f:facet>
+	<h:outputText value="#{agencia.agencia}"></h:outputText>
+	</p:column>
 	<br/>
 	<br/>
-	<p:commandButton value="Buscar"></p:commandButton>
-	<p:commandButton value="Retornar" action="Administrador.xhtml"></p:commandButton>
+	<p:column><f:facet name="header">Retornar</f:facet>
+	<p:commandButton value="Retornar" action="Administrador.xhtml?faces-redirect=true"></p:commandButton>
+	</p:column>
+	</p:dataTable>
 	</h:form>
 </body>
 </html>

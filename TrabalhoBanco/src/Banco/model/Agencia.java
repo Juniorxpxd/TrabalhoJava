@@ -15,7 +15,6 @@ public class Agencia {
 	private int idAgen;
 	private String nome;
 	private String agencia;
-	private String conta;
 	
 	public int getIdAgen() {
 		return idAgen;
@@ -35,11 +34,5 @@ public class Agencia {
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
-	}
-	public String getConta() {
-		return conta;
-	}
-	public void setConta(String conta) {
-		this.conta = conta;
 	}
 }
