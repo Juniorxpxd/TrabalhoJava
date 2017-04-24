@@ -26,7 +26,7 @@ public class MPessoaBean {
 		return pessoa;
 	}
 	public List<Pessoa> getPessoas() {
-		return pessoas;
+		return PessoaDAO.retornarLista();
 	}
 	public void setPessoa(Pessoa pessoa) {
 		this.pessoa = pessoa;
@@ -34,7 +34,16 @@ public class MPessoaBean {
 	public void setPessoas(List<Pessoa> pessoas) {
 		this.pessoas = pessoas;
 	}
-	
+	public String enviarDadosParaAlterar(Pessoa p) {
+		this.pessoa = p;
+		return "AlterarPessoa.xhtml?faces-redirect=true";
+	}
+
+	public String alterarPessoa(Pessoa p) {
+		PessoaDAO.alterarPessoa(p);
+		pessoa = new Pessoa();
+		return "ListarPessoa.xhtml?faces-redirect=true";
+	}
 	public String gravarPessoa(Pessoa p){
 		Cadastro c = CadastroDAO.buscarCadastroPorId(idCad);
 		p.setCadastro(c);

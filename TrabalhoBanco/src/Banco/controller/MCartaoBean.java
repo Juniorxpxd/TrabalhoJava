@@ -39,6 +39,6 @@ public class MCartaoBean {
 		Cadastro e = CadastroDAO.buscarCadastroPorId(idCad);
 		c.setCadastro(e);
 		CartaoDAO.adicionarCartao(c);
-		return "Index.xhtml?faces-redirect=true";
+		return "Index.xhtml";
 	}
 }

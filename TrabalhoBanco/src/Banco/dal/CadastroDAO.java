@@ -27,7 +27,7 @@ public class CadastroDAO {
 			em.getTransaction().commit();
 			em.close();
 			}catch(RollbackException e){
-				System.out.println();
+				System.out.println(e.toString());
 			}
 	}
 	public static List<Cadastro> retornarLista(){
