@@ -53,13 +53,36 @@
     </div>
   </div>
 </nav>
-	<h:form acceptcharset="ISO-8859-1">
-	<b:icon name="glyphicon-search"/> 
-	<p:inputText id="clientes" pt:placeholder="Buscar cliente"></p:inputText>
-	<br/>
-	<br/>
-	<p:commandButton value="Buscar"></p:commandButton>
-	<p:commandButton value="Retornar" action="Administrador.xhtml"></p:commandButton>
+	<h:form acceptcharset="ISO-8859-1" id="Cadastro">
+	<p:dataTable  value="#{mCadastroBean.cadastros}" var="cadastroCliente" >
+	<p:column><f:facet name="header">Nome</f:facet>
+	<h:outputText value="#{cadastroCliente.nome}"></h:outputText>
+	</p:column>
+	<p:column><f:facet name="header">Email</f:facet>
+	<h:outputText value="#{cadastroCliente.email}"></h:outputText>
+	</p:column>
+	<p:column><f:facet name="header">Telefone</f:facet>
+	<h:outputText value="#{cadastroCliente.telefone}"></h:outputText>
+	</p:column>
+	<p:column><f:facet name="header">Data de Nascimento</f:facet>
+	<h:outputText value="#{cadastroCliente.dataNasc}"></h:outputText>
+	</p:column>
+	<p:column><f:facet name="header">Sexo</f:facet>
+	<h:outputText value="#{cadastroCliente.sexo}"></h:outputText>
+	</p:column>
+	<p:column><f:facet name="header">RG</f:facet>
+	<h:outputText value="#{cadastroCliente.rg}"></h:outputText>
+	</p:column>
+	<p:column><f:facet name="header">Agencia</f:facet>
+	<h:outputText value="#{cadastroCliente.agencia.agencia}"></h:outputText>
+	</p:column>
+	<p:column><f:facet name="header">Alterar</f:facet>
+	<p:commandLink  value="Alterar" action="#{mCadastroBean.enviarDadosParaAlterar(cadastroCliente)}"></p:commandLink>
+	</p:column>
+	<p:column><f:facet name="header">Retornar</f:facet>
+	<p:commandLink value="Retornar" action="Administrador.xhtml?faces-redirect=true"></p:commandLink>
+	</p:column>
+	</p:dataTable>
 	</h:form>
 </body>
 </html>

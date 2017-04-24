@@ -7,6 +7,7 @@ import javax.persistence.NoResultException;
 import javax.persistence.Query;
 import javax.persistence.RollbackException;
 
+import Banco.model.Agencia;
 import Banco.model.Cadastro;
 
 public class CadastroDAO {
@@ -37,11 +38,20 @@ public class CadastroDAO {
 		return lista;
 	}
 	public static void alterarCadastro(Cadastro c){
-		for (int i = 0; i < cadastros.size(); i++) {
-			if(cadastros.get(i).getIdCad() == c.getIdCad()){
-				cadastros.set(i, c);
-			}
-		}
+		EntityManager em = Conexao.getEntityManager();
+		em.getTransaction().begin();
+		Cadastro cadastro = em.find(Cadastro.class, c.getIdCad());
+		cadastro.setNome(c.getNome());
+		cadastro.setEmail(c.getEmail());
+		cadastro.setSenha(c.getSenha());
+		cadastro.setTelefone(c.getTelefone());
+		cadastro.setDataNasc(c.getDataNasc());
+		cadastro.setSexo(c.getSexo());
+		cadastro.setRg(c.getRg());
+		cadastro.setAgencia(c.getAgencia());
+		em.merge(cadastro);
+		em.getTransaction().commit();
+		em.close();
 	}
 	public static Cadastro buscarCadastroPorId(int id){
 		EntityManager em = Conexao.getEntityManager();

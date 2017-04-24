@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import javax.persistence.RollbackException;
 
+import Banco.model.Cadastro;
 import Banco.model.Endereco;
 
 public class EnderecoDAO {
@@ -31,17 +32,23 @@ public class EnderecoDAO {
 	}
 	public static List<Endereco> retornarLista(){
 		EntityManager em = Conexao.getEntityManager();
-		em.getTransaction().begin();
 		Query q = em.createQuery("SELECT e FROM Endereco e");
 		List<Endereco> lista = q.getResultList();
 		em.close();
 		return lista;
 	}
 	public static void alterarEndereco(Endereco e){
-		for (int i = 0; i < enderecos.size(); i++) {
-			if(enderecos.get(i).getIdEnd() == e.getIdEnd()){
-				enderecos.set(i, e);
-			}
-		}
+		EntityManager em = Conexao.getEntityManager();
+		em.getTransaction().begin();
+		Endereco endereco = em.find(Endereco.class, e.getIdEnd());
+		endereco.setRua(e.getRua());
+		endereco.setNumero(e.getNumero());
+		endereco.setBairro(e.getBairro());
+		endereco.setCidade(e.getCidade());
+		endereco.setEstado(e.getEstado());
+		endereco.setPais(e.getPais());
+		em.merge(endereco);
+		em.getTransaction().commit();
+		em.close();
 	}
 }

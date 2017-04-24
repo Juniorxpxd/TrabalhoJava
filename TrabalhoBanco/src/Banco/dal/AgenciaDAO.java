@@ -31,18 +31,20 @@ public class AgenciaDAO {
 	}
 	public static List<Agencia> retornarLista(){
 		EntityManager em = Conexao.getEntityManager();
-		em.getTransaction().begin();
 		Query q = em.createQuery("SELECT a FROM Agencia a");
 		List<Agencia> lista = q.getResultList();
 		em.close();
 		return lista;
 	}
 	public static void alterarAgencia(Agencia a){
-		for (int i = 0; i < agencias.size(); i++) {
-			if(agencias.get(i).getIdAgen() == a.getIdAgen()){
-				agencias.set(i, a);
-			}
-		}
+		EntityManager em = Conexao.getEntityManager();
+		em.getTransaction().begin();
+		Agencia agencia = em.find(Agencia.class, a.getIdAgen());
+		agencia.setNome(a.getNome());
+		agencia.setAgencia(a.getAgencia());
+		em.merge(agencia);
+		em.getTransaction().commit();
+		em.close();
 	}
 	public static Agencia buscarAgenciaPorId(int id){
 		EntityManager em = Conexao.getEntityManager();

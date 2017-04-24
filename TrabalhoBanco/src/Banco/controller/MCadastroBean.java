@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 
@@ -13,6 +14,7 @@ import Banco.dal.CadastroDAO;
 import Banco.model.Agencia;
 import Banco.model.Cadastro;
 
+@SessionScoped
 @ManagedBean(name = "mCadastroBean")
 public class MCadastroBean {
 	private Cadastro cadastro = new Cadastro();
@@ -37,6 +39,17 @@ public class MCadastroBean {
 	}
 	public void setCadastros(List<Cadastro> cadastros) {
 		this.cadastros = cadastros;
+	}
+	
+	public String enviarDadosParaAlterar(Cadastro c) {
+		this.cadastro = c;
+		return "AlterarCliente.xhtml?faces-redirect=true";
+	}
+
+	public String alterarCadastro(Cadastro c) {
+		CadastroDAO.alterarCadastro(c);
+		cadastro = new Cadastro();
+		return "ListarCliente.xhtml?faces-redirect=true";
 	}
 	
 	public String gravarCadastro(Cadastro c){

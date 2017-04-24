@@ -8,9 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "Cadastro")
@@ -29,6 +28,8 @@ public class Cadastro{
 	private String datanasc;
 	private String sexo;
 	private String rg;
+	@OneToOne
+	private Conta conta;
 	@ManyToOne
 	private Agencia agencia;
 	
@@ -37,6 +38,12 @@ public class Cadastro{
 	}
 	public void setAgencia(Agencia agencia) {
 		this.agencia = agencia;
+	}
+	public Conta getConta() {
+		return conta;
+	}
+	public void setConta(Conta conta) {
+		this.conta = conta;
 	}
 	public int getIdCad() {
 		return idCad;
