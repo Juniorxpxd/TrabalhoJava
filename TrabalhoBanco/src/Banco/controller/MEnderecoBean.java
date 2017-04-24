@@ -26,13 +26,23 @@ public class MEnderecoBean {
 		return endereco;
 	}
 	public List<Endereco> getEnderecos() {
-		return enderecos;
+		return EnderecoDAO.retornarLista();
 	}
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
 	public void setEnderecos(List<Endereco> enderecos) {
 		this.enderecos = enderecos;
+	}
+	public String enviarDadosParaAlterar(Endereco e) {
+		this.endereco = e;
+		return "AlterarEndereco.xhtml?faces-redirect=true";
+	}
+
+	public String alterarEndereco(Endereco e) {
+		EnderecoDAO.alterarEndereco(e);
+		endereco = new Endereco();
+		return "ListarEndereco.xhtml?faces-redirect=true";
 	}
 	public String gravarEndereco(Endereco e){
 		Cadastro c = CadastroDAO.buscarCadastroPorId(idCad);

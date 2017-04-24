@@ -53,13 +53,38 @@
     </div>
   </div>
 </nav>
-	<h:form acceptcharset="ISO-8859-1">
-	<b:icon name="glyphicon-search"/> 
-	<p:inputText id="clientes" pt:placeholder="Buscar cliente"></p:inputText>
+	<h:form acceptcharset="ISO-8859-1" id="Cadastro">
+	<h:panelGrid columns="1">
+	<h:inputHidden value="#{mEnderecoBean.endereco.idEnd}"></h:inputHidden>
+	<p:outputLabel value="Rua: "></p:outputLabel>
+	<p:inputText pt:placeholder="Digite a Rua" value="#{mEnderecoBean.endereco.rua}"></p:inputText>
 	<br/>
 	<br/>
-	<p:commandButton value="Buscar"></p:commandButton>
+	<p:outputLabel value="Número: "></p:outputLabel>
+	<p:inputText pt:placeholder="Digite o número" value="#{mEnderecoBean.endereco.numero}"></p:inputText>
+	<br/>
+	<br/>
+	<p:outputLabel value="Bairro: "></p:outputLabel>
+	<p:inputText pt:placeholder="Digite o bairro" value="#{mEnderecoBean.endereco.bairro}"></p:inputText>
+	<br/>
+	<br/>
+	<p:outputLabel value="Cidade: "></p:outputLabel>
+	<p:inputText pt:placeholder="Digite a cidade" value="#{mEnderecoBean.endereco.cidade}"></p:inputText>
+	<br/>
+	<br/>
+	<p:outputLabel value="Estado: "></p:outputLabel>
+	<p:inputText pt:placeholder="Digite o estado" value="#{mEnderecoBean.endereco.estado}"></p:inputText>
+	<br/>
+	<br/>
+	<p:outputLabel value="País: "></p:outputLabel>
+	<p:inputText pt:placeholder="Digite o país" value="#{mEnderecoBean.endereco.pais}"></p:inputText>
+	<br/>
+	<br/>
+	<p:commandButton value="Alterar" action="#{mEnderecoBean.alterarEndereco(mEnderecoBean.endereco)}"></p:commandButton>
+	<br/>
+	<br/>
 	<p:commandButton value="Retornar" action="Administrador.xhtml?faces-redirect=true"></p:commandButton>
+	</h:panelGrid>
 	</h:form>
 </body>
 </html>

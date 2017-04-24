@@ -25,6 +25,16 @@ public class MAgenciaBean {
 	public void setAgencias(List<Agencia> agencias) {
 		this.agencias = agencias;
 	}
+	public String enviarDadosParaAlterar(Agencia a) {
+		this.agencia = a;
+		return "AlterarAgencia.xhtml?faces-redirect=true";
+	}
+
+	public String alterarAgencia(Agencia a) {
+		AgenciaDAO.alterarAgencia(a);
+		agencia = new Agencia();
+		return "ListarAgencia.xhtml?faces-redirect=true";
+	}
 	public String gravarAgencia(Agencia a){
 		AgenciaDAO.adicionarAgencia(a);
 		return "Administrador.xhtml?faces-redirect=true";

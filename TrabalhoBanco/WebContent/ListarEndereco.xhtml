@@ -53,13 +53,40 @@
     </div>
   </div>
 </nav>
-	<h:form acceptcharset="ISO-8859-1">
-	<b:icon name="glyphicon-search"/> 
-	<p:inputText id="clientes" pt:placeholder="Buscar cliente"></p:inputText>
+	<h:form acceptcharset="ISO-8859-1" id="Endereco">
+	<p:dataTable  value="#{mEnderecoBean.enderecos}" var="cadastroEndereco" >
+	<p:column><f:facet name="header">Nome do Cliente</f:facet>
+	<h:outputText value="#{cadastroEndereco.cadastro.nome}"></h:outputText>
+	</p:column>
+	<p:column><f:facet name="header">Rua</f:facet>
+	<h:outputText value="#{cadastroEndereco.rua}"></h:outputText>
+	</p:column>
+	<p:column><f:facet name="header">Número</f:facet>
+	<h:outputText value="#{cadastroEndereco.numero}"></h:outputText>
+	</p:column>
+	<p:column><f:facet name="header">Bairro</f:facet>
+	<h:outputText value="#{cadastroEndereco.bairro}"></h:outputText>
+	</p:column>
+	<p:column><f:facet name="header">Cidade</f:facet>
+	<h:outputText value="#{cadastroEndereco.cidade}"></h:outputText>
+	</p:column>
+	<p:column><f:facet name="header">Estado</f:facet>
+	<h:outputText value="#{cadastroEndereco.estado}"></h:outputText>
+	</p:column>
+	<p:column><f:facet name="header">País</f:facet>
+	<h:outputText value="#{cadastroEndereco.pais}"></h:outputText>
+	</p:column>
 	<br/>
 	<br/>
-	<p:commandButton value="Buscar"></p:commandButton>
-	<p:commandButton value="Retornar" action="Administrador.xhtml?faces-redirect=true"></p:commandButton>
+	<p:column><f:facet name="header">Alterar</f:facet>
+	<p:commandLink  value="Alterar" action="#{mEnderecoBean.enviarDadosParaAlterar(cadastroEndereco)}"></p:commandLink>
+	</p:column>
+	<br/>
+	<br/>
+	<p:column><f:facet name="header">Retornar</f:facet>
+	<p:commandLink value="Retornar" action="Administrador.xhtml?faces-redirect=true"></p:commandLink>
+	</p:column>
+	</p:dataTable>
 	</h:form>
 </body>
 </html>

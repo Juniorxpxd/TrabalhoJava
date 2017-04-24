@@ -87,6 +87,12 @@
 	<p:inputText pt:placeholder="Digite o nome" value="#{mCadastroBean.cadastro.rg}"></p:inputText>
 	<br/>
 	<br/>
+	<h:selectOneMenu value="#{mCadastroBean.idAgen}">
+		<f:selectItem itemLabel="Selecione uma Agência" itemValue="0"></f:selectItem>
+		<f:selectItems value="#{mAgenciaBean.agencias}" var="agencia" itemLabel="#{agencia.nome} - #{agencia.agencia}" itemValue="#{agencia.idAgen}"></f:selectItems>
+	</h:selectOneMenu>
+	<br/>
+	<br/>
 	<p:commandButton value="Alterar" action="#{mCadastroBean.alterarCadastro(mCadastroBean.cadastro)}"></p:commandButton>
 	<br/>
 	<br/>

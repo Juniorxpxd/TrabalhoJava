@@ -48,6 +48,7 @@ public class CadastroDAO {
 		cadastro.setDataNasc(c.getDataNasc());
 		cadastro.setSexo(c.getSexo());
 		cadastro.setRg(c.getRg());
+		cadastro.setAgencia(c.getAgencia());
 		em.merge(cadastro);
 		em.getTransaction().commit();
 		em.close();
