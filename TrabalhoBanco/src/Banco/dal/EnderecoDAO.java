@@ -6,12 +6,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import javax.persistence.RollbackException;
 
-import Banco.model.Cadastro;
 import Banco.model.Endereco;
 
 public class EnderecoDAO {
-	private static ArrayList<Endereco> enderecos = new ArrayList<Endereco>();
-	
+	private static ArrayList<Endereco> enderecos = new ArrayList<Endereco>();	
 	public static void adicionarEndereco(Endereco e){
 		EntityManager em = Conexao.getEntityManager();
 		em.getTransaction().begin();
@@ -27,7 +25,7 @@ public class EnderecoDAO {
 			em.getTransaction().commit();
 			em.close();
 			}catch(RollbackException c){
-				System.out.println(c.toString());
+				System.out.println();
 			}
 	}
 	public static List<Endereco> retornarLista(){
@@ -50,5 +48,9 @@ public class EnderecoDAO {
 		em.merge(endereco);
 		em.getTransaction().commit();
 		em.close();
+	}
+	public static Endereco buscarEnderecoPorId(int id){
+		EntityManager em = Conexao.getEntityManager();
+		return em.find(Endereco.class, id);
 	}
 }
