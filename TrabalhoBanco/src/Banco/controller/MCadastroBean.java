@@ -38,7 +38,6 @@ public class MCadastroBean {
 		this.cadastro = cadastro;
 	}
 	public void setCadastros(List<Cadastro> cadastros) {
-		this.cadastros = cadastros;
 	}
 	
 	public String enviarDadosParaAlterar(Cadastro c) {
@@ -48,6 +47,12 @@ public class MCadastroBean {
 
 	public String alterarCadastro(Cadastro c) {
 		CadastroDAO.alterarCadastro(c);
+		cadastro = new Cadastro();
+		return "ListarCliente.xhtml?faces-redirect=true";
+	}
+	
+	public String removerCadastro(Cadastro c) {
+		CadastroDAO.removerCadastro(c);
 		cadastro = new Cadastro();
 		return "ListarCliente.xhtml?faces-redirect=true";
 	}

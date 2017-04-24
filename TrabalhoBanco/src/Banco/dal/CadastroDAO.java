@@ -20,15 +20,16 @@ public class CadastroDAO {
 		em.close();
 	}
 	public static void removerCadastro(Cadastro c){
-		try{
-			EntityManager em = Conexao.getEntityManager();
-			em.getTransaction().begin();
-			em.remove(c);
-			em.getTransaction().commit();
-			em.close();
-			}catch(RollbackException e){
-				System.out.println(e.toString());
-			}
+	try{
+		EntityManager em = Conexao.getEntityManager();
+		em.getTransaction().begin();
+		c = em.getReference(Cadastro.class, c.getIdCad());
+		em.remove(c);
+		em.getTransaction().commit();
+		em.close();
+		}catch(RollbackException e){
+			System.out.println(e.toString());
+		}
 	}
 	public static List<Cadastro> retornarLista(){
 		EntityManager em = Conexao.getEntityManager();
