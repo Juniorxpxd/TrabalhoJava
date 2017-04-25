@@ -62,10 +62,10 @@
 	<h:outputText value="#{cadastroCliente.nome}"></h:outputText>
 	</p:column>
 	<p:column><f:facet name="header">Conta</f:facet>
-	<h:outputText value="#{cadastroConta.conta}"></h:outputText>
+	<h:outputText value="#{cadastroCliente.conta}"></h:outputText>
 	</p:column>
 	<p:column><f:facet name="header">Alterar</f:facet>
-	<p:commandLink  value="Inserir" action="#{mCadastroBean.enviarDadosParaAlterar3(cadastroCLiente)}"></p:commandLink>
+	<p:commandLink  value="Inserir" action="#{mCadastroBean.enviarDadosParaAlterar3(cadastroCliente)}"></p:commandLink>
 	</p:column>
 	<p:column><f:facet name="header">Remover</f:facet>
 	<p:commandLink  value="Remover" action="#{mCadastroBean.removerCadastro(cadastroCliente)}"></p:commandLink>

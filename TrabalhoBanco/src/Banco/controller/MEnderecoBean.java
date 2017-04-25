@@ -57,6 +57,7 @@ public class MEnderecoBean {
 		Cadastro c = CadastroDAO.buscarCadastroPorId(idCad);
 		e.setCadastro(c);
 		EnderecoDAO.adicionarEndereco(e);
+		endereco = new Endereco();
 		return "Pessoa.xhtml?faces-redirect=true";
 	}
 }

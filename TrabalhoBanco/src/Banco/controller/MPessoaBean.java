@@ -55,6 +55,7 @@ public class MPessoaBean {
 		Cadastro c = CadastroDAO.buscarCadastroPorId(idCad);
 		p.setCadastro(c);
 		PessoaDAO.adicionarPessoa(p);
+		pessoa = new Pessoa();
 		return "Cartao.xhtml?faces-redirect=true";
 	}
 }

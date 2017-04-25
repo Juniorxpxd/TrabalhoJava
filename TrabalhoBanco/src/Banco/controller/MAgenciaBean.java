@@ -43,6 +43,7 @@ public class MAgenciaBean {
 	}
 	public String gravarAgencia(Agencia a){
 		AgenciaDAO.adicionarAgencia(a);
+		agencia = new Agencia();
 		return "Administrador.xhtml?faces-redirect=true";
 	}
 }

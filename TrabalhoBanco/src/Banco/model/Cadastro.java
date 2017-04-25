@@ -29,14 +29,14 @@ public class Cadastro{
 	private String sexo;
 	private float saldo = 50;
 	private String rg;
-	private String conta;
+	private int conta = 1;
 	@ManyToOne
 	private Agencia agencia;
 	
-	public String getConta() {
+	public int getConta() {
 		return conta;
 	}
-	public void setConta(String conta) {
+	public void setConta(int conta) {
 		this.conta = conta;
 	}
 	public float getSaldo() {
