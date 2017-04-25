@@ -7,9 +7,7 @@ import javax.persistence.NoResultException;
 import javax.persistence.Query;
 import javax.persistence.RollbackException;
 
-import Banco.model.Agencia;
 import Banco.model.Cadastro;
-import Banco.model.Pessoa;
 
 public class CadastroDAO {
 	private static ArrayList<Cadastro> cadastros = new ArrayList<Cadastro>();
@@ -70,12 +68,16 @@ public class CadastroDAO {
 	public static Cadastro getCadastro(String email, String senha) {
 		try {
 			EntityManager em = Conexao.getEntityManager();
-			Cadastro cadastro = (Cadastro) em
-					.createQuery("SELECT c FROM Cadastro c where c.email = :email and c.senha = :senha")
-					.setParameter("email", email).setParameter("senha", senha).getSingleResult();
+			Cadastro cadastro = (Cadastro) em .createQuery("SELECT c FROM Cadastro c where c.email = :email and c.senha = :senha").setParameter("email", email).setParameter("senha", senha).getSingleResult();
 			return cadastro;
 		} catch (NoResultException e) {
 			return null;
 		}
+	}
+	public static Cadastro buscarCadastroPorNome(String nome){
+		EntityManager em = Conexao.getEntityManager();
+		Query query = em.createQuery("SELECT c FROM Cadastro c WHERE c.nome = :nome",Cadastro.class);
+		query.setParameter("nome", nome);
+		return (Cadastro) query.getResultList().get(0);
 	}
 }
