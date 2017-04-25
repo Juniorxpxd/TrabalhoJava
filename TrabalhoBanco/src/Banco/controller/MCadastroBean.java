@@ -52,6 +52,8 @@ public class MCadastroBean {
 		return "AlterarConta.xhtml?faces-redirect=true";
 	}
 	public String alterarCadastro(Cadastro c) {
+		Agencia a = AgenciaDAO.buscarAgenciaPorId(idAgen);
+		c.setAgencia(a);
 		CadastroDAO.alterarCadastro(c);
 		cadastro = new Cadastro();
 		return "ListarCliente.xhtml?faces-redirect=true";
