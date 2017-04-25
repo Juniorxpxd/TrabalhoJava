@@ -21,13 +21,14 @@ public class EnderecoDAO {
 		try{
 			EntityManager em = Conexao.getEntityManager();
 			em.getTransaction().begin();
+			e = em.getReference(Endereco.class, e.getIdEnd());
 			em.remove(e);
 			em.getTransaction().commit();
 			em.close();
 			}catch(RollbackException c){
-				System.out.println();
+				System.out.println(c.toString());
 			}
-	}
+		}
 	public static List<Endereco> retornarLista(){
 		EntityManager em = Conexao.getEntityManager();
 		Query q = em.createQuery("SELECT e FROM Endereco e");

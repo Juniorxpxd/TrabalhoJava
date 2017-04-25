@@ -4,16 +4,15 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:b="http://bootsfaces.net/ui" 
+	xmlns:b="http://bootsfaces.net/ui"
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="bootstrap.css" />
 	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="Script.js"></script>
-	<title>Área do Cliente</title>
+	<title>Cadastro Conta</title>
 </h:head>
-<h:body>
 <nav class="navbar navbar-default">
 	<div class="container-fluid">
 		<div class="navbar-header">
@@ -29,7 +28,7 @@
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 				<li><a href="#">Informações</a></li>
-				<li><a href="CadastroCliente.xhtml">Cadastro</a></li>
+				<li><a href="#">Cadastro</a></li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown" role="button" aria-expanded="false">Ajuda
 						<span class="caret"></span>
@@ -56,52 +55,30 @@
 		</div>
 	</div>
 </nav>
-	<h:form acceptcharset="ISO-8859-1" id="Cliente">
-	<h:panelGrid columns="3">
-	<h:inputHidden value="#{mCadastroBean.cadastro.idCad}"></h:inputHidden>
-	<p:outputLabel value="Nome: "></p:outputLabel>
-	<p:outputLabel value="#{mCadastroBean.cadastro.nome}"></p:outputLabel>
-	<br/>
-	<br/>
-	<p:outputLabel value="Email: "></p:outputLabel>
-	<p:outputLabel value="#{mCadastroBean.cadastro.email}"></p:outputLabel>
-	<br/>
-	<br/>
-	<p:outputLabel value="Telefone: "></p:outputLabel>
-	<p:outputLabel value="#{mCadastroBean.cadastro.telefone}"></p:outputLabel>
-	<br/>
-	<br/>
-	<p:outputLabel value="Data Nascimento: "></p:outputLabel>
-	<p:outputLabel value="#{mCadastroBean.cadastro.dataNasc}"></p:outputLabel>
-	<br/>
-	<br/>
-	<p:outputLabel value="Sexo: "></p:outputLabel>
-	<p:outputLabel value="#{mCadastroBean.cadastro.sexo}"></p:outputLabel>
-	<br/>
-	<br/>
-	<p:outputLabel value="Agencia: "></p:outputLabel>
-	<p:outputLabel value="#{mCadastroBean.cadastro.agencia.agencia}"></p:outputLabel>
-	</h:panelGrid>			
-			<h1>• Ir para</h1>
+<h:body>
+	<h:form acceptcharset="ISO-8859-1">
+		<fieldset>
+			<h1>Cadastrar Conta</h1>
+			<b:icon name="glyphicon-user"/> 
+			<h:outputText value="Contas pré-definidas: "/>
+			<h:selectOneMenu value="#{mContaBean.idConta}">
+			<f:selectItem itemLabel="Selecione uma Conta" itemValue="0"></f:selectItem>
+			<f:selectItem itemLabel="5123" itemValue="1"></f:selectItem>
+			<f:selectItem itemLabel="9247" itemValue="2"></f:selectItem>
+			<f:selectItem itemLabel="8352" itemValue="3"></f:selectItem>
+			<f:selectItem itemLabel="4524" itemValue="4"></f:selectItem>
+			<f:selectItem itemLabel="1834" itemValue="5"></f:selectItem>
+			<f:selectItem itemLabel="3751" itemValue="6"></f:selectItem>
+			<f:selectItem itemLabel="8513" itemValue="7"></f:selectItem>
+			<f:selectItem itemLabel="6184" itemValue="8"></f:selectItem>
+			<f:selectItem itemLabel="2724" itemValue="9"></f:selectItem>
+			<f:selectItem itemLabel="6945" itemValue="10"></f:selectItem>
+			<f:selectItem itemLabel="7153" itemValue="11"></f:selectItem>
+			</h:selectOneMenu>
+			<br/> 
 			<br/>
-			<ul>
-		<li><a href="Saldo.xhtml">Saldo</a></li>
-			<br/>						
-		<li><a href="Transferencia.xhtml">Transferência</a></li>
-			<br/>		
-		<li><a href="Deposito.xhtml">Depósito</a></li>
-			<br/>		
-		<li><a href="Pagamento.xhtml">Pagamentos</a></li>
-			<br/>			
-		<li><a href="Emprestimo.xhtml">Empréstimo</a></li>
-			<br/>			
-		<li><a href="Poupanca.xhtml">Poupânça</a></li>
-			<br/>			
-		<li><a href="Comprovante.xhtml">Comprovantes</a></li>
-			<br/>
-			</ul>	
-			<p:commandButton value="Logout" action="#{mCadastroBean.logout}"></p:commandButton>		
-		
-		</h:form>
-	</h:body>
+			<h:commandButton value="Próximo Passo" action="#{mContaBean.gravarConta(mContaBean.conta)}"></h:commandButton>
+		</fieldset>
+	</h:form>
+</h:body>
 </html>

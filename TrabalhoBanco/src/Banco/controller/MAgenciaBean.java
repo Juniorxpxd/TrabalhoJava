@@ -4,10 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 
 import Banco.dal.AgenciaDAO;
 import Banco.model.Agencia;
 
+@SessionScoped
 @ManagedBean(name = "mAgenciaBean")
 public class MAgenciaBean {
 	private Agencia agencia = new Agencia();

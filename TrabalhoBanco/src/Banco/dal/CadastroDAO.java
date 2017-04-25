@@ -9,6 +9,7 @@ import javax.persistence.RollbackException;
 
 import Banco.model.Agencia;
 import Banco.model.Cadastro;
+import Banco.model.Pessoa;
 
 public class CadastroDAO {
 	private static ArrayList<Cadastro> cadastros = new ArrayList<Cadastro>();
@@ -20,17 +21,17 @@ public class CadastroDAO {
 		em.close();
 	}
 	public static void removerCadastro(Cadastro c){
-	try{
-		EntityManager em = Conexao.getEntityManager();
-		em.getTransaction().begin();
-		c = em.getReference(Cadastro.class, c.getIdCad());
-		em.remove(c);
-		em.getTransaction().commit();
-		em.close();
-		}catch(RollbackException e){
-			System.out.println(e.toString());
+		try{
+			EntityManager em = Conexao.getEntityManager();
+			em.getTransaction().begin();
+			c = em.getReference(Cadastro.class, c.getIdCad());
+			em.remove(c);
+			em.getTransaction().commit();
+			em.close();
+			}catch(RollbackException e){
+				System.out.println(e.toString());
+			}
 		}
-	}
 	public static List<Cadastro> retornarLista(){
 		EntityManager em = Conexao.getEntityManager();
 		Query q = em.createQuery("SELECT c FROM Cadastro c");
@@ -50,6 +51,7 @@ public class CadastroDAO {
 		cadastro.setSexo(c.getSexo());
 		cadastro.setRg(c.getRg());
 		cadastro.setAgencia(c.getAgencia());
+		cadastro.setSaldo(c.getSaldo());
 		em.merge(cadastro);
 		em.getTransaction().commit();
 		em.close();

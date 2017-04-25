@@ -4,12 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 
 import Banco.dal.CadastroDAO;
 import Banco.dal.CartaoDAO;
 import Banco.model.Cadastro;
 import Banco.model.Cartao;
 
+@SessionScoped
 @ManagedBean(name = "mCartaoBean")
 public class MCartaoBean {
 	private Cartao cartao = new Cartao();
@@ -39,6 +41,6 @@ public class MCartaoBean {
 		Cadastro e = CadastroDAO.buscarCadastroPorId(idCad);
 		c.setCadastro(e);
 		CartaoDAO.adicionarCartao(c);
-		return "Index.xhtml";
+		return "Index.xhtml?faces-redirect=true";
 	}
 }

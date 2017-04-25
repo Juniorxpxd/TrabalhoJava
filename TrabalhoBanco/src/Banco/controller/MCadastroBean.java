@@ -7,7 +7,6 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
-import javax.faces.event.ActionEvent;
 
 import Banco.dal.AgenciaDAO;
 import Banco.dal.CadastroDAO;
@@ -44,8 +43,17 @@ public class MCadastroBean {
 		this.cadastro = c;
 		return "AlterarCliente.xhtml?faces-redirect=true";
 	}
+	public String enviarDadosParaAlterar2(Cadastro c) {
+		this.cadastro = c;
+		return "AlterarSaldo.xhtml?faces-redirect=true";
+	}
 
 	public String alterarCadastro(Cadastro c) {
+		CadastroDAO.alterarCadastro(c);
+		cadastro = new Cadastro();
+		return "ListarCliente.xhtml?faces-redirect=true";
+	}
+	public String alterarSaldo(Cadastro c) {
 		CadastroDAO.alterarCadastro(c);
 		cadastro = new Cadastro();
 		return "ListarCliente.xhtml?faces-redirect=true";

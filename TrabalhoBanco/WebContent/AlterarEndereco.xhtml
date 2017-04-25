@@ -53,7 +53,7 @@
     </div>
   </div>
 </nav>
-	<h:form acceptcharset="ISO-8859-1" id="Cadastro">
+	<h:form acceptcharset="ISO-8859-1" id="Endereco">
 	<h:panelGrid columns="1">
 	<h:inputHidden value="#{mEnderecoBean.endereco.idEnd}"></h:inputHidden>
 	<p:outputLabel value="Rua: "></p:outputLabel>
@@ -83,7 +83,7 @@
 	<p:commandButton value="Alterar" action="#{mEnderecoBean.alterarEndereco(mEnderecoBean.endereco)}"></p:commandButton>
 	<br/>
 	<br/>
-	<p:commandButton value="Retornar" action="Administrador.xhtml?faces-redirect=true"></p:commandButton>
+	<p:commandButton value="Retornar" action="ListarEndereco.xhtml?faces-redirect=true"></p:commandButton>
 	</h:panelGrid>
 	</h:form>
 </body>

@@ -4,12 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 
 import Banco.dal.CadastroDAO;
 import Banco.dal.PessoaDAO;
 import Banco.model.Cadastro;
 import Banco.model.Pessoa;
 
+@SessionScoped
 @ManagedBean(name = "mPessoaBean")
 public class MPessoaBean {
 	private Pessoa pessoa = new Pessoa();
@@ -37,6 +39,11 @@ public class MPessoaBean {
 	public String enviarDadosParaAlterar(Pessoa p) {
 		this.pessoa = p;
 		return "AlterarPessoa.xhtml?faces-redirect=true";
+	}
+	public String removerPessoa(Pessoa p) {
+		PessoaDAO.removerPessoa(p);
+		pessoa = new Pessoa();
+		return "ListarPessoa.xhtml?faces-redirect=true";
 	}
 
 	public String alterarPessoa(Pessoa p) {

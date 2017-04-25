@@ -44,4 +44,8 @@ public class CartaoDAO {
 			}
 		}
 	}
+	public static Cartao buscarCartaoPorId(int id){
+		EntityManager em = Conexao.getEntityManager();
+		return em.find(Cartao.class, id);
+	}
 }

@@ -1,15 +1,18 @@
 package Banco.controller;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 
 import Banco.dal.CadastroDAO;
 import Banco.dal.EnderecoDAO;
 import Banco.model.Cadastro;
 import Banco.model.Endereco;
 
+@SessionScoped
 @ManagedBean(name = "mEnderecoBean")
 public class MEnderecoBean {
 	private Endereco endereco = new Endereco();
@@ -34,9 +37,15 @@ public class MEnderecoBean {
 	public void setEnderecos(List<Endereco> enderecos) {
 		this.enderecos = enderecos;
 	}
-	public String enviarDadosParaAlterar(Endereco e) {
+	public String enviarDadosParaAlterar(Endereco e){
 		this.endereco = e;
 		return "AlterarEndereco.xhtml?faces-redirect=true";
+	}
+	
+	public String removerEndereco(Endereco e) {
+		EnderecoDAO.removerEndereco(e);
+		endereco = new Endereco();
+		return "ListarEndereco.xhtml?faces-redirect=true";
 	}
 
 	public String alterarEndereco(Endereco e) {
