@@ -53,25 +53,24 @@
     </div>
   </div>
 </nav>
-	<h:form acceptcharset="ISO-8859-1" id="Cartao">
-	<h:panelGrid columns="1">
-	<h:inputHidden value="#{mCartaoBean.cartao.idCar}"></h:inputHidden>
-	<p:outputLabel value="Tipo do Cartão: "></p:outputLabel>
-	<p:selectOneRadio itemValue="Cartao" value="#{mCartaoBean.cartao.tipoCartao}">
-			<f:selectItem itemValue="Credito" itemLabel="Credito" />
-			<f:selectItem itemValue="Debito" itemLabel="Debito" />
-	</p:selectOneRadio>
-	<br/>
-	<br/>
-	<p:outputLabel value="Renda: "></p:outputLabel>
-	<p:inputText pt:placeholder="Digite a renda" value="#{mCartaoBean.cartao.renda}"></p:inputText>
-	<br/>
-	<br/>
-	<p:commandButton value="Alterar" action="#{mCartaoBean.alterarCartao(mCartaoBean.cartao)}"></p:commandButton>
-	<br/>
-	<br/>
-	<p:commandButton value="Retornar" action="ListarCartao.xhtml?faces-redirect=true"></p:commandButton>
-	</h:panelGrid>
+	<h:form acceptcharset="ISO-8859-1" id="Cadastro">
+	<p:dataTable  value="#{mCadastroBean.cadastros}" var="cadastroCliente" >
+	<p:column><f:facet name="header">Nome</f:facet>
+	<h:outputText value="#{cadastroCliente.nome}"></h:outputText>
+	</p:column>
+	<p:column><f:facet name="header">Saldo</f:facet>
+	<h:outputText value="#{cadastroCliente.saldo}"></h:outputText>
+	</p:column>
+	<p:column><f:facet name="header">Alterar</f:facet>
+	<p:commandLink  value="Alterar" action="#{mCadastroBean.enviarDadosParaAlterar2(cadastroCliente)}"></p:commandLink>
+	</p:column>
+	<p:column><f:facet name="header">Remover</f:facet>
+	<p:commandLink  value="Remover" action="#{mCadastroBean.removerCadastro(cadastroCliente)}"></p:commandLink>
+	</p:column>
+	<p:column><f:facet name="header">Retornar</f:facet>
+	<p:commandLink value="Retornar" action="Administrador.xhtml?faces-redirect=true"></p:commandLink>
+	</p:column>
+	</p:dataTable>
 	</h:form>
 </body>
 </html>

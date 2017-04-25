@@ -29,7 +29,7 @@
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 				<li><a href="#">Informações</a></li>
-				<li><a href="#">Cadastro</a></li>
+				<li><a href="CadastroCliente.xhtml">Cadastro</a></li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown" role="button" aria-expanded="false">Ajuda
 						<span class="caret"></span>
@@ -56,8 +56,38 @@
 		</div>
 	</div>
 </nav>
-	<h:form acceptcharset="ISO-8859-1">
-			<h1>• Ir para</h1>
+<h1>• Informações do Cliente</h1>
+	<h:form acceptcharset="ISO-8859-1" id="Cliente">
+	<h:panelGrid columns="3">
+	<h:inputHidden value="#{mCadastroBean.cadastro.idCad}"></h:inputHidden>
+	<p:outputLabel value="Nome: "></p:outputLabel>
+	<p:outputLabel value="#{mCadastroBean.cadastro.nome}"></p:outputLabel>
+	<br/>
+	<br/>
+	<p:outputLabel value="Email: "></p:outputLabel>
+	<p:outputLabel value="#{mCadastroBean.cadastro.email}"></p:outputLabel>
+	<br/>
+	<br/>
+	<p:outputLabel value="Telefone: "></p:outputLabel>
+	<p:outputLabel value="#{mCadastroBean.cadastro.telefone}"></p:outputLabel>
+	<br/>
+	<br/>
+	<p:outputLabel value="Data Nascimento: "></p:outputLabel>
+	<p:outputLabel value="#{mCadastroBean.cadastro.dataNasc}"></p:outputLabel>
+	<br/>
+	<br/>
+	<p:outputLabel value="Sexo: "></p:outputLabel>
+	<p:outputLabel value="#{mCadastroBean.cadastro.sexo}"></p:outputLabel>
+	<br/>
+	<br/>
+	<p:outputLabel value="Agencia: "></p:outputLabel>
+	<p:outputLabel value="#{mCadastroBean.cadastro.agencia.agencia}"></p:outputLabel>
+	<br/>
+	<br/>
+	<p:outputLabel value="Conta: "></p:outputLabel>
+	<p:outputLabel value="#{mCadastroBean.cadastro.conta}"></p:outputLabel>
+	</h:panelGrid>			
+			<h2>• Ir para</h2>
 			<br/>
 			<ul>
 		<li><a href="Saldo.xhtml">Saldo</a></li>
@@ -75,7 +105,8 @@
 		<li><a href="Comprovante.xhtml">Comprovantes</a></li>
 			<br/>
 			</ul>	
-			<p:commandButton value="Logout" action="#{mCadastroBean.logout}"></p:commandButton>					
+			<p:commandButton value="Logout" action="#{mCadastroBean.logout}"></p:commandButton>		
+		
 		</h:form>
 	</h:body>
 </html>

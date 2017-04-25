@@ -27,7 +27,7 @@
  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="#">Informações</a></li>
-        <li><a href="CadastroCliente.xhtml">Cadastro</a></li>
+       <li><a href="CadastroCliente.xhtml">Cadastro</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Ajuda <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
@@ -53,13 +53,29 @@
     </div>
   </div>
 </nav>
-	<h:form acceptcharset="ISO-8859-1">
-	<b:icon name="glyphicon-search"/> 
-	<p:inputText id="clientes" pt:placeholder="Buscar cliente"></p:inputText>
+	<h:form acceptcharset="ISO-8859-1" id="Pessoa">
+	<h:panelGrid columns="1">
+	<h:inputHidden value="#{mPessoaBean.pessoa.idPes}"></h:inputHidden>
+	<p:outputLabel value="Você é uma pessoa: "></p:outputLabel>
+	<p:selectOneRadio itemValue="Pessoa" required="true" value="#{mPessoaBean.pessoa.pessoa}">
+			<f:selectItem itemValue="Juridica" itemLabel="Juridica" />
+			<f:selectItem itemValue="Fisica" itemLabel="Fisica" />
+	</p:selectOneRadio>
 	<br/>
 	<br/>
-	<p:commandButton value="Buscar"></p:commandButton>
-	<p:commandButton value="Retornar" action="Administrador.xhtml?faces-redirect=true"></p:commandButton>
+	<p:outputLabel value="Juridica: "></p:outputLabel>
+	<p:inputText pt:placeholder="Digite o CNPJ" value="#{mPessoaBean.pessoa.juridica}"></p:inputText>
+	<br/>
+	<br/>
+	<p:outputLabel value="Fisica: "></p:outputLabel>
+	<p:inputText pt:placeholder="Digite o CPF" value="#{mPessoaBean.pessoa.fisica}"></p:inputText>
+	<br/>
+	<br/>
+	<p:commandButton value="Alterar" action="#{mPessoaBean.alterarPessoa(mPessoaBean.pessoa)}"></p:commandButton>
+	<br/>
+	<br/>
+	<p:commandButton value="Retornar" action="ListarPessoa.xhtml?faces-redirect=true"></p:commandButton>
+	</h:panelGrid>
 	</h:form>
 </body>
 </html>

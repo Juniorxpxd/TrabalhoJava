@@ -53,13 +53,22 @@
     </div>
   </div>
 </nav>
-	<h:form acceptcharset="ISO-8859-1">
-	<b:icon name="glyphicon-search"/> 
-	<p:inputText id="clientes" pt:placeholder="Buscar cliente"></p:inputText>
+	<h:form acceptcharset="ISO-8859-1" id="Agencia">
+	<h:panelGrid columns="1">
+	<h:inputHidden value="#{mAgenciaBean.agencia.idAgen}"></h:inputHidden>
+	<p:outputLabel value="Nome: "></p:outputLabel>
+	<p:inputText pt:placeholder="Digite o nome da agência" value="#{mAgenciaBean.agencia.nome}"></p:inputText>
 	<br/>
 	<br/>
-	<p:commandButton value="Buscar"></p:commandButton>
-	<p:commandButton value="Retornar" action="Administrador.xhtml?faces-redirect=true"></p:commandButton>
+	<p:outputLabel value="Agência: "></p:outputLabel>
+	<p:inputText pt:placeholder="Digite a agência" value="#{mAgenciaBean.agencia.agencia}"></p:inputText>
+	<br/>
+	<br/>
+	<p:commandButton value="Alterar" action="#{mAgenciaBean.alterarAgencia(mAgenciaBean.agencia)}"></p:commandButton>
+	<br/>
+	<br/>
+	<p:commandButton value="Retornar" action="ListarAgencia.xhtml?faces-redirect=true"></p:commandButton>
+	</h:panelGrid>
 	</h:form>
 </body>
 </html>

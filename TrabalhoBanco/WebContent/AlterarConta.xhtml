@@ -27,7 +27,7 @@
  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="#">Informações</a></li>
-        <li><a href="CadastroCliente.xhtml">Cadastro</a></li>
+      	<li><a href="CadastroCliente.xhtml">Cadastro</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Ajuda <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
@@ -53,24 +53,17 @@
     </div>
   </div>
 </nav>
-	<h:form acceptcharset="ISO-8859-1" id="Cartao">
+	<h:form acceptcharset="ISO-8859-1" id="Conta">
 	<h:panelGrid columns="1">
-	<h:inputHidden value="#{mCartaoBean.cartao.idCar}"></h:inputHidden>
-	<p:outputLabel value="Tipo do Cartão: "></p:outputLabel>
-	<p:selectOneRadio itemValue="Cartao" value="#{mCartaoBean.cartao.tipoCartao}">
-			<f:selectItem itemValue="Credito" itemLabel="Credito" />
-			<f:selectItem itemValue="Debito" itemLabel="Debito" />
-	</p:selectOneRadio>
+	<h:inputHidden value="#{mCadastroBean.cadastro.idCad}"></h:inputHidden>
+	<p:outputLabel value="Conta: "></p:outputLabel>
+	<p:inputText pt:placeholder="Digite a conta" value="#{mCadastroBean.cadastro.conta}"></p:inputText>
 	<br/>
 	<br/>
-	<p:outputLabel value="Renda: "></p:outputLabel>
-	<p:inputText pt:placeholder="Digite a renda" value="#{mCartaoBean.cartao.renda}"></p:inputText>
+	<p:commandButton value="Alterar" action="#{mCadastroBean.alterarConta(mCadastroBean.cadastro)}"></p:commandButton>
 	<br/>
 	<br/>
-	<p:commandButton value="Alterar" action="#{mCartaoBean.alterarCartao(mCartaoBean.cartao)}"></p:commandButton>
-	<br/>
-	<br/>
-	<p:commandButton value="Retornar" action="ListarCartao.xhtml?faces-redirect=true"></p:commandButton>
+	<p:commandButton value="Retornar" action="InserirConta.xhtml?faces-redirect=true"></p:commandButton>
 	</h:panelGrid>
 	</h:form>
 </body>

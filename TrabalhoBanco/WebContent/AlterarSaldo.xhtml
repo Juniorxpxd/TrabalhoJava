@@ -27,7 +27,7 @@
  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="#">Informações</a></li>
-        <li><a href="CadastroCliente.xhtml">Cadastro</a></li>
+      	<li><a href="CadastroCliente.xhtml">Cadastro</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Ajuda <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
@@ -53,13 +53,18 @@
     </div>
   </div>
 </nav>
-	<h:form acceptcharset="ISO-8859-1">
-	<b:icon name="glyphicon-search"/> 
-	<p:inputText id="clientes" pt:placeholder="Buscar cliente"></p:inputText>
+	<h:form acceptcharset="ISO-8859-1" id="Saldo">
+	<h:panelGrid columns="1">
+	<h:inputHidden value="#{mCadastroBean.cadastro.idCad}"></h:inputHidden>
+	<p:outputLabel value="Saldo: "></p:outputLabel>
+	<p:inputText pt:placeholder="Digite o saldo" value="#{mCadastroBean.cadastro.saldo}"></p:inputText>
 	<br/>
 	<br/>
-	<p:commandButton value="Buscar"></p:commandButton>
-	<p:commandButton value="Retornar" action="Administrador.xhtml?faces-redirect=true"></p:commandButton>
+	<p:commandButton value="Alterar" action="#{mCadastroBean.alterarSaldo(mCadastroBean.cadastro)}"></p:commandButton>
+	<br/>
+	<br/>
+	<p:commandButton value="Retornar" action="ListarSaldo.xhtml?faces-redirect=true"></p:commandButton>
+	</h:panelGrid>
 	</h:form>
 </body>
 </html>

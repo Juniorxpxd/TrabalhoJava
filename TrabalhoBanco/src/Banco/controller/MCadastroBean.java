@@ -7,7 +7,6 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
-import javax.faces.event.ActionEvent;
 
 import Banco.dal.AgenciaDAO;
 import Banco.dal.CadastroDAO;
@@ -38,24 +37,48 @@ public class MCadastroBean {
 		this.cadastro = cadastro;
 	}
 	public void setCadastros(List<Cadastro> cadastros) {
-		this.cadastros = cadastros;
 	}
 	
 	public String enviarDadosParaAlterar(Cadastro c) {
 		this.cadastro = c;
 		return "AlterarCliente.xhtml?faces-redirect=true";
 	}
-
+	public String enviarDadosParaAlterar2(Cadastro c) {
+		this.cadastro = c;
+		return "AlterarSaldo.xhtml?faces-redirect=true";
+	}
+	public String enviarDadosParaAlterar3(Cadastro c) {
+		this.cadastro = c;
+		return "AlterarConta.xhtml?faces-redirect=true";
+	}
 	public String alterarCadastro(Cadastro c) {
+		Agencia a = AgenciaDAO.buscarAgenciaPorId(idAgen);
+		c.setAgencia(a);
 		CadastroDAO.alterarCadastro(c);
 		cadastro = new Cadastro();
 		return "ListarCliente.xhtml?faces-redirect=true";
 	}
+	public String alterarSaldo(Cadastro c) {
+		CadastroDAO.alterarCadastro(c);
+		cadastro = new Cadastro();
+		return "ListarSaldo.xhtml?faces-redirect=true";
+	}
+	public String alterarConta(Cadastro c) {
+		CadastroDAO.alterarCadastro(c);
+		cadastro = new Cadastro();
+		return "InserirConta.xhtml?faces-redirect=true";
+	}
 	
+	public String removerCadastro(Cadastro c) {
+		CadastroDAO.removerCadastro(c);
+		cadastro = new Cadastro();
+		return "ListarCliente.xhtml?faces-redirect=true";
+	}
 	public String gravarCadastro(Cadastro c){
 		Agencia a = AgenciaDAO.buscarAgenciaPorId(idAgen);
 		c.setAgencia(a);
 		CadastroDAO.adicionarCadastro(c);
+		cadastro = new Cadastro();
 		return "Endereco.xhtml?faces-redirect=true";
 	}
 	

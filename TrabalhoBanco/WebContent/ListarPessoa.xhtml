@@ -53,13 +53,30 @@
     </div>
   </div>
 </nav>
-	<h:form acceptcharset="ISO-8859-1">
-	<b:icon name="glyphicon-search"/> 
-	<p:inputText id="clientes" pt:placeholder="Buscar cliente"></p:inputText>
-	<br/>
-	<br/>
-	<p:commandButton value="Buscar"></p:commandButton>
-	<p:commandButton value="Retornar" action="Administrador.xhtml?faces-redirect=true"></p:commandButton>
+	<h:form acceptcharset="ISO-8859-1" id="Pessoa">
+	<p:dataTable  value="#{mPessoaBean.pessoas}" var="cadastroPessoa" >
+	<p:column><f:facet name="header">Nome do Cliente</f:facet>
+	<h:outputText value="#{cadastroPessoa.cadastro.nome}"></h:outputText>
+	</p:column>
+	<p:column><f:facet name="header">Você é uma pessoa: </f:facet>
+	<h:outputText value="#{cadastroPessoa.pessoa}"></h:outputText>
+	</p:column>
+	<p:column><f:facet name="header">Juridica</f:facet>
+	<h:outputText value="#{cadastroPessoa.juridica}"></h:outputText>
+	</p:column>
+	<p:column><f:facet name="header">Fisica</f:facet>
+	<h:outputText value="#{cadastroPessoa.fisica}"></h:outputText>
+	</p:column>
+	<p:column><f:facet name="header">Alterar</f:facet>
+	<p:commandLink  value="Alterar" action="#{mPessoaBean.enviarDadosParaAlterar(cadastroPessoa)}"></p:commandLink>
+	</p:column>
+	<p:column><f:facet name="header">Remover</f:facet>
+	<p:commandLink  value="Remover" action="#{mPessoaBean.removerPessoa(cadastroPessoa)}"></p:commandLink>
+	</p:column>
+	<p:column><f:facet name="header">Retornar</f:facet>
+	<p:commandLink value="Retornar" action="Administrador.xhtml?faces-redirect=true"></p:commandLink>
+	</p:column>
+	</p:dataTable>
 	</h:form>
 </body>
 </html>

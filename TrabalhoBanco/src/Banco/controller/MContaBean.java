@@ -4,14 +4,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 
 import Banco.dal.ContaDAO;
 import Banco.model.Conta;
 
+@SessionScoped
 @ManagedBean(name = "mContaBean")
 public class MContaBean {
 	private Conta conta = new Conta();
 	private List<Conta> contas = new ArrayList<Conta>();
+	private int idConta;
+	
+	public int getIdConta() {
+		return idConta;
+	}
+	public void setIdConta(int idConta) {
+		this.idConta = idConta;
+	}
 	public Conta getConta() {
 		return conta;
 	}
@@ -27,6 +37,6 @@ public class MContaBean {
 	
 	public String gravarConta(Conta c){
 		ContaDAO.adicionarConta(c);
-		return "Administrador.xhtml?faces-redirect=true";
+		return "CadastroCliente.xhtml?faces-redirect=true";
 	}
 }

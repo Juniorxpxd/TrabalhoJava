@@ -21,26 +21,34 @@ public class PessoaDAO {
 		try{
 			EntityManager em = Conexao.getEntityManager();
 			em.getTransaction().begin();
+			p = em.getReference(Pessoa.class, p.getIdPes());
 			em.remove(p);
 			em.getTransaction().commit();
 			em.close();
 			}catch(RollbackException e){
 				System.out.println(e.toString());
 			}
-	}
+		}
 	public static List<Pessoa> retornarLista(){
 		EntityManager em = Conexao.getEntityManager();
-		em.getTransaction().begin();
 		Query q = em.createQuery("SELECT p FROM Pessoa p");
 		List<Pessoa> lista = q.getResultList();
 		em.close();
 		return lista;
 	}
 	public static void alterarPessoa(Pessoa p){
-		for (int i = 0; i < pessoas.size(); i++) {
-			if(pessoas.get(i).getIdPes() == p.getIdPes()){
-				pessoas.set(i, p);
-			}
-		}
+		EntityManager em = Conexao.getEntityManager();
+		em.getTransaction().begin();
+		Pessoa pessoa = em.find(Pessoa.class, p.getIdPes());
+		pessoa.setPessoa(p.getPessoa());
+		pessoa.setFisica(p.getFisica());
+		pessoa.setJuridica(p.getJuridica());
+		em.merge(pessoa);
+		em.getTransaction().commit();
+		em.close();
+	}
+	public static Pessoa buscarPessoaPorId(int id){
+		EntityManager em = Conexao.getEntityManager();
+		return em.find(Pessoa.class, id);
 	}
 }

@@ -27,23 +27,29 @@ public class Cadastro{
 	private String telefone;
 	private String datanasc;
 	private String sexo;
+	private float saldo = 50;
 	private String rg;
-	@OneToOne
-	private Conta conta;
+	private int conta = 1;
 	@ManyToOne
 	private Agencia agencia;
 	
+	public int getConta() {
+		return conta;
+	}
+	public void setConta(int conta) {
+		this.conta = conta;
+	}
+	public float getSaldo() {
+		return saldo;
+	}
+	public void setSaldo(float saldo) {
+		this.saldo = saldo;
+	}
 	public Agencia getAgencia() {
 		return agencia;
 	}
 	public void setAgencia(Agencia agencia) {
 		this.agencia = agencia;
-	}
-	public Conta getConta() {
-		return conta;
-	}
-	public void setConta(Conta conta) {
-		this.conta = conta;
 	}
 	public int getIdCad() {
 		return idCad;

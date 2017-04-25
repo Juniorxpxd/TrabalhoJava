@@ -54,17 +54,24 @@
   </div>
 </nav>
 	<h:form acceptcharset="ISO-8859-1" id="Cartao">
-	<p:dataTable  value="#{mCartaoBean.cartoes}" var="cartao" >
+	<p:dataTable  value="#{mCartaoBean.cartoes}" var="cadastroCartao">
+	<p:column><f:facet name="header">Nome do Cliente</f:facet>
+	<h:outputText value="#{cadastroCartao.cadastro.nome}"></h:outputText>
+	</p:column>
 	<p:column><f:facet name="header">Renda</f:facet>
-	<h:outputText value="#{cartao.renda}"></h:outputText>
+	<h:outputText value="#{cadastroCartao.renda}"></h:outputText>
 	</p:column>
 	<p:column><f:facet name="header">Tipo cartão</f:facet>
-	<h:outputText value="#{cartao.tipoCartao}"></h:outputText>
+	<h:outputText value="#{cadastroCartao.tipoCartao}"></h:outputText>
 	</p:column>
-	<br/>
-	<br/>
+	<p:column><f:facet name="header">Alterar</f:facet>
+	<p:commandLink  value="Alterar" action="#{mCartaoBean.enviarDadosParaAlterar(cadastroCartao)}"></p:commandLink>
+	</p:column>
+	<p:column><f:facet name="header">Remover</f:facet>
+	<p:commandLink  value="Remover" action="#{mCartaoBean.removerCartao(cadastroCartao)}"></p:commandLink>
+	</p:column>
 	<p:column><f:facet name="header">Retornar</f:facet>
-	<p:commandButton value="Retornar" action="Administrador.xhtml?faces-redirect=true"></p:commandButton>
+	<p:commandLink  value="Retornar" action="Administrador.xhtml?faces-redirect=true"></p:commandLink>
 	</p:column>
 	</p:dataTable>
 	</h:form>

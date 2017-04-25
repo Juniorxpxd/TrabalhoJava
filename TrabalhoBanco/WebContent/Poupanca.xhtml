@@ -11,7 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="bootstrap.css" />
 	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="Script.js"></script>
-	<title>Área do Cliente</title>
+	<title>Poupança</title>
 </h:head>
 <h:body>
 <nav class="navbar navbar-default">
@@ -59,8 +59,14 @@
 <h:form acceptcharset="ISO-8859-1">
 <fieldset>
 <h1>Poupança do Cliente</h1>
-<h:outputText value="Poupanca avaliada: "/>
-			<p:inputText id="poupanca" required="true" pt:placeholder="" value="#{mCadastroBean.cadastro.poupanca}"></p:inputText>
+<p:outputLabel style="font-size: 25px;" value="Saldo: "></p:outputLabel>
+		<p:outputLabel style="font-size: 20px;" value="R$#{mCadastroBean.cadastro.saldo}"></p:outputLabel>
+		<br/>
+<h:outputText value="Valor total: "/>
+			<p:inputText id="poupanca" required="true" pt:placeholder="" value=""></p:inputText>
+			
 			
 </fieldset>
+</h:form>
+</h:body>
 </html>

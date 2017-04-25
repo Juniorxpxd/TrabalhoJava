@@ -23,7 +23,6 @@ public class Endereco {
 	@OneToOne
 	private Cadastro cadastro;
 
-
 	public int getIdEnd() {
 		return idEnd;
 	}
