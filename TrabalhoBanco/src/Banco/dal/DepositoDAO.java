@@ -7,7 +7,6 @@ import javax.persistence.Query;
 import javax.persistence.RollbackException;
 
 import Banco.model.Deposito;
-import Banco.model.Pessoa;
 
 public class DepositoDAO {
 	private static ArrayList<Deposito> deposito = new ArrayList<Deposito>();
@@ -22,12 +21,12 @@ public class DepositoDAO {
 		try{
 			EntityManager em = Conexao.getEntityManager();
 			em.getTransaction().begin();
-			d = em.getReference(Pessoa.class, d.get());
+			d = em.getReference(Deposito.class, d.getIdDeposito());
 			em.remove(d);
 			em.getTransaction().commit();
 			em.close();
-			}catch(RollbackException d){
-				System.out.println(d.toString());
+			}catch(RollbackException e){
+				System.out.println(e.toString());
 			}
 		}
 	public static List<Deposito> retornarLista(){
@@ -49,5 +48,6 @@ public class DepositoDAO {
 	}
 	public static Deposito buscarDepositoPorId(int id){
 		EntityManager em = Conexao.getEntityManager();
+		return em.find(Deposito.class, id);
 }
 }

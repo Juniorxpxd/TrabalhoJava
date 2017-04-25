@@ -11,12 +11,9 @@ import javax.persistence.Table;
 public class Deposito {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	
 	private int idDeposito;
-	private int quantidade;
+	private float quantidade;
 	
-	
-
 	public int getIdDeposito() {
 		return idDeposito;
 	}
@@ -25,15 +22,11 @@ public class Deposito {
 		this.idDeposito = idDeposito;
 	}
 
-	public int getQuantidade() {
+	public float getQuantidade() {
 		return quantidade;
 	}
 
-	public void setQuantidade(int quantidade) {
+	public void setQuantidade(float quantidade) {
 		this.quantidade = quantidade;
 	}
-	
-	
-	
-
 }
