@@ -11,7 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="bootstrap.css" />
 	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="Script.js"></script>
-	<title>Cartão</title>
+	<title>Tranferencia</title>
 </h:head>
 <nav class="navbar navbar-default">
 	<div class="container-fluid">
@@ -52,6 +52,7 @@
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="Login.xhtml">Login </a></li>
 			</ul>
+			
 		</div>
 	</div>
 </nav>
@@ -59,31 +60,28 @@
 	<h:form acceptcharset="ISO-8859-1">
 		<fieldset>
 		
-			<h1>Cadastrar Usúario</h1>
+			<h1>Tranferencia</h1>
 			<b:icon name="glyphicon-user"/> 
 			<h:outputText value=" Agencia: "/>
-			<p:inputText id="Agencia" required="true" pt:placeholder="Digite a agencia" value="#{mCadastroBean.cadastro.agencia}"></p:inputText>
+			<p:inputText id="Agencia" required="true" pt:placeholder="Digite a agencia" value="#{mAgenciaBean.agencia.agencia}"></p:inputText>
 			<br/> 
 			<br/> 
 			<b:icon name="glyphicon-user"/> 
 			<h:outputText value=" Numero da conta: "/>
-			<p:inputText id="nconta" required="true" pt:placeholder="Digite o numero da conta" value="#{mCadastroBean.cadastro.nconta}"></p:inputText>
+			<p:inputText id="nconta" required="true" pt:placeholder="Digite o numero da conta" value="#{mContaBean.conta.conta}"></p:inputText>
 			<br/> 
 			<br/> 
 			<b:icon name="glyphicon-user"/> 
 			<h:outputText value="Valor a ser tranferido: "/>
-			<p:inputText id="vtrans" required="true" pt:placeholder="Digite o valor" value="#{mCadastroBean.cadastro.vtrans}"></p:inputText>
+			<p:inputText id="vtrans" required="true" pt:placeholder="Digite o valor" value=""></p:inputText>
 			<br/> 
 			<br/> 
-			<b:icon name="glyphicon-user"/> 
-			<h:outputText value=" Numero da conta: "/>
-			<p:inputText id="nconta" required="true" pt:placeholder="Digite o numero da conta" value="#{mCadastroBean.cadastro.nconta}"></p:inputText>
-			<br/> 
-			<br/> 
+			 
 			<h:outputText value=" Data de Tranferencia: "/>
-			<p:inputText id="datatrans" required="true" pt:placeholder="Data de transferencia" value="#{mCadastroBean.cadastro.dataTrans}"></p:inputText><br/> 
+			<p:inputText id="datatrans" required="true" pt:placeholder="Data de transferencia" value=""></p:inputText><br/> 
 			<br/>
 			<br/>
+				<h:commandButton value="Efetuar tranferencia" action="#{mCadastroBean.gravarCadastro(mCadastroBean.cadastro)}"></h:commandButton>
 </fieldset>
 </h:form>
 </h:body>

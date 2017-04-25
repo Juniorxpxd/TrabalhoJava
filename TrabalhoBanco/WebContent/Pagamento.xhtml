@@ -11,7 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="bootstrap.css" />
 	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="Script.js"></script>
-	<title>Área do Cliente</title>
+	<title>Pagamento</title>
 </h:head>
 <h:body>
 <nav class="navbar navbar-default">
@@ -60,22 +60,21 @@
 <fieldset>
 <h1>Efetuar pagamentos</h1>
 			<h:outputText value=" codigo de barras"/>
-			<p:inputText id="codbarras" required="true" pt:placeholder="Codigo de barras" value="#{mCadastroBean.cadastro.codbarras}"></p:inputText>
+			<p:inputText id="codbarras" required="true" pt:placeholder="Codigo de barras" value="#{mCadastroBean.cadastro.codigoB}"></p:inputText>
 			<br/> 
 			<br/>
 			<h:outputText value=" Data de Vencimento: "/>
 			<p:inputText id="datavenci" required="true" pt:placeholder="Data de vencimento" value="#{mCadastroBean.cadastro.dataVenci}"></p:inputText><br/> 
 			<br/>
 			<h:outputText value=" valor de pagmaneto"/>
-			<p:inputText id="valorpag" required="true" pt:placeholder="Valor do pagamento" value="#{mCadastroBean.cadastro.ValorPag}"></p:inputText>
+			<p:inputText id="valorpag" required="true" pt:placeholder="Valor do pagamento" value="#{mCadastroBean.cadastro.dataPaga}"></p:inputText>
 			<br/> 
 			<br/>
 			<h:outputText value=" Identificacao de pagamento"/>
-			<p:inputText id="idpag" required="true" pt:placeholder="Identificacao de pagamento" value="#{mCadastroBean.cadastro.idpag}"></p:inputText> 
+			<p:inputText id="idpag" required="true" pt:placeholder="Identificacao de pagamento" value="#{mCadastroBean.cadastro.idPaga}"></p:inputText> 
 			<br/> 
 			<br/>
-			<h:outputText value="Agendar pagamento: "/>
-			<p:inputText id="agenpag" required="true" pt:placeholder="Agendar pagamento" value="#{mCadastroBean.cadastro.agenPag}"></p:inputText><br/> 
+		<h:commandButton value="Próximo Passo" action="#{mCadastroBean.gravarCadastro(mCadastroBean.cadastro)}"></h:commandButton>
 			<br/>
 			<br/>
 			</fieldset>
