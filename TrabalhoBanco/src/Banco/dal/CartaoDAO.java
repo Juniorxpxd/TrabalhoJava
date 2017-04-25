@@ -8,6 +8,7 @@ import javax.persistence.Query;
 import javax.persistence.RollbackException;
 
 import Banco.model.Cartao;
+import Banco.model.Endereco;
 
 public class CartaoDAO {
 	private static ArrayList<Cartao> cartoes = new ArrayList<Cartao>();
@@ -22,27 +23,30 @@ public class CartaoDAO {
 		try{
 			EntityManager em = Conexao.getEntityManager();
 			em.getTransaction().begin();
+			d = em.getReference(Cartao.class, d.getIdCar());
 			em.remove(d);
 			em.getTransaction().commit();
 			em.close();
-			}catch(RollbackException e){
-				System.out.println(e.toString());
+			}catch(RollbackException c){
+				System.out.println(c.toString());
 			}
-	}
+		}
 	public static List<Cartao> retornarLista(){
 		EntityManager em = Conexao.getEntityManager();
-		em.getTransaction().begin();
 		Query q = em.createQuery("SELECT c FROM Cartao c");
 		List<Cartao> lista = q.getResultList();
 		em.close();
 		return lista;
 	}
 	public static void alterarCartao(Cartao d){
-		for (int i = 0; i < cartoes.size(); i++) {
-			if(cartoes.get(i).getIdCar() == d.getIdCar()){
-				cartoes.set(i, d);
-			}
-		}
+		EntityManager em = Conexao.getEntityManager();
+		em.getTransaction().begin();
+		Cartao cartao = em.find(Cartao.class, d.getIdCar());
+		cartao.setTipoCartao(d.getTipoCartao());
+		cartao.setRenda(d.getRenda());
+		em.merge(cartao);
+		em.getTransaction().commit();
+		em.close();
 	}
 	public static Cartao buscarCartaoPorId(int id){
 		EntityManager em = Conexao.getEntityManager();

@@ -47,7 +47,10 @@ public class MCadastroBean {
 		this.cadastro = c;
 		return "AlterarSaldo.xhtml?faces-redirect=true";
 	}
-
+	public String enviarDadosParaAlterar3(Cadastro c) {
+		this.cadastro = c;
+		return "AlterarConta.xhtml?faces-redirect=true";
+	}
 	public String alterarCadastro(Cadastro c) {
 		CadastroDAO.alterarCadastro(c);
 		cadastro = new Cadastro();
@@ -56,7 +59,12 @@ public class MCadastroBean {
 	public String alterarSaldo(Cadastro c) {
 		CadastroDAO.alterarCadastro(c);
 		cadastro = new Cadastro();
-		return "ListarCliente.xhtml?faces-redirect=true";
+		return "ListarSaldo.xhtml?faces-redirect=true";
+	}
+	public String alterarConta(Cadastro c) {
+		CadastroDAO.alterarCadastro(c);
+		cadastro = new Cadastro();
+		return "InserirConta.xhtml?faces-redirect=true";
 	}
 	
 	public String removerCadastro(Cadastro c) {
@@ -64,11 +72,11 @@ public class MCadastroBean {
 		cadastro = new Cadastro();
 		return "ListarCliente.xhtml?faces-redirect=true";
 	}
-	
 	public String gravarCadastro(Cadastro c){
 		Agencia a = AgenciaDAO.buscarAgenciaPorId(idAgen);
 		c.setAgencia(a);
 		CadastroDAO.adicionarCadastro(c);
+		cadastro = new Cadastro();
 		return "Endereco.xhtml?faces-redirect=true";
 	}
 	

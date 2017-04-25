@@ -54,15 +54,19 @@
   </div>
 </nav>
 	<h:form acceptcharset="ISO-8859-1" id="Agencia">
-	<p:dataTable  value="#{mAgenciaBean.agencias}" var="agencia" >
+	<p:dataTable  value="#{mAgenciaBean.agencias}" var="cadastroAgencia" >
 	<p:column><f:facet name="header">Nome da Agencia</f:facet>
-	<h:outputText value="#{agencia.nome}"></h:outputText>
+	<h:outputText value="#{cadastroAgencia.nome}"></h:outputText>
 	</p:column>
 	<p:column><f:facet name="header">Agencia</f:facet>
-	<h:outputText value="#{agencia.agencia}"></h:outputText>
+	<h:outputText value="#{cadastroAgencia.agencia}"></h:outputText>
 	</p:column>
-	<br/>
-	<br/>
+	<p:column><f:facet name="header">Alterar</f:facet>
+	<p:commandLink  value="Alterar" action="#{mAgenciaBean.enviarDadosParaAlterar(cadastroAgencia)}"></p:commandLink>
+	</p:column>
+	<p:column><f:facet name="header">Remover</f:facet>
+	<p:commandLink  value="Remover" action="#{mAgenciaBean.removerAgencia(cadastroAgencia)}"></p:commandLink>
+	</p:column>
 	<p:column><f:facet name="header">Retornar</f:facet>
 	<p:commandButton value="Retornar" action="Administrador.xhtml?faces-redirect=true"></p:commandButton>
 	</p:column>

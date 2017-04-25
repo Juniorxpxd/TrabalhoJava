@@ -29,11 +29,16 @@ public class Cadastro{
 	private String sexo;
 	private float saldo = 50;
 	private String rg;
-	@OneToOne
-	private Conta conta;
+	private String conta;
 	@ManyToOne
 	private Agencia agencia;
 	
+	public String getConta() {
+		return conta;
+	}
+	public void setConta(String conta) {
+		this.conta = conta;
+	}
 	public float getSaldo() {
 		return saldo;
 	}
@@ -45,12 +50,6 @@ public class Cadastro{
 	}
 	public void setAgencia(Agencia agencia) {
 		this.agencia = agencia;
-	}
-	public Conta getConta() {
-		return conta;
-	}
-	public void setConta(Conta conta) {
-		this.conta = conta;
 	}
 	public int getIdCad() {
 		return idCad;

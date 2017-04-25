@@ -56,19 +56,24 @@
 		</div>
 	</div>
 </nav>
-<h:form acceptcharset="ISO-8859-1">
-<h1>Inserir conta para o cliente</h1>
-			<h:selectOneMenu value="#{mCartaoBean.idCad}">
-			<f:selectItem itemLabel="Selecione o cadastro" itemValue="0"></f:selectItem>
-			<f:selectItems value="#{mCadastroBean.cadastros}" var="cadastro" itemLabel="#{cadastro.nome}" itemValue="#{cadastro.idCad}"></f:selectItems>
-			</h:selectOneMenu>
-			<br/> 
-			<br/>
-			<h:outputText value="• Conta: "/>
-			<p:inputText id="conta" pt:placeholder="Digite a conta" value="#{mContaBean.conta.conta}"></p:inputText>
-			<br/>
-			<br/> 
-			<h:commandButton value="Inserir" action="#{mContaBean.gravarConta(mContaBean.conta)}"></h:commandButton>
-</h:form>
+	<h:form acceptcharset="ISO-8859-1" id="Conta">
+	<p:dataTable  value="#{mCadastroBean.cadastros}" var="cadastroCliente" >
+	<p:column><f:facet name="header">Nome do Cliente</f:facet>
+	<h:outputText value="#{cadastroCliente.nome}"></h:outputText>
+	</p:column>
+	<p:column><f:facet name="header">Conta</f:facet>
+	<h:outputText value="#{cadastroConta.conta}"></h:outputText>
+	</p:column>
+	<p:column><f:facet name="header">Alterar</f:facet>
+	<p:commandLink  value="Inserir" action="#{mCadastroBean.enviarDadosParaAlterar3(cadastroCLiente)}"></p:commandLink>
+	</p:column>
+	<p:column><f:facet name="header">Remover</f:facet>
+	<p:commandLink  value="Remover" action="#{mCadastroBean.removerCadastro(cadastroCliente)}"></p:commandLink>
+	</p:column>
+	<p:column><f:facet name="header">Retornar</f:facet>
+	<p:commandLink value="Retornar" action="Administrador.xhtml?faces-redirect=true"></p:commandLink>
+	</p:column>
+	</p:dataTable>
+	</h:form>
 </body>
 </html>

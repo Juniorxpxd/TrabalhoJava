@@ -31,9 +31,13 @@ public class MAgenciaBean {
 		this.agencia = a;
 		return "AlterarAgencia.xhtml?faces-redirect=true";
 	}
-
 	public String alterarAgencia(Agencia a) {
 		AgenciaDAO.alterarAgencia(a);
+		agencia = new Agencia();
+		return "ListarAgencia.xhtml?faces-redirect=true";
+	}
+	public String removerAgencia(Agencia a) {
+		AgenciaDAO.removerAgencia(a);
 		agencia = new Agencia();
 		return "ListarAgencia.xhtml?faces-redirect=true";
 	}
