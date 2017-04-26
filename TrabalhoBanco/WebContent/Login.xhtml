@@ -70,19 +70,20 @@
 	</h:form>
 	<br/>
 	Ou login por Administrador
-		<h:form>
-		<p:panelGrid colums="3" style="margin-left: 10px; margin-bottom:20px" >
-		<p:messages id="messages3" />
+	<h:form>
+		<p:panelGrid colums="1" style="margin-left: 10px; margin-bottom:20px" >
+		<p:messages id="messages" />
 		<p:outputLabel for="Email" value="• Email:" />
-		• Email: <p:inputText id="Email" pt:placeholder="Digite o email"></p:inputText>
+		<p:inputText id="Email" value="#{mAdministradorBean.administrador.email}" pt:placeholder="Digite o e-mail"></p:inputText>
 		<br/>
 		<br/>
-		• Senha:<p:inputText id="Senha" pt:placeholder="Digite a senha"></p:inputText>
+		<p:outputLabel for="Senha" value="• Senha:" />
+		<p:password id="Senha" value="#{mAdministradorBean.administrador.senha}" pt:placeholder="Digite a senha"></p:password>
 		<br/>
 		<br/>
 		<b:icon name="glyphicon-log-in"></b:icon>
-		<p:commandButton value="Login" action="#"></p:commandButton>
-		</p:panelGrid>
+	<p:commandButton value="Login" action="#{mAdministradorBean.enviar}" ajax="false"></p:commandButton>
+	</p:panelGrid>
 	</h:form>
 </body>
 </html>

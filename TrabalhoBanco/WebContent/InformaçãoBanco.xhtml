@@ -11,8 +11,9 @@
 	<link rel="stylesheet" type="text/css" href="bootstrap.css" />
 	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="Script.js"></script>
-	<title>Cadastro Cliente</title>
+	<title>Informação banco</title>
 </h:head>
+<h:body>
 <nav class="navbar navbar-default">
 	<div class="container-fluid">
 		<div class="navbar-header">
@@ -28,7 +29,7 @@
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 				<li><a href="#">Informações</a></li>
-				<li><a href="CadastroCliente.xhtml">Cadastro</a></li>
+				<li><a href="#">Cadastro</a></li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown" role="button" aria-expanded="false">Ajuda
 						<span class="caret"></span>
@@ -55,28 +56,15 @@
 		</div>
 	</div>
 </nav>
-<h:body>
-	<h:form acceptcharset="ISO-8859-1">
-	<fieldset>
-		<h1>Cadastrar Endereço</h1>
-		<h:selectOneMenu value="#{mEnderecoBean.idCad}">
-			<f:selectItem itemLabel="Selecione o cadastro" itemValue="0"></f:selectItem>
-			<f:selectItems value="#{mCadastroBean.cadastros}" var="cadastro" itemLabel="#{cadastro.nome}" itemValue="#{cadastro.idCad}"></f:selectItems>
-		</h:selectOneMenu>
-		<br/>
-		<br/>
-			<h:outputText value="• Endereço: "/> 
-			<br/> →<p:inputText id="Cep" required="true" pt:placeholder="CEP" value="#{mEnderecoBean.endereco.cep}"></p:inputText>
-			<br/> →<p:inputText id="Rua" required="true" pt:placeholder="Rua" value="#{mEnderecoBean.endereco.rua}"><f:validateLength minimun="10" maximum="100"/></p:inputText>
-			<br/> →<p:inputText id="Num" required="true" pt:placeholder="Número" value="#{mEnderecoBean.endereco.numero}"></p:inputText>
-			<br/> →<p:inputText id="Bairro" required="true" pt:placeholder="Bairro" value="#{mEnderecoBean.endereco.bairro}"></p:inputText>
-			<br/> →<p:inputText id="Cidade" required="true" pt:placeholder="Cidade" value="#{mEnderecoBean.endereco.cidade}"></p:inputText>
-			<br/> →<p:inputText id="Estado" required="true" pt:placeholder="Estado" value="#{mEnderecoBean.endereco.estado}"></p:inputText>
-			<br/> →<p:inputText id="Pais" required="true" pt:placeholder="País" value="#{mEnderecoBean.endereco.pais}"></p:inputText>
-			<br/>
-			<br/> 
-			<h:commandButton value="Próximo Passo" action="#{mEnderecoBean.gravarEndereco(mEnderecoBean.endereco)}"></h:commandButton>
-	</fieldset>
-	</h:form>
-	</h:body>
+<h:form acceptcharset="ISO-8859-1">
+<fieldset>
+<h1>Descrição do banco</h1>
+
+<h2><p>O EvilMoney é o maior banco privado do Mundo, primeiro no ranking da Forbs. Mas nosso objetivo vai muito além disso,
+ razão por trás de nossas operações está na visão de que, como banco, devemos contribuir para que as pessoas e as empresas tenham uma relação saudável com o dinheiro e
+  façam boas escolhas financeiras O propósito da nossa marca é promover mudanças positivas na vida das pessoas e da sociedade. Nossa responsabilidade com o desenvolvimento do país está na nossa essência. 
+  Investimos em projetos ligados à educação, cultura, esportes e mobilidade</p></h2>
+</fieldset>
+</h:form>
+</h:body>
 </html>

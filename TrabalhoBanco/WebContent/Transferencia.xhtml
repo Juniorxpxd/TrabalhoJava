@@ -59,33 +59,58 @@
 <h:body>
 	<h:form acceptcharset="ISO-8859-1">
 		<fieldset>
+<<<<<<< HEAD
 		
 <<<<<<< HEAD
 			<h1>Tranferencia </h1>
 =======
 			<h1>Tranferencia</h1>
 >>>>>>> branch 'master' of https://github.com/Juniorxpxd/TrabalhoJava.git
+=======
+			<h1>Transferência Bancaria</h1>
+>>>>>>> branch 'master' of https://github.com/Juniorxpxd/TrabalhoJava.git
 			<b:icon name="glyphicon-user"/> 
-			<h:outputText value=" Agencia: "/>
+			<h:inputHidden value="#{mCadastroBean.cadastro.idCad}"></h:inputHidden>
+			<p:outputLabel value="Nome: "></p:outputLabel>
+			<p:outputLabel value="#{mCadastroBean.cadastro.nome}"></p:outputLabel>
+			<br/>
+			<br/>
+			<b:icon name="glyphicon-user"/> 
+			<p:outputLabel value="Agencia: "></p:outputLabel>
+			<p:outputLabel value="#{mCadastroBean.cadastro.agencia.agencia}"></p:outputLabel>
+			<br/>
+			<br/>
+			<b:icon name="glyphicon-user"/> 
+			<p:outputLabel value="Conta: "></p:outputLabel>
+			<p:outputLabel value="#{mCadastroBean.cadastro.conta}"></p:outputLabel>
+			<br/>
+			<br/>
+			<b:icon name="glyphicon-user"/> 
+			<p:outputLabel value="Saldo atual: "></p:outputLabel>
+			<p:outputLabel value="R$#{mCadastroBean.cadastro.saldo}"></p:outputLabel>
+			<br/>
+			<br/>
+			<b:icon name="glyphicon-user"/> 
+			<h:outputText value=" Agência do outro cliente: "/>
 			<p:inputText id="Agencia" required="true" pt:placeholder="Digite a agencia" value="#{mAgenciaBean.agencia.agencia}"></p:inputText>
 			<br/> 
 			<br/> 
 			<b:icon name="glyphicon-user"/> 
-			<h:outputText value=" Numero da conta: "/>
+			<h:outputText value=" Número da conta do outro cliente: "/>
 			<p:inputText id="nconta" required="true" pt:placeholder="Digite o numero da conta" value="#{mContaBean.conta.conta}"></p:inputText>
 			<br/> 
 			<br/> 
 			<b:icon name="glyphicon-user"/> 
-			<h:outputText value="Valor a ser tranferido: "/>
+			<h:outputText value="Valor a ser transferido: "/>
 			<p:inputText id="vtrans" required="true" pt:placeholder="Digite o valor" value=""></p:inputText>
 			<br/> 
 			<br/> 
 			<b:icon name="glyphicon-user"/> 
-			<h:outputText value=" Data de Tranferencia: "/>
-			<p:inputText id="datatrans" required="true" pt:placeholder="Data de transferencia" value=""></p:inputText><br/> 
+			<h:outputText value=" Data de Transferência: "/>
+			<p:inputText id="datatrans" required="true" pt:placeholder="Data de transferência" value=""></p:inputText><br/> 
 			<br/>
 			<br/>
-				<h:commandButton value="Efetuar tranferencia" action="#{mCadastroBean.gravarCadastro(mCadastroBean.cadastro)}"></h:commandButton>
+			<h:commandButton value="Efetuar transferencia" action="#{mCadastroBean.gravarCadastro(mCadastroBean.cadastro)}"></h:commandButton>
 </fieldset>
 </h:form>
 </h:body>

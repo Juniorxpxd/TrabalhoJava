@@ -53,42 +53,44 @@
     </div>
   </div>
 </nav>
-	<h:form acceptcharset="ISO-8859-1" id="Endereco">
-	<h:panelGrid columns="1">
-	<h:inputHidden value="#{mEnderecoBean.endereco.idEnd}"></h:inputHidden>
-	<p:outputLabel value="CEP: "></p:outputLabel>
-	<p:inputText pt:placeholder="Digite o CEP" value="#{mEnderecoBean.endereco.cep}"></p:inputText>
+	<h:form acceptcharset="ISO-8859-1" id="Cadastro">
+	<h:outputText value=" Nome: "/>
+	<h:outputText value="#{mCadastroBean.cadastro.nome}"></h:outputText>
 	<br/>
 	<br/>
-	<p:outputLabel value="Rua: "></p:outputLabel>
-	<p:inputText pt:placeholder="Digite a Rua" value="#{mEnderecoBean.endereco.rua}"></p:inputText>
+	<h:outputText value=" Email: "/>
+	<h:outputText value="#{mCadastroBean.cadastro.email}"></h:outputText>
 	<br/>
 	<br/>
-	<p:outputLabel value="Número: "></p:outputLabel>
-	<p:inputText pt:placeholder="Digite o número" value="#{mEnderecoBean.endereco.numero}"></p:inputText>
+	<h:outputText value=" Telefone: "/>
+	<h:outputText value="#{mCadastroBean.cadastro.telefone}"></h:outputText>
 	<br/>
 	<br/>
-	<p:outputLabel value="Bairro: "></p:outputLabel>
-	<p:inputText pt:placeholder="Digite o bairro" value="#{mEnderecoBean.endereco.bairro}"></p:inputText>
+	<h:outputText value=" Data de Nascimento: "/>
+	<h:outputText value="#{mCadastroBean.cadastro.dataNasc}"></h:outputText>
 	<br/>
 	<br/>
-	<p:outputLabel value="Cidade: "></p:outputLabel>
-	<p:inputText pt:placeholder="Digite a cidade" value="#{mEnderecoBean.endereco.cidade}"></p:inputText>
+	<h:outputText value=" Sexo: "/>
+	<h:outputText value="#{mCadastroBean.cadastro.sexo}"></h:outputText>
 	<br/>
 	<br/>
-	<p:outputLabel value="Estado: "></p:outputLabel>
-	<p:inputText pt:placeholder="Digite o estado" value="#{mEnderecoBean.endereco.estado}"></p:inputText>
+	<h:outputText value=" RG: "/>
+	<h:outputText value="#{mCadastroBean.cadastro.rg}"></h:outputText>
 	<br/>
 	<br/>
-	<p:outputLabel value="País: "></p:outputLabel>
-	<p:inputText pt:placeholder="Digite o país" value="#{mEnderecoBean.endereco.pais}"></p:inputText>
+	<h:outputText value=" Saldo: "/>
+	<h:outputText value="R$#{mCadastroBean.cadastro.saldo}"></h:outputText>
 	<br/>
 	<br/>
-	<p:commandButton value="Alterar" action="#{mEnderecoBean.alterarEndereco(mEnderecoBean.endereco)}"></p:commandButton>
+	<h:outputText value=" Agência: "/>
+	<h:outputText value="#{mCadastroBean.cadastro.agencia.agencia}"></h:outputText>
 	<br/>
 	<br/>
-	<p:commandButton value="Retornar" action="ListarEndereco.xhtml?faces-redirect=true"></p:commandButton>
-	</h:panelGrid>
+	<h:outputText value=" Conta: "/>
+	<h:outputText value="#{mCadastroBean.cadastro.conta}"></h:outputText>
+	<br/>
+	<br/>
+	<p:commandButton value="Retornar" action="BuscarCliente.xhtml?faces-redirect=true"></p:commandButton>
 	</h:form>
 </body>
 </html>

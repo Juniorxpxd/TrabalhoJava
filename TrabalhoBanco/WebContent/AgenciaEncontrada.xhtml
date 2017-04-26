@@ -53,42 +53,16 @@
     </div>
   </div>
 </nav>
-	<h:form acceptcharset="ISO-8859-1" id="Endereco">
-	<h:panelGrid columns="1">
-	<h:inputHidden value="#{mEnderecoBean.endereco.idEnd}"></h:inputHidden>
-	<p:outputLabel value="CEP: "></p:outputLabel>
-	<p:inputText pt:placeholder="Digite o CEP" value="#{mEnderecoBean.endereco.cep}"></p:inputText>
+	<h:form acceptcharset="ISO-8859-1" id="Agencia">
+	<h:outputText value=" Agência: "/>
+	<h:outputText value="#{mAgenciaBean.agencia.agencia}"></h:outputText>
 	<br/>
 	<br/>
-	<p:outputLabel value="Rua: "></p:outputLabel>
-	<p:inputText pt:placeholder="Digite a Rua" value="#{mEnderecoBean.endereco.rua}"></p:inputText>
+	<h:outputText value=" Nome da Agência: "/>
+	<h:outputText value="#{mAgenciaBean.agencia.nome}"></h:outputText>
 	<br/>
 	<br/>
-	<p:outputLabel value="Número: "></p:outputLabel>
-	<p:inputText pt:placeholder="Digite o número" value="#{mEnderecoBean.endereco.numero}"></p:inputText>
-	<br/>
-	<br/>
-	<p:outputLabel value="Bairro: "></p:outputLabel>
-	<p:inputText pt:placeholder="Digite o bairro" value="#{mEnderecoBean.endereco.bairro}"></p:inputText>
-	<br/>
-	<br/>
-	<p:outputLabel value="Cidade: "></p:outputLabel>
-	<p:inputText pt:placeholder="Digite a cidade" value="#{mEnderecoBean.endereco.cidade}"></p:inputText>
-	<br/>
-	<br/>
-	<p:outputLabel value="Estado: "></p:outputLabel>
-	<p:inputText pt:placeholder="Digite o estado" value="#{mEnderecoBean.endereco.estado}"></p:inputText>
-	<br/>
-	<br/>
-	<p:outputLabel value="País: "></p:outputLabel>
-	<p:inputText pt:placeholder="Digite o país" value="#{mEnderecoBean.endereco.pais}"></p:inputText>
-	<br/>
-	<br/>
-	<p:commandButton value="Alterar" action="#{mEnderecoBean.alterarEndereco(mEnderecoBean.endereco)}"></p:commandButton>
-	<br/>
-	<br/>
-	<p:commandButton value="Retornar" action="ListarEndereco.xhtml?faces-redirect=true"></p:commandButton>
-	</h:panelGrid>
+	<p:commandButton value="Retornar" action="BuscarAgencia.xhtml?faces-redirect=true"></p:commandButton>
 	</h:form>
 </body>
 </html>

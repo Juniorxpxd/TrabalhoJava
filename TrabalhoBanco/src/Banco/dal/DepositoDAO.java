@@ -31,7 +31,7 @@ public class DepositoDAO {
 		}
 	public static List<Deposito> retornarLista(){
 		EntityManager em = Conexao.getEntityManager();
-		Query q = em.createQuery("SELECT d FROM Deposito d");
+		Query d = em.createQuery("SELECT d FROM Deposito d");
 		List<Deposito> lista = d.getResultList();
 		em.close();
 		return lista;

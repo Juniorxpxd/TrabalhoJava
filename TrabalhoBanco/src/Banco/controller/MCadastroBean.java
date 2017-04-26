@@ -81,7 +81,16 @@ public class MCadastroBean {
 		cadastro = new Cadastro();
 		return "Endereco.xhtml?faces-redirect=true";
 	}
-	
+	public String buscarCadastro(){
+		 cadastro = CadastroDAO.buscarCadastroPorNome(cadastro.getNome());
+			if(cadastro == null){
+				cadastro = new Cadastro();
+				FacesContext.getCurrentInstance().addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Nome não encontrado!","Erro na Busca!"));
+			       return null;
+			   } else {
+				   return "ClienteEncontrado.xhtml?faces-redirect=true";
+			   }
+		}
 	public String enviar(){
 		cadastro = CadastroDAO.getCadastro(cadastro.getEmail(), cadastro.getSenha());
 		if(cadastro == null){
@@ -96,4 +105,33 @@ public class MCadastroBean {
 		FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
         return "Index.xhtml?faces-redirect=true";
 	}
+	
+	private float saldo;
+	private float poupança;
+	private float result;
+
+	public float getSaldo() {
+		return cadastro.getSaldo();
+	}
+	public float getPoupança() {
+		return cadastro.getPoupanca();
+	}
+	public float getResult() {
+		return result;
+	}
+	public void setSaldo(float saldo) {
+		this.saldo = saldo;
+	}
+	public void setPoupança(float poupança) {
+		this.poupança = poupança;
+	}
+	public void setResult(float result) {
+		this.result = result;
+	}
+	
+	public void calcular(){
+		this.result = this.saldo+this.poupança;
+	}
+	
+	
 }

@@ -61,21 +61,36 @@
 	<ui:composition template="Template.xhtml">
 		<ui:define name="conteudo">
 		<h1>• Área do Administrador</h1>
+		<h:inputHidden value="#{mAdministradorBean.administrador.idAdm}"></h:inputHidden>
+		<p:outputLabel value="Nome: "></p:outputLabel>
+		<p:outputLabel value="#{mAdministradorBean.administrador.nome}"></p:outputLabel>
+		<br/>
+		<br/>
+		<p:outputLabel value="Email: "></p:outputLabel>
+		<p:outputLabel value="#{mAdministradorBean.administrador.email}"></p:outputLabel>
+		<br/>
+		<br/>
 		<nav>
 	<p:menubar>
 		<p:submenu label="Listas">
 			<p:menuitem value="Cliente" url="ListarCliente.xhtml"/>
 			<p:menuitem value="Endereços" url="ListarEndereco.xhtml"/>
 			<p:menuitem value="Cartões" url="ListarCartao.xhtml"/>
-			<p:menuitem value="Pessoa" url="ListarPessoa.xhtml"/>
+			<p:menuitem value="Pessoas" url="ListarPessoa.xhtml"/>
 			<p:menuitem value="Agências" url="ListarAgencia.xhtml"/>
 			<p:menuitem value="Saldo" url="ListarSaldo.xhtml"/>
+			<p:menuitem value="Administrador" url="ListarAdm.xhtml"/>
 		</p:submenu>
 		<p:submenu label="Cadastrar">
 		<p:menuitem value="Agências" url="Agencia.xhtml"></p:menuitem>
 		</p:submenu>
 		<p:submenu label="Inserir Dados">
 		<p:menuitem value="Conta" url="InserirConta.xhtml"></p:menuitem>
+		</p:submenu>
+		<p:submenu label="Buscar">
+		<p:menuitem value="Cliente" url="BuscarCliente.xhtml"></p:menuitem>
+		<p:menuitem value="Endereços" url="BuscarEndereco.xhtml"></p:menuitem>
+		<p:menuitem value="Agências" url="BuscarAgencia.xhtml"></p:menuitem>
 		</p:submenu>
 	</p:menubar>
 	</nav>	

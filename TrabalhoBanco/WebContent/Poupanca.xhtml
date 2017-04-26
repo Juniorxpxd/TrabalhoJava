@@ -58,14 +58,24 @@
 </nav>
 <h:form acceptcharset="ISO-8859-1">
 <fieldset>
-<h1>Poupança do Cliente</h1>
-<p:outputLabel style="font-size: 25px;" value="Saldo: "></p:outputLabel>
+		<h1>Poupança do Cliente</h1>
+		<p:outputLabel style="font-size: 25px;" value="Cliente: "></p:outputLabel>
+		<p:outputLabel style="font-size: 20px;" value="#{mCadastroBean.cadastro.nome}"></p:outputLabel>
+		<br/>
+		<br/>
+		<p:outputLabel style="font-size: 25px;" value="Saldo: "></p:outputLabel>
 		<p:outputLabel style="font-size: 20px;" value="R$#{mCadastroBean.cadastro.saldo}"></p:outputLabel>
 		<br/>
-<h:outputText value="Valor total: "/>
-			<p:inputText id="poupanca" required="true" pt:placeholder="" value=""></p:inputText>
-			
-			
+		<br/>
+		<p:outputLabel style="font-size: 25px;" value="Saldo na Poupança: "></p:outputLabel>
+		<p:outputLabel style="font-size: 20px;" value="R$#{mCadastroBean.cadastro.poupanca}"></p:outputLabel>
+		<br/>
+		<br/>
+		<p:outputLabel style="font-size: 25px;" value="Inserir saldo na poupança: "></p:outputLabel>
+		<p:inputText id="poupanca" required="true" pt:placeholder="Inserir saldo na poupança" value="#{mCadastroBean.cadastro.poupanca}"></p:inputText>		
+		<br/>
+		<br/>
+		<p:commandButton value="Inserir" action="#{mCadastroBean.calcular}"></p:commandButton>
 </fieldset>
 </h:form>
 </h:body>
