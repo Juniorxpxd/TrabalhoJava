@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	  xmlns:h="http://java.sun.com/jsf/html"
-	  xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
-	  xmlns:f= "http://java.sun.com/jsf/core"
-	  xmlns:b= "http://bootsfaces.net/ui"
-	  xmlns:p="http://primefaces.org/ui"
-	  xmlns:ui="http://java.sun.com/jsf/facelets">
-	<h:head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<link rel="stylesheet" type="text/css" href="bootstrap.css"/>
-		<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
-		<script type="text/javascript" src="Script.js"></script>
-		<title>Listar Saldo</title>
-	</h:head>
-<body>
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:b="http://bootsfaces.net/ui" 
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="bootstrap.css" />
+	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="Script.js"></script>
+	<title>Informação do Banco</title>
+</h:head>
+<h:body>
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -49,24 +48,14 @@
     </div>
   </div>
 </nav>
-	<h:form acceptcharset="ISO-8859-1" id="Cadastro">
-	<p:dataTable  value="#{mCadastroBean.cadastros}" var="cadastroCliente" >
-	<p:column><f:facet name="header">Nome</f:facet>
-	<h:outputText value="#{cadastroCliente.nome}"></h:outputText>
-	</p:column>
-	<p:column><f:facet name="header">Saldo</f:facet>
-	<h:outputText value="#{cadastroCliente.saldo}"></h:outputText>
-	</p:column>
-	<p:column><f:facet name="header">Alterar</f:facet>
-	<p:commandLink  value="Alterar" action="#{mCadastroBean.enviarDadosParaAlterar2(cadastroCliente)}"></p:commandLink>
-	</p:column>
-	<p:column><f:facet name="header">Remover</f:facet>
-	<p:commandLink  value="Remover" action="#{mCadastroBean.removerCadastro(cadastroCliente)}"></p:commandLink>
-	</p:column>
-	<p:column><f:facet name="header">Retornar</f:facet>
-	<p:commandLink value="Retornar" action="Administrador.xhtml?faces-redirect=true"></p:commandLink>
-	</p:column>
-	</p:dataTable>
-	</h:form>
-</body>
+<h:form acceptcharset="ISO-8859-1">
+<h1>Descrição do banco</h1>
+<p>O EvilMoney é o maior banco privado do Mundo, primeiro no ranking da Forbs. Mas nosso objetivo vai muito além disso,
+ razão por trás de nossas operações está na visão de que, como banco, devemos contribuir para que as pessoas e as empresas tenham uma relação saudável com o dinheiro e
+  façam boas escolhas financeiras O propósito da nossa marca é promover mudanças positivas na vida das pessoas e da sociedade. Nossa responsabilidade com o desenvolvimento do país está na nossa essência. 
+  Investimos em projetos ligados à educação, cultura, esportes e mobilidade</p>
+  <br/>
+  <H3>O banco EvilMoney foi criado em 26/04/2017 com uma longa história de uma exelente prestação de serviços, ele foi fundado por Osvaldo Turatto e Petterson Jung.</H3>
+</h:form>
+</h:body>
 </html>

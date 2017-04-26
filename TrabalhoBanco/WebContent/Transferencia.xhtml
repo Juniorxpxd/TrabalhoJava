@@ -11,64 +11,47 @@
 	<link rel="stylesheet" type="text/css" href="bootstrap.css" />
 	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="Script.js"></script>
-	<title>Tranferencia</title>
+	<title>Transferência</title>
 </h:head>
 <nav class="navbar navbar-default">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed"
-				data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-				<span class="sr-only">Toggle navigation</span> <span
-					class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="Index.xhtml">EvilMoney</a>
-		</div>
-
-		<div class="collapse navbar-collapse"
-			id="bs-example-navbar-collapse-1">
-			<ul class="nav navbar-nav">
-				<li><a href="#">Informações</a></li>
-				<li><a href="#">Cadastro</a></li>
-				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown" role="button" aria-expanded="false">Ajuda
-						<span class="caret"></span>
-				</a>
-					<ul class="dropdown-menu" role="menu">
-						<li><a href="Contato.xhtml">Contato</a></li>
-						<li><a href="SAC.xhtml">SAC</a></li>
-						<li><a href="Ouvidoria.xhtml">Ouvidoria</a></li>
-						<li class="divider"></li>
-						<li><a href="#">TESTE</a></li>
-						<li class="divider"></li>
-						<li><a href="#">TESTE 23211232</a></li>
-					</ul></li>
-			</ul>
-			<form class="navbar-form navbar-right" role="search">
-				<div class="form-group">
-					<input type="text" class="form-control" placeholder="Buscar" />
-				</div>
-				<button type="submit" class="btn btn-default">Buscar</button>
-			</form>
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="Login.xhtml">Login </a></li>
-			</ul>
-			
-		</div>
-	</div>
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="Index.xhtml">EvilMoney</a>
+    </div>
+ <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="InformacaoBanco.xhtml">Informações</a></li>
+        <li><a href="CadastroCliente.xhtml">Cadastro</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Ajuda <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="Contato.xhtml">Contato</a></li>
+            <li><a href="SAC.xhtml">SAC</a></li>
+            <li><a href="Ouvidoria.xhtml">Ouvidoria</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Buscar"/>
+        </div>
+        <button type="submit" class="btn btn-default">Buscar</button>
+              </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="Login.xhtml">Login</a></li>
+      </ul>
+    </div>
+  </div>
 </nav>
 <h:body>
 	<h:form acceptcharset="ISO-8859-1">
 		<fieldset>
-<<<<<<< HEAD
-		
-<<<<<<< HEAD
-			<h1>Tranferencia </h1>
-=======
-			<h1>Tranferencia</h1>
->>>>>>> branch 'master' of https://github.com/Juniorxpxd/TrabalhoJava.git
-=======
-			<h1>Transferência Bancaria</h1>
->>>>>>> branch 'master' of https://github.com/Juniorxpxd/TrabalhoJava.git
+
+			<h1>Transferência </h1>
 			<b:icon name="glyphicon-user"/> 
 			<h:inputHidden value="#{mCadastroBean.cadastro.idCad}"></h:inputHidden>
 			<p:outputLabel value="Nome: "></p:outputLabel>
@@ -92,81 +75,29 @@
 			<br/>
 			<b:icon name="glyphicon-user"/> 
 			<h:outputText value=" Agência do outro cliente: "/>
-			<p:inputText id="Agencia" required="true" pt:placeholder="Digite a agencia" value="#{mAgenciaBean.agencia.agencia}"></p:inputText>
+			<p:inputText id="Agencia" pt:placeholder="Digite a agencia" value="#{mAgenciaBean.agencia.agencia}"></p:inputText>
 			<br/> 
 			<br/> 
 			<b:icon name="glyphicon-user"/> 
 			<h:outputText value=" Número da conta do outro cliente: "/>
-			<p:inputText id="nconta" required="true" pt:placeholder="Digite o numero da conta" value="#{mContaBean.conta.conta}"></p:inputText>
+			<p:inputText id="nconta" pt:placeholder="Digite o numero da conta" value="#{mContaBean.conta.conta}"></p:inputText>
 			<br/> 
 			<br/> 
 			<b:icon name="glyphicon-user"/> 
 			<h:outputText value="Valor a ser transferido: "/>
-			<p:inputText id="vtrans" required="true" pt:placeholder="Digite o valor" value=""></p:inputText>
+			<p:inputText id="vtrans" pt:placeholder="Digite o valor"></p:inputText>
 			<br/> 
 			<br/> 
 			<b:icon name="glyphicon-user"/> 
 			<h:outputText value=" Data de Transferência: "/>
-			<p:inputText id="datatrans" required="true" pt:placeholder="Data de transferência" value=""></p:inputText><br/> 
+			<p:inputText id="datatrans" pt:placeholder="Data de transferência"></p:inputText><br/> 
 			<br/>
 			<br/>
 			<h:commandButton value="Efetuar transferencia" action="#{mCadastroBean.gravarCadastro(mCadastroBean.cadastro)}"></h:commandButton>
+			<br/>
+			<br/>
+			<h:commandButton value="Retornar" action="AreaCliente.xhtml?faces-redirect=true"></h:commandButton>
 </fieldset>
 </h:form>
 </h:body>
 </html>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
