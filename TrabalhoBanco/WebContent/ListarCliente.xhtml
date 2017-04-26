@@ -76,6 +76,9 @@
 	<p:column><f:facet name="header">Agencia</f:facet>
 	<h:outputText value="#{cadastroCliente.agencia.agencia}"></h:outputText>
 	</p:column>
+	<p:column><f:facet name="header">Conta</f:facet>
+	<h:outputText value="#{cadastroCliente.conta}"></h:outputText>
+	</p:column>
 	<p:column><f:facet name="header">Alterar</f:facet>
 	<p:commandLink  value="Alterar" action="#{mCadastroBean.enviarDadosParaAlterar(cadastroCliente)}"></p:commandLink>
 	</p:column>

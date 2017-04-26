@@ -65,7 +65,7 @@ public class CadastroDAO {
 		return em.find(Cadastro.class, id);
 	}
 
-	public static Cadastro getCadastro(String email, String senha) {
+	public static Cadastro getCadastro(String email, String senha){
 		try {
 			EntityManager em = Conexao.getEntityManager();
 			Cadastro cadastro = (Cadastro) em .createQuery("SELECT c FROM Cadastro c where c.email = :email and c.senha = :senha").setParameter("email", email).setParameter("senha", senha).getSingleResult();
@@ -75,9 +75,12 @@ public class CadastroDAO {
 		}
 	}
 	public static Cadastro buscarCadastroPorNome(String nome){
-		EntityManager em = Conexao.getEntityManager();
-		Query query = em.createQuery("SELECT c FROM Cadastro c WHERE c.nome = :nome",Cadastro.class);
-		query.setParameter("nome", nome);
-		return (Cadastro) query.getResultList().get(0);
+		try {
+			EntityManager em = Conexao.getEntityManager();
+			Cadastro cadastro = (Cadastro) em.createQuery("SELECT c FROM Cadastro c WHERE c.nome = :nome").setParameter("nome", nome).getSingleResult();
+			return cadastro;
+		} catch (NoResultException e) {
+			return null;
+		}
 	}
 }

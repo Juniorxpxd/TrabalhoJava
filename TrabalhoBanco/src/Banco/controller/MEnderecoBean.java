@@ -4,8 +4,10 @@ import java.util.ArrayList;
 
 import java.util.List;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 import Banco.dal.CadastroDAO;
 import Banco.dal.EnderecoDAO;
@@ -60,4 +62,14 @@ public class MEnderecoBean {
 		endereco = new Endereco();
 		return "Pessoa.xhtml?faces-redirect=true";
 	}
+	public String buscarEndereco(){
+		 endereco = EnderecoDAO.buscarEnderecoPorCEP(endereco.getCep());
+			if(endereco == null){
+				endereco = new Endereco();
+				FacesContext.getCurrentInstance().addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "CEP não encontrado!","Erro na Busca!"));
+			       return null;
+			   } else {
+				   return "EnderecoEncontrado.xhtml?faces-redirect=true";
+			   }
+		}
 }

@@ -81,7 +81,16 @@ public class MCadastroBean {
 		cadastro = new Cadastro();
 		return "Endereco.xhtml?faces-redirect=true";
 	}
-	
+	public String buscarCadastro(){
+		 cadastro = CadastroDAO.buscarCadastroPorNome(cadastro.getNome());
+			if(cadastro == null){
+				cadastro = new Cadastro();
+				FacesContext.getCurrentInstance().addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR, "Nome não encontrado!","Erro na Busca!"));
+			       return null;
+			   } else {
+				   return "ClienteEncontrado.xhtml?faces-redirect=true";
+			   }
+		}
 	public String enviar(){
 		cadastro = CadastroDAO.getCadastro(cadastro.getEmail(), cadastro.getSenha());
 		if(cadastro == null){
