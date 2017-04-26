@@ -27,18 +27,23 @@ public class Cadastro{
 	private String telefone;
 	private String datanasc;
 	private String sexo;
-	private float saldo = 50;
-	private float poupanca = 20;
+	private double saldo = 50;
+	private double poupanca = 20;
 	private String rg;
 	private int conta = 1;
 	@ManyToOne
 	private Agencia agencia;
 	
-	
-	public float getPoupanca() {
+	public double getSaldo() {
+		return saldo;
+	}
+	public double getPoupanca() {
 		return poupanca;
 	}
-	public void setPoupanca(float poupanca) {
+	public void setSaldo(double saldo) {
+		this.saldo = saldo;
+	}
+	public void setPoupanca(double poupanca) {
 		this.poupanca = poupanca;
 	}
 	public int getConta() {
@@ -46,12 +51,6 @@ public class Cadastro{
 	}
 	public void setConta(int conta) {
 		this.conta = conta;
-	}
-	public float getSaldo() {
-		return saldo;
-	}
-	public void setSaldo(float saldo) {
-		this.saldo = saldo;
 	}
 	public Agencia getAgencia() {
 		return agencia;

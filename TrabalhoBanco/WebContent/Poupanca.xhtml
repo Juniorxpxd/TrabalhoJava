@@ -56,27 +56,25 @@
 		</div>
 	</div>
 </nav>
-<h:form acceptcharset="ISO-8859-1">
-<fieldset>
-		<h1>Poupança do Cliente</h1>
-		<p:outputLabel style="font-size: 25px;" value="Cliente: "></p:outputLabel>
-		<p:outputLabel style="font-size: 20px;" value="#{mCadastroBean.cadastro.nome}"></p:outputLabel>
-		<br/>
-		<br/>
-		<p:outputLabel style="font-size: 25px;" value="Saldo: "></p:outputLabel>
-		<p:outputLabel style="font-size: 20px;" value="R$#{mCadastroBean.cadastro.saldo}"></p:outputLabel>
-		<br/>
-		<br/>
-		<p:outputLabel style="font-size: 25px;" value="Saldo na Poupança: "></p:outputLabel>
-		<p:outputLabel style="font-size: 20px;" value="R$#{mCadastroBean.cadastro.poupanca}"></p:outputLabel>
-		<br/>
-		<br/>
-		<p:outputLabel style="font-size: 25px;" value="Inserir saldo na poupança: "></p:outputLabel>
-		<p:inputText id="poupanca" required="true" pt:placeholder="Inserir saldo na poupança" value="#{mCadastroBean.cadastro.poupanca}"></p:inputText>		
-		<br/>
-		<br/>
-		<p:commandButton value="Inserir" action="#{mCadastroBean.calcular}"></p:commandButton>
-</fieldset>
+<h:form acceptcharset="ISO-8859-1" id="Cadastro">
+	<h1>Poupança do Cliente</h1>
+	<p:dataTable  value="#{mCadastroBean.cadastros}" var="cadastroPoupanca" >
+		<p:column><f:facet name="header">Nome</f:facet>
+		<h:outputText value="#{cadastroPoupanca.nome}"></h:outputText>
+		</p:column>
+		<p:column><f:facet name="header">Saldo</f:facet>
+		<h:outputText value="#{cadastroPoupanca.saldo}"></h:outputText>
+		</p:column>
+		<p:column><f:facet name="header">Poupança</f:facet>
+		<h:outputText value="#{cadastroPoupanca.poupanca}"></h:outputText>
+		</p:column>
+		<p:column><f:facet name="header">Inserir</f:facet>
+		<h:commandLink value="Inserir" action="#{mCadastroBean.enviarDadosParaAlterar4(cadastroPoupanca)}"></h:commandLink>
+		</p:column>
+		<p:column><f:facet name="header">Retornar</f:facet>
+		<h:commandLink value="Retornar" action="AreaCliente.xhtml"></h:commandLink>
+		</p:column>
+	</p:dataTable>
 </h:form>
 </h:body>
 </html>

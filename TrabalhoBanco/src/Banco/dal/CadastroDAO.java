@@ -55,6 +55,7 @@ public class CadastroDAO {
 		cadastro.setAgencia(c.getAgencia());
 		cadastro.setSaldo(c.getSaldo());
 		cadastro.setConta(c.getConta());
+		cadastro.setPoupanca(c.getPoupanca());
 		em.merge(cadastro);
 		em.getTransaction().commit();
 		em.close();

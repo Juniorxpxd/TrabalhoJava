@@ -105,33 +105,59 @@ public class MCadastroBean {
 		FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
         return "Index.xhtml?faces-redirect=true";
 	}
-	
-	private float saldo;
-	private float poupança;
-	private float result;
+	/*
+	 private double saldo = 0;
+	 private double poupanca = 0;
+	 private double resultado = 0;
+	 private double resultado2 = 0;
+	 
 
-	public float getSaldo() {
-		return cadastro.getSaldo();
+	 public double getResultado2() {
+		return resultado2;
 	}
-	public float getPoupança() {
-		return cadastro.getPoupanca();
+	public void setResultado2(double resultado2) {
+		this.resultado2 = resultado2;
 	}
-	public float getResult() {
-		return result;
+	public double getSaldo()
+	 {
+	 return saldo = cadastro.getSaldo();
+	 }
+
+	 public double getPoupanca()
+	 {
+	 return poupanca = cadastro.getPoupanca();
+	 }
+
+	 public double getResultado()
+	 {
+	 return resultado;
+	 }
+	 public void setResultado(double resultado)
+	 {
+	 this.resultado = resultado;
+	 }
+	 public void setSaldo(double saldo2)
+	 {
+	 saldo = saldo2;
+	 }
+	 public void setPoupanca(double poupanca2)
+	 {
+	 poupanca = poupanca2;
+	 }
+	public void calcular() {
+		resultado = saldo + poupanca;
+		resultado2 = poupanca - resultado;
+		cadastro.setPoupanca(poupanca);
+		cadastro.setSaldo(resultado2);
 	}
-	public void setSaldo(float saldo) {
-		this.saldo = saldo;
+	*/
+	public String enviarDadosParaAlterar4(Cadastro c) {
+		this.cadastro = c;
+		return "AlterarPoupanca.xhtml?faces-redirect=true";
 	}
-	public void setPoupança(float poupança) {
-		this.poupança = poupança;
+	public String alterarPoupanca(Cadastro c) {
+		CadastroDAO.alterarCadastro(c);
+		cadastro = new Cadastro();
+		return "Poupanca.xhtml?faces-redirect=true";
 	}
-	public void setResult(float result) {
-		this.result = result;
-	}
-	
-	public void calcular(){
-		this.result = this.saldo+this.poupança;
-	}
-	
-	
 }
