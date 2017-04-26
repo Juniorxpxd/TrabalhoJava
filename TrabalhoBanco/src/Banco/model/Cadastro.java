@@ -28,11 +28,19 @@ public class Cadastro{
 	private String datanasc;
 	private String sexo;
 	private float saldo = 50;
+	private float poupanca = 20;
 	private String rg;
 	private int conta = 1;
 	@ManyToOne
 	private Agencia agencia;
 	
+	
+	public float getPoupanca() {
+		return poupanca;
+	}
+	public void setPoupanca(float poupanca) {
+		this.poupanca = poupanca;
+	}
 	public int getConta() {
 		return conta;
 	}

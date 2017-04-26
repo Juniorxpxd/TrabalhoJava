@@ -4,10 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.Query;
 import javax.persistence.RollbackException;
 
 import Banco.model.Agencia;
+import Banco.model.Cadastro;
 
 public class AgenciaDAO {
 	private static ArrayList<Agencia> agencias = new ArrayList<Agencia>();
@@ -49,5 +51,14 @@ public class AgenciaDAO {
 	public static Agencia buscarAgenciaPorId(int id){
 		EntityManager em = Conexao.getEntityManager();
 		return em.find(Agencia.class, id);
+	}
+	public static Agencia buscarAgenciaPorAgencia(String agencia){
+		try {
+			EntityManager em = Conexao.getEntityManager();
+			Agencia a  = (Agencia) em.createQuery("SELECT a FROM Agencia a WHERE a.agencia = :agencia").setParameter("agencia", agencia).getSingleResult();
+			return a;
+		} catch (NoResultException e) {
+			return null;
+		}
 	}
 }

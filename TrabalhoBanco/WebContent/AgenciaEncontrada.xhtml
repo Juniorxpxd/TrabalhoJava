@@ -54,17 +54,15 @@
   </div>
 </nav>
 	<h:form acceptcharset="ISO-8859-1" id="Agencia">
-	<p:panelGrid colums="1" style="margin-left: 10px; margin-bottom:20px" >
-	<p:messages id="messages" />
-	<p:outputLabel value="• Agência a ser buscada:" />
-	<h:inputText pt:placeholder="Digite a Agência" value="#{mAgenciaBean.agencia.agencia}"></h:inputText>
+	<h:outputText value=" Agência: "/>
+	<h:outputText value="#{mAgenciaBean.agencia.agencia}"></h:outputText>
 	<br/>
 	<br/>
-	<h:commandButton value="Buscar" action="#{mAgenciaBean.buscarAgencia}" ajax="false"></h:commandButton>
+	<h:outputText value=" Nome da Agência: "/>
+	<h:outputText value="#{mAgenciaBean.agencia.nome}"></h:outputText>
 	<br/>
 	<br/>
-	<h:commandButton value="Retornar" action="Administrador.xhtml?faces-redirect=true"></h:commandButton>
-	</p:panelGrid>
+	<p:commandButton value="Retornar" action="BuscarAgencia.xhtml?faces-redirect=true"></p:commandButton>
 	</h:form>
 </body>
 </html>
