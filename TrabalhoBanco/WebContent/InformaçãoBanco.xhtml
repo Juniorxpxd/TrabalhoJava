@@ -11,8 +11,9 @@
 	<link rel="stylesheet" type="text/css" href="bootstrap.css" />
 	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="Script.js"></script>
-	<title>Cartão</title>
+	<title>Informação banco</title>
 </h:head>
+<h:body>
 <nav class="navbar navbar-default">
 	<div class="container-fluid">
 		<div class="navbar-header">
@@ -50,23 +51,23 @@
 				<button type="submit" class="btn btn-default">Buscar</button>
 			</form>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="Login.xhtml">Login </a></li>
+				<li><a href="Login.xhtml">Login</a></li>
 			</ul>
 		</div>
 	</div>
 </nav>
-<h:body>
-	<h:form acceptcharset="ISO-8859-1">
-		<fieldset>
-		<h1>Cadastrar Usúario</h1>
-			<b:icon name="glyphicon-user"/> 
-			<h:outputText value="Cliente: "/>
-			<p:inputText id="Cliente" required="true" pt:placeholder="Digite a agencia" value="#{mCadastroBean.cadastro.agencia}"></p:inputText>
-			<br/> 
-			<br/> 
-		</fieldset>
-		</h:form>
-		</h:body>
-		</html>
-		
-		
+<h:form acceptcharset="ISO-8859-1">
+<fieldset>
+<h1>Descrição do banco</h1>
+
+<h2><p>O EvilMoney é o maior banco privado do Mundo, primeiro no ranking da Forbs. Mas nosso objetivo vai muito além disso,
+ razão por trás de nossas operações está na visão de que, como banco, devemos contribuir para que as pessoas e as empresas tenham uma relação saudável com o dinheiro e
+  façam boas escolhas financeiras O propósito da nossa marca é promover mudanças positivas na vida das pessoas e da sociedade. Nossa responsabilidade com o desenvolvimento do país está na nossa essência. 
+  Investimos em projetos ligados à educação, cultura, esportes e mobilidade</p></h2>
+  <br>
+  </br>
+  <H3>O banco EvilMoney foi criado em 26/04/2017 com uma longa história de uma exelente prestação de serviços, ele foi fundado por Osvaldo Turrato e Petterson Jung.</H3>
+</fieldset>
+</h:form>
+</h:body>
+</html>
