@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	  xmlns:h="http://java.sun.com/jsf/html"
-	  xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
-	  xmlns:f= "http://java.sun.com/jsf/core"
-	  xmlns:b= "http://bootsfaces.net/ui"
-	  xmlns:p="http://primefaces.org/ui"
-	  xmlns:ui="http://java.sun.com/jsf/facelets">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:b="http://bootsfaces.net/ui" 
+	xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="bootstrap.css" />
@@ -49,24 +48,24 @@
   </div>
 </nav>
 <h:body>
-	<h:form acceptcharset="ISO-8859-1">
-		<fieldset>
-		<h1>Comprovantes</h1>
-			<b:icon name="glyphicon-user"/> 
-			<h:inputHidden value="#{mCadastroBean.cadastro.idCad}"></h:inputHidden>
-			<p:outputLabel value="Nome: "></p:outputLabel>
-			<p:outputLabel value="#{mCadastroBean.cadastro.nome}"></p:outputLabel>
-			<li><a href="ComprovanteEmp.xhtml">Empréstimo</a></li>
-			<br/>						
-			<li><a href="ComprovanteTra.xhtml">Transferência</a></li>
-			<br/>		
-			<li><a href="ComprovanteDep.xhtml">Depósito</a></li>
-			<br/>		
-			<li><a href="ComprovantePag.xhtml">Pagamentos</a></li>
-			<br/> 
-			<h:commandButton value="Retornar" action="AreaCliente.xhtml?faces-redirect=true"></h:commandButton>
-			<br/> 
-		</fieldset>
+	<h:form acceptcharset="ISO-8859-1" id="Pagamento">
+	<p:dataTable  value="#{mPagamentoBean.pagamentos}" var="cadastroPagamento" >
+	<p:column><f:facet name="header">Nome do cliente do Comprovante</f:facet>
+	<h:outputText value="#{cadastroPagamento.cadastro.nome}"></h:outputText>
+	</p:column>
+	<p:column><f:facet name="header">Valor Pago</f:facet>
+	<h:outputText value="R$#{cadastroPagamento.valor}"></h:outputText>
+	</p:column>
+	<p:column><f:facet name="header">Código de barras</f:facet>
+	<h:outputText value="#{cadastroPagamento.codBarras}"></h:outputText>
+	</p:column>
+	<p:column><f:facet name="header">Data do vencimento</f:facet>
+	<h:outputText value="#{cadastroPagamento.data}"></h:outputText>
+	</p:column>
+	<p:column><f:facet name="header">Retornar</f:facet>
+	<p:commandButton value="Retornar" action="Comprovante.xhtml?faces-redirect=true"></p:commandButton>
+	</p:column>
+	</p:dataTable>
 	</h:form>
 </h:body>
 </html>

@@ -50,27 +50,36 @@
 </nav>
 <h:form acceptcharset="ISO-8859-1">
 <fieldset>
-<h1>Efetuar pagamentos</h1>
-			<h:outputText value=" Código de barras"/>
-			<p:inputText id="codbarras" required="true" pt:placeholder="Codigo de barras"></p:inputText>
+	<h1>Efetuar pagamentos</h1>
+			<h:inputHidden value="#{mCadastroBean.cadastro.idCad}"></h:inputHidden>
+			<p:outputLabel value="Nome: "></p:outputLabel>
+			<p:outputLabel value="#{mCadastroBean.cadastro.nome}"></p:outputLabel>
+			<br/> 
+			<br/>
+			<h:outputText value=" Pessoa que ira pagar: "/>
+			<h:selectOneMenu value="#{mPagamentoBean.idCad}">
+			<f:selectItem itemLabel="Selecione o cliente para pagar" itemValue="0"></f:selectItem>
+			<f:selectItems value="#{mCadastroBean.cadastros}" var="cadastro" itemLabel="#{cadastro.nome}" itemValue="#{cadastro.idCad}"></f:selectItems>
+			</h:selectOneMenu>
+			<br/> 
+			<br/>
+			<h:outputText value=" Código de barras: "/>
+			<p:inputText id="codbarras" pt:placeholder="Codigo de barras" value="#{mPagamentoBean.pagamento.codBarras}"></p:inputText>
 			<br/> 
 			<br/>
 			<h:outputText value=" Data de Vencimento: "/>
-			<p:inputText id="datavenci" required="true" pt:placeholder="Data de vencimento"></p:inputText><br/> 
+			<p:inputText id="datavenci" pt:placeholder="Data de vencimento" value="#{mPagamentoBean.pagamento.data}"></p:inputText><br/> 
 			<br/>
-			<h:outputText value=" Valor do pagamento"/>
-			<p:inputText id="valorpag" required="true" pt:placeholder="Valor do pagamento"></p:inputText>
+			<br/>
+			<h:outputText value=" Valor do pagamento: "/>
+			<p:inputText id="valorpag"  pt:placeholder="Valor do pagamento" value="#{mPagamentoBean.pagamento.valor}"></p:inputText>
 			<br/> 
 			<br/>
-			<h:outputText value=" Identificacão de pagamento"/>
-			<p:inputText id="idpag" required="true" pt:placeholder="Identificacao de pagamento"></p:inputText> 
-			<br/> 
-			<br/>
-			<h:commandButton value="Pagar" action="#{mCadastroBean.gravarCadastro(mCadastroBean.cadastro)}"></h:commandButton>
+			<h:commandButton value="Pagar" action="#{mPagamentoBean.gravarPagamento(mPagamentoBean.pagamento)}"></h:commandButton>
 			<br/>
 			<br/>
+			<h:commandButton value="Retornar" action="AreaCliente.xhtml?faces-redirect=true"></h:commandButton>
 			</fieldset>
-			</h:form>
-			</h:body>
-			</html>
-			
+	</h:form>
+</h:body>
+</html>
