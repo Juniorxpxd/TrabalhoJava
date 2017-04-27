@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:b="http://bootsfaces.net/ui" 
-	xmlns:p="http://primefaces.org/ui">
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	  xmlns:f= "http://java.sun.com/jsf/core"
+	  xmlns:b= "http://bootsfaces.net/ui"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="bootstrap.css" />
@@ -52,6 +53,7 @@
 	<h:form acceptcharset="ISO-8859-1" id="Cliente">
 	<h:panelGrid columns="3">
 	<h:inputHidden value="#{mCadastroBean.cadastro.idCad}"></h:inputHidden>
+	
 	<p:outputLabel value="Nome: "></p:outputLabel>
 	<p:outputLabel value="#{mCadastroBean.cadastro.nome}"></p:outputLabel>
 	<br/>
@@ -77,28 +79,31 @@
 	<br/>
 	<br/>
 	<p:outputLabel value="Conta: "></p:outputLabel>
-	<p:outputLabel value="#{mCadastroBean.cadastro.conta}"></p:outputLabel>
-	</h:panelGrid>			
+	<p:outputLabel value="#{mCadastroBean.cadastro.conta}"></p:outputLabel>	
+	<br/>
+	<br/>
+	<p:outputLabel value="Cartão: "></p:outputLabel>
+	<h:outputText value="#{mCadastroBean.cadastro.cartao}"></h:outputText>
+	</h:panelGrid>
 			<h2>• Ir para</h2>
 			<br/>
 			<ul>
-		<li><a href="Saldo.xhtml">Saldo</a></li>
+			<li><a href="Saldo.xhtml">Saldo</a></li>
 			<br/>						
-		<li><a href="Transferencia.xhtml">Transferência</a></li>
+			<li><a href="Transferencia.xhtml">Transferência</a></li>
 			<br/>		
-		<li><a href="Deposito.xhtml">Depósito</a></li>
+			<li><a href="Deposito.xhtml">Depósito</a></li>
 			<br/>		
-		<li><a href="Pagamento.xhtml">Pagamentos</a></li>
+			<li><a href="Pagamento.xhtml">Pagamentos</a></li>
 			<br/>			
-		<li><a href="Emprestimo.xhtml">Empréstimo</a></li>
+			<li><a href="Emprestimo.xhtml">Empréstimo</a></li>
 			<br/>			
-		<li><a href="Poupanca.xhtml">Poupânça</a></li>
+			<li><a href="Poupanca.xhtml">Poupânça</a></li>
 			<br/>			
-		<li><a href="Comprovante.xhtml">Comprovantes</a></li>
+			<li><a href="Comprovante.xhtml">Comprovantes</a></li>
 			<br/>
-			</ul>	
+			</ul>
 			<p:commandButton value="Logout" action="#{mCadastroBean.logout}"></p:commandButton>		
-		
 		</h:form>
 	</h:body>
 </html>

@@ -31,9 +31,16 @@ public class Cadastro{
 	private double poupanca = 20;
 	private String rg;
 	private int conta = 1;
+	private String cartao;
 	@ManyToOne
 	private Agencia agencia;
 	
+	public String getCartao() {
+		return cartao;
+	}
+	public void setCartao(String cartao) {
+		this.cartao = cartao;
+	}
 	public double getSaldo() {
 		return saldo;
 	}

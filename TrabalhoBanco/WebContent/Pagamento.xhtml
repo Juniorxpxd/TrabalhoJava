@@ -51,22 +51,22 @@
 <h:form acceptcharset="ISO-8859-1">
 <fieldset>
 <h1>Efetuar pagamentos</h1>
-			<h:outputText value=" codigo de barras"/>
-			<p:inputText id="codbarras" required="true" pt:placeholder="Codigo de barras" value="#{mCadastroBean.cadastro.codigoB}"></p:inputText>
+			<h:outputText value=" Código de barras"/>
+			<p:inputText id="codbarras" required="true" pt:placeholder="Codigo de barras"></p:inputText>
 			<br/> 
 			<br/>
 			<h:outputText value=" Data de Vencimento: "/>
-			<p:inputText id="datavenci" required="true" pt:placeholder="Data de vencimento" value="#{mCadastroBean.cadastro.dataVenci}"></p:inputText><br/> 
+			<p:inputText id="datavenci" required="true" pt:placeholder="Data de vencimento"></p:inputText><br/> 
 			<br/>
-			<h:outputText value=" valor de pagmaneto"/>
-			<p:inputText id="valorpag" required="true" pt:placeholder="Valor do pagamento" value="#{mCadastroBean.cadastro.dataPaga}"></p:inputText>
+			<h:outputText value=" Valor do pagamento"/>
+			<p:inputText id="valorpag" required="true" pt:placeholder="Valor do pagamento"></p:inputText>
 			<br/> 
 			<br/>
-			<h:outputText value=" Identificacao de pagamento"/>
-			<p:inputText id="idpag" required="true" pt:placeholder="Identificacao de pagamento" value="#{mCadastroBean.cadastro.idPaga}"></p:inputText> 
+			<h:outputText value=" Identificacão de pagamento"/>
+			<p:inputText id="idpag" required="true" pt:placeholder="Identificacao de pagamento"></p:inputText> 
 			<br/> 
 			<br/>
-		<h:commandButton value="Próximo Passo" action="#{mCadastroBean.gravarCadastro(mCadastroBean.cadastro)}"></h:commandButton>
+			<h:commandButton value="Pagar" action="#{mCadastroBean.gravarCadastro(mCadastroBean.cadastro)}"></h:commandButton>
 			<br/>
 			<br/>
 			</fieldset>

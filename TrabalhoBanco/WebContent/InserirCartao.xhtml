@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	  xmlns:h="http://java.sun.com/jsf/html"
-	  xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
-	  xmlns:f= "http://java.sun.com/jsf/core"
-	  xmlns:b= "http://bootsfaces.net/ui"
-	  xmlns:p="http://primefaces.org/ui"
-	  xmlns:ui="http://java.sun.com/jsf/facelets">
-	<h:head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<link rel="stylesheet" type="text/css" href="bootstrap.css"/>
-		<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
-		<script type="text/javascript" src="Script.js"></script>
-		<title>Listar Cartões</title>
-	</h:head>
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:b="http://bootsfaces.net/ui" 
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="bootstrap.css" />
+	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="Script.js"></script>
+	<title>Inserir Cartão</title>
+</h:head>
 <body>
 <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -49,28 +48,22 @@
     </div>
   </div>
 </nav>
-	<h:form acceptcharset="ISO-8859-1" id="Cartao">
-	<p:dataTable  value="#{mCartaoBean.cartoes}" var="cadastroCartao">
+	<h:form acceptcharset="ISO-8859-1" id="Conta">
+	<p:dataTable  value="#{mCadastroBean.cadastros}" var="cadastroCartao" >
 	<p:column><f:facet name="header">Nome do Cliente</f:facet>
-	<h:outputText value="#{cadastroCartao.cadastro.nome}"></h:outputText>
-	</p:column>
-	<p:column><f:facet name="header">Renda</f:facet>
-	<h:outputText value="#{cadastroCartao.renda}"></h:outputText>
-	</p:column>
-	<p:column><f:facet name="header">Tipo cartão</f:facet>
-	<h:outputText value="#{cadastroCartao.tipoCartao}"></h:outputText>
+	<h:outputText value="#{cadastroCartao.nome}"></h:outputText>
 	</p:column>
 	<p:column><f:facet name="header">Cartão</f:facet>
 	<h:outputText value="#{cadastroCartao.cartao}"></h:outputText>
 	</p:column>
 	<p:column><f:facet name="header">Alterar</f:facet>
-	<p:commandLink  value="Alterar" action="#{mCartaoBean.enviarDadosParaAlterar(cadastroCartao)}"></p:commandLink>
+	<p:commandLink  value="Inserir" action="#{mCadastroBean.enviarDadosParaAlterar5(cadastroCartao)}"></p:commandLink>
 	</p:column>
 	<p:column><f:facet name="header">Remover</f:facet>
-	<p:commandLink  value="Remover" action="#{mCartaoBean.removerCartao(cadastroCartao)}"></p:commandLink>
+	<p:commandLink  value="Remover" action="#{mCadastroBean.removerCadastro(cadastroCartao)}"></p:commandLink>
 	</p:column>
 	<p:column><f:facet name="header">Retornar</f:facet>
-	<p:commandLink  value="Retornar" action="Administrador.xhtml?faces-redirect=true"></p:commandLink>
+	<p:commandLink value="Retornar" action="Administrador.xhtml?faces-redirect=true"></p:commandLink>
 	</p:column>
 	</p:dataTable>
 	</h:form>

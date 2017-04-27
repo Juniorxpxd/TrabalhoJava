@@ -10,8 +10,10 @@ import javax.faces.context.FacesContext;
 
 import Banco.dal.AgenciaDAO;
 import Banco.dal.CadastroDAO;
+import Banco.dal.CartaoDAO;
 import Banco.model.Agencia;
 import Banco.model.Cadastro;
+import Banco.model.Cartao;
 
 @SessionScoped
 @ManagedBean(name = "mCadastroBean")
@@ -20,7 +22,15 @@ public class MCadastroBean {
 	private List<Cadastro> cadastros = new ArrayList<Cadastro>();
 	private CadastroDAO cadastroDAO = new CadastroDAO();
 	private int idAgen;
+	private int idCar;
 
+	
+	public int getIdCar() {
+		return idCar;
+	}
+	public void setIdCar(int idCar) {
+		this.idCar = idCar;
+	}
 	public int getIdAgen() {
 		return idAgen;
 	}
@@ -51,6 +61,10 @@ public class MCadastroBean {
 		this.cadastro = c;
 		return "AlterarConta.xhtml?faces-redirect=true";
 	}
+	public String enviarDadosParaAlterar5(Cadastro c) {
+		this.cadastro = c;
+		return "CriarCartao.xhtml?faces-redirect=true";
+	}
 	public String alterarCadastro(Cadastro c) {
 		Agencia a = AgenciaDAO.buscarAgenciaPorId(idAgen);
 		c.setAgencia(a);
@@ -68,7 +82,11 @@ public class MCadastroBean {
 		cadastro = new Cadastro();
 		return "InserirConta.xhtml?faces-redirect=true";
 	}
-	
+	public String alterarCartao(Cadastro c) {
+		CadastroDAO.alterarCadastro(c);
+		cadastro = new Cadastro();
+		return "InserirCartao.xhtml?faces-redirect=true";
+	}
 	public String removerCadastro(Cadastro c) {
 		CadastroDAO.removerCadastro(c);
 		cadastro = new Cadastro();
@@ -103,7 +121,7 @@ public class MCadastroBean {
 	}
 	public String logout(){
 		FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
-        return "Index.xhtml?faces-redirect=true";
+        return "Login.xhtml?faces-redirect=true";
 	}
 	public String alterarSaldo2(Cadastro c) {
 		CadastroDAO.alterarCadastro(c);
