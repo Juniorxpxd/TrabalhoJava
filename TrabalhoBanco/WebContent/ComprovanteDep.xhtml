@@ -48,37 +48,24 @@
   </div>
 </nav>
 <h:body>
-	<h:form acceptcharset="ISO-8859-1">
-		<fieldset>
-		<h1>Comprovante de pagamento</h1>
-		<br />
-		<br />
-		<h2>Sistema de infomaçoes EvilMoney </h2>
-		<br/>
-		<br/>
-		<h3>Comprovante de pagamentoa</h3>
-		<br>
-		<br/>
-			<b:icon name="glyphicon-user"/> 
-			<h:inputHidden value="#{mAgenciaBean.agencia.idAgen}"></h:inputHidden>
-		<p:outputLabel style="font-size: 25px;" value="Agencia: "></p:outputLabel>
-		<p:outputLabel style="font-size: 20px;" value="#{mAgenciaBean.agencia.agencia}"></p:outputLabel>
-		<br/><br/> 
-			<br/> 
-			<b:icon name="glyphicon-user"/> 
-			<h:inputHidden value="#{mContaBean.conta.idConta}"></h:inputHidden>
-		<p:outputLabel style="font-size: 25px;" value="Conta origen: "></p:outputLabel>
-		<p:outputLabel style="font-size: 20px;" value="#{mContaBean.conta.conta}"></p:outputLabel>
-		<br/><br/> 
-			<br/> 
-			<h:inputHidden value="#{mCadastroBean.cadastro.idCad}"></h:inputHidden>
-		<p:outputLabel style="font-size: 25px;" value="Valor depositado: "></p:outputLabel>
-		<p:outputLabel style="font-size: 20px;" value="#{mCadastroBean.cadastro.deposito}"></p:outputLabel>
-		<br/><br/> 
-			<br/> 
-		</fieldset>
-		</h:form>
-		</h:body>
-		</html>
-		
-		
+	<h:form acceptcharset="ISO-8859-1" id="Depósito">
+	<p:dataTable  value="#{mDepositoBean.depositos}" var="cadastroDeposito" >
+	<p:column><f:facet name="header">Nome do cliente do Comprovante</f:facet>
+	<h:outputText value="#{cadastroDeposito.cadastro.nome}"></h:outputText>
+	</p:column>
+	<p:column><f:facet name="header">Depósitado</f:facet>
+	<h:outputText value="#{cadastroDeposito.quantidade}"></h:outputText>
+	</p:column>
+	<p:column><f:facet name="header">Agência</f:facet>
+	<h:outputText value="#{cadastroDeposito.cadastro.agencia.agencia}"></h:outputText>
+	</p:column>
+	<p:column><f:facet name="header">Conta</f:facet>
+	<h:outputText value="#{cadastroDeposito.cadastro.conta}"></h:outputText>
+	</p:column>
+	<p:column><f:facet name="header">Retornar</f:facet>
+	<p:commandButton value="Retornar" action="Comprovante.xhtml?faces-redirect=true"></p:commandButton>
+	</p:column>
+	</p:dataTable>
+	</h:form>
+</h:body>
+</html>

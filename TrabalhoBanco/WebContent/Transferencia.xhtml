@@ -50,7 +50,6 @@
 <h:body>
 	<h:form acceptcharset="ISO-8859-1">
 		<fieldset>
-
 			<h1>Transferência </h1>
 			<b:icon name="glyphicon-user"/> 
 			<h:inputHidden value="#{mCadastroBean.cadastro.idCad}"></h:inputHidden>
@@ -59,18 +58,14 @@
 			<br/>
 			<br/>
 			<b:icon name="glyphicon-user"/> 
-			<p:outputLabel value="Agencia: "></p:outputLabel>
-			<p:outputLabel value="#{mCadastroBean.cadastro.agencia.agencia}"></p:outputLabel>
-			<br/>
-			<br/>
-			<b:icon name="glyphicon-user"/> 
-			<p:outputLabel value="Conta: "></p:outputLabel>
-			<p:outputLabel value="#{mCadastroBean.cadastro.conta}"></p:outputLabel>
-			<br/>
-			<br/>
-			<b:icon name="glyphicon-user"/> 
 			<p:outputLabel value="Saldo atual: "></p:outputLabel>
 			<p:outputLabel value="R$#{mCadastroBean.cadastro.saldo}"></p:outputLabel>
+			<br/>
+			<br/>
+			<h:selectOneMenu value="#{mEmprestimoBean.idCad}">
+			<f:selectItem itemLabel="Selecione o cadastro" itemValue="0"></f:selectItem>
+			<f:selectItems value="#{mCadastroBean.cadastros}" var="cadastro" itemLabel="#{cadastro.nome}" itemValue="#{cadastro.idCad}"></f:selectItems>
+			</h:selectOneMenu>
 			<br/>
 			<br/>
 			<b:icon name="glyphicon-user"/> 

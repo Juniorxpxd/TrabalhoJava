@@ -51,27 +51,42 @@
 <h:form acceptcharset="ISO-8859-1">
 <fieldset>
 <h1>Depositar</h1>
+<b:icon name="glyphicon-user"/> 
 			<h:inputHidden value="#{mCadastroBean.cadastro.idCad}"></h:inputHidden>
 			<p:outputLabel value="Nome: "></p:outputLabel>
 			<p:outputLabel value="#{mCadastroBean.cadastro.nome}"></p:outputLabel>
 			<br/>
 			<br/>
+			<b:icon name="glyphicon-user"/> 
+			<p:outputLabel value="Agencia: "></p:outputLabel>
+			<p:outputLabel value="#{mCadastroBean.cadastro.agencia.agencia}"></p:outputLabel>
+			<br/>
+			<br/>
+			<b:icon name="glyphicon-user"/> 
 			<p:outputLabel value="Conta: "></p:outputLabel>
 			<p:outputLabel value="#{mCadastroBean.cadastro.conta}"></p:outputLabel>
 			<br/>
 			<br/>
-			<p:outputLabel value="Saldo: "></p:outputLabel>
-			<p:outputLabel value="#{mCadastroBean.cadastro.saldo}"></p:outputLabel>
+			<b:icon name="glyphicon-user"/> 
+			<p:outputLabel value="Saldo atual: "></p:outputLabel>
+			<p:outputLabel value="R$#{mCadastroBean.cadastro.saldo}"></p:outputLabel>
 			<br/>
 			<br/>
-			<h:outputText value="Quantidade(R$): "/>
-			<p:inputText id="Deposito" pt:placeholder="" value="#{mCadastroBean.cadastro.saldo}"></p:inputText>
+			<h:selectOneMenu value="#{mDepositoBean.idCad}">
+			<f:selectItem itemLabel="Selecione o cliente para depositar" itemValue="0"></f:selectItem>
+			<f:selectItems value="#{mCadastroBean.cadastros}" var="cadastro" itemLabel="#{cadastro.nome}" itemValue="#{cadastro.idCad}"></f:selectItems>
+			</h:selectOneMenu>
+			<br/> 
+			<br/> 
+			<b:icon name="glyphicon-user"/> 
+			<h:outputText value="Valor a ser depositado: "/>
+			<p:inputText id="vtrans" pt:placeholder="Digite o valor" value="#{mDepositoBean.deposito.quantidade}"></p:inputText>
 			<br/>
 			<br/>
-			<p:commandButton value="Depositar" action="#{mCadastroBean.alterarSaldo2(mCadastroBean.cadastro)}"></p:commandButton>	
+			<h:commandButton value="Depositar" action="#{mDepositoBean.gravarDeposito(mDepositoBean.deposito)}"></h:commandButton>
 			<br/>
 			<br/>
-			<p:commandButton value="Retornar" action="AreaCliente.xhtml"></p:commandButton>	
+			<h:commandButton value="Retornar" action="AreaCliente.xhtml?faces-redirect=true"></h:commandButton>
 			</fieldset>
 			</h:form>
 			</h:body>

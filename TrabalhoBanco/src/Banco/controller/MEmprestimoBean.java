@@ -43,6 +43,6 @@ public class MEmprestimoBean {
 		e.setCadastro(c);
 		EmprestimoDAO.adicionarEmprestimo(e);
 		emprestimo = new Emprestimo();
-		return "AreaCliente.xhtml?faces-redirect=true";
+		return "ComprovanteEmp.xhtml?faces-redirect=true";
 	}
 }
