@@ -17,7 +17,7 @@ public class DepositoDAO {
 		em.getTransaction().commit();
 		em.close();
 	}
-	public static void removerPessoa(Deposito d){
+	public static void removerDeposito(Deposito d){
 		try{
 			EntityManager em = Conexao.getEntityManager();
 			em.getTransaction().begin();

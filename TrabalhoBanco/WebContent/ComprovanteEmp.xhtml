@@ -12,7 +12,7 @@
 		<link rel="stylesheet" type="text/css" href="bootstrap.css"/>
 		<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
 		<script type="text/javascript" src="Script.js"></script>
-		<title>Alterar Administrador</title>
+		<title>Listar Agências</title>
 	</h:head>
 <body>
 <nav class="navbar navbar-default">
@@ -49,22 +49,24 @@
     </div>
   </div>
 </nav>
-	<h:form acceptcharset="ISO-8859-1" id="Adm">
-	<h:panelGrid columns="1">
-	<h:inputHidden value="#{mAdministradorBean.administrador.idAdm}"></h:inputHidden>
-	<p:outputLabel value="Nome: "></p:outputLabel>
-	<p:inputText pt:placeholder="Digite o nome" value="#{mAdministradorBean.administrador.nome}"></p:inputText>
-	<br/>
-	<br/>
-	<p:outputLabel value="Email: "></p:outputLabel>
-	<p:inputText pt:placeholder="Digite o email" value="#{mAdministradorBean.administrador.email}"></p:inputText>
-	<br/>
-	<br/>
-	<p:commandButton value="Alterar" action="#{mAdministradorBean.alterarAdm(mAdministradorBean.administrador)}"></p:commandButton>
-	<br/>
-	<br/>
-	<p:commandButton value="Retornar" action="ListarAdm.xhtml?faces-redirect=true"></p:commandButton>
-	</h:panelGrid>
+	<h:form acceptcharset="ISO-8859-1" id="Empréstimo">
+	<p:dataTable  value="#{mEmprestimoBean.emprestimos}" var="cadastroEmprestimo" >
+	<p:column><f:facet name="header">Nome do cliente do Comprovante</f:facet>
+	<h:outputText value="#{cadastroEmprestimo.cadastro.nome}"></h:outputText>
+	</p:column>
+	<p:column><f:facet name="header">Saldo Emprestado</f:facet>
+	<h:outputText value="#{cadastroEmprestimo.saldoE}"></h:outputText>
+	</p:column>
+	<p:column><f:facet name="header">Motivo</f:facet>
+	<h:outputText value="#{cadastroEmprestimo.motivo}"></h:outputText>
+	</p:column>
+	<p:column><f:facet name="header">Tempo de empréstimo</f:facet>
+	<h:outputText value="#{cadastroEmprestimo.data}"></h:outputText>
+	</p:column>
+	<p:column><f:facet name="header">Retornar</f:facet>
+	<p:commandButton value="Retornar" action="Comprovante.xhtml?faces-redirect=true"></p:commandButton>
+	</p:column>
+	</p:dataTable>
 	</h:form>
 </body>
 </html>

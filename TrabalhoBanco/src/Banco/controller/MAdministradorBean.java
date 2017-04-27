@@ -7,7 +7,9 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import Banco.dal.AdministradorDAO;
+import Banco.dal.AgenciaDAO;
 import Banco.model.Administrador;
+import Banco.model.Agencia;
 
 @SessionScoped
 @ManagedBean(name = "mAdministradorBean")
@@ -28,11 +30,19 @@ public class MAdministradorBean {
 	public void setAdministradores(List<Administrador> administradores) {
 		this.administradores = administradores;
 	}
-	
+	public String enviarDadosParaAlterar(Administrador a) {
+		this.administrador = a;
+		return "AlterarAdm.xhtml?faces-redirect=true";
+	}
+	public String alterarAdm(Administrador a) {
+		AdministradorDAO.alterarAdm(a);
+		administrador = new Administrador();
+		return "ListarAdm.xhtml?faces-redirect=true";
+	}
 	public String removerAdministrador(Administrador a) {
 		AdministradorDAO.removerAdministrador(a);
 		administrador = new Administrador();
-		return "ListarAdministrador.xhtml?faces-redirect=true";
+		return "ListarAdm.xhtml?faces-redirect=true";
 	}
 	public String gravarAdministrador(Administrador a){
 		AdministradorDAO.adicionarAdministrador(a);

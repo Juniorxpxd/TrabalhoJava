@@ -9,6 +9,7 @@ import javax.persistence.Query;
 import javax.persistence.RollbackException;
 
 import Banco.model.Administrador;
+import Banco.model.Agencia;
 
 public class AdministradorDAO {
 	private static ArrayList<Administrador> administradores = new ArrayList<Administrador>();
@@ -33,7 +34,16 @@ public class AdministradorDAO {
 			System.out.println(e.toString());
 		}
 	}
-
+	public static void alterarAdm(Administrador a){
+		EntityManager em = Conexao.getEntityManager();
+		em.getTransaction().begin();
+		Administrador administrador = em.find(Administrador.class, a.getIdAdm());
+		administrador.setNome(a.getNome());
+		administrador.setEmail(a.getEmail());
+		em.merge(administrador);
+		em.getTransaction().commit();
+		em.close();
+	}
 	public static List<Administrador> retornarLista() {
 		EntityManager em = Conexao.getEntityManager();
 		Query q = em.createQuery("SELECT a FROM Administrador a");

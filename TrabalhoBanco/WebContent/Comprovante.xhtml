@@ -50,10 +50,18 @@
 <h:body>
 	<h:form acceptcharset="ISO-8859-1">
 		<fieldset>
-		<h1>Cadastrar Usúario</h1>
+		<h1>Comprovantes</h1>
 			<b:icon name="glyphicon-user"/> 
-			<h:outputText value="Cliente: "/>
-			<p:inputText id="Cliente" required="true" pt:placeholder="Digite a agencia" value="#{mCadastroBean.cadastro.agencia}"></p:inputText>
+			<h:inputHidden value="#{mCadastroBean.cadastro.idCad}"></h:inputHidden>
+			<p:outputLabel value="Nome: "></p:outputLabel>
+			<p:outputLabel value="#{mCadastroBean.cadastro.nome}"></p:outputLabel>
+			<li><a href="ComprovanteEmp.xhtml">Empréstimo</a></li>
+			<br/>						
+			<li><a href="ComprovanteTra.xhtml">Transferência</a></li>
+			<br/>		
+			<li><a href="ComprovanteDep.xhtml">Depósito</a></li>
+			<br/>		
+			<li><a href="ComprovantePag.xhtml">Pagamentos</a></li>
 			<br/> 
 			<br/> 
 		</fieldset>

@@ -50,12 +50,28 @@
 </nav>
 <h:form acceptcharset="ISO-8859-1">
 <fieldset>
-<h1>depositar</h1>
-<h:outputText value="Quantidade(R$) "/>
-			<p:inputText id="quantidade" required="true" pt:placeholder="" value="#{mCadastroBean.cadastro.quantidade}"></p:inputText>
-	<
-<h:outputText value="numero da conta "/>
-			<p:inputText id="nconta" required="true" pt:placeholder="" value="#{mContaBean.conta.idconta}"></p:inputText>
+<h1>Depositar</h1>
+			<h:inputHidden value="#{mCadastroBean.cadastro.idCad}"></h:inputHidden>
+			<p:outputLabel value="Nome: "></p:outputLabel>
+			<p:outputLabel value="#{mCadastroBean.cadastro.nome}"></p:outputLabel>
+			<br/>
+			<br/>
+			<p:outputLabel value="Conta: "></p:outputLabel>
+			<p:outputLabel value="#{mCadastroBean.cadastro.conta}"></p:outputLabel>
+			<br/>
+			<br/>
+			<p:outputLabel value="Saldo: "></p:outputLabel>
+			<p:outputLabel value="#{mCadastroBean.cadastro.saldo}"></p:outputLabel>
+			<br/>
+			<br/>
+			<h:outputText value="Quantidade(R$): "/>
+			<p:inputText id="Deposito" pt:placeholder="" value="#{mCadastroBean.cadastro.saldo}"></p:inputText>
+			<br/>
+			<br/>
+			<p:commandButton value="Depositar" action="#{mCadastroBean.alterarSaldo2(mCadastroBean.cadastro)}"></p:commandButton>	
+			<br/>
+			<br/>
+			<p:commandButton value="Retornar" action="AreaCliente.xhtml"></p:commandButton>	
 			</fieldset>
 			</h:form>
 			</h:body>
