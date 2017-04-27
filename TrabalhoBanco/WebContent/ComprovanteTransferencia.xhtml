@@ -50,13 +50,10 @@
 <h:body>
 	<h:form acceptcharset="ISO-8859-1">
 		<fieldset>
-		<h1>Comprovante de pagamento</h1>
-		<br />
-		<br />
-		<h2>Sistema de infomaçoes EvilMoney </h2>
+		<h1>Sistema de infomaçoes EvilMoney </h1>
 		<br/>
 		<br/>
-		<h3>Comprovante de pagamentoa</h3>
+		<h2>Comprovante de pagamentoa</h2>
 		<br>
 		<br/>
 			<b:icon name="glyphicon-user"/> 
@@ -71,14 +68,16 @@
 		<p:outputLabel style="font-size: 20px;" value="#{mContaBean.conta.conta}"></p:outputLabel>
 		<br/><br/> 
 			<br/> 
-			<h:inputHidden value="#{mCadastroBean.cadastro.idCad}"></h:inputHidden>
-		<p:outputLabel style="font-size: 25px;" value="Valor depositado: "></p:outputLabel>
-		<p:outputLabel style="font-size: 20px;" value="#{mCadastroBean.cadastro.deposito}"></p:outputLabel>
+			<h:inputHidden value="#{mAgenciaBean.agencia.idConta}"></h:inputHidden>
+		<p:outputLabel style="font-size: 25px;" value="Conta destino: "></p:outputLabel>
+		<p:outputLabel style="font-size: 20px;" value="#{mContaBean.conta.conta}"></p:outputLabel>
 		<br/><br/> 
-			<br/> 
-		</fieldset>
-		</h:form>
-		</h:body>
-		</html>
-		
-		
+		<h:inputHidden value=""></h:inputHidden>
+		<p:outputLabel style="font-size: 25px;" value="Valor tranferido: "></p:outputLabel>
+		<p:outputLabel style="font-size: 20px;" value=""></p:outputLabel>
+		<br/><br/> 
+			</fieldset>
+			</h:form>
+			</h:body>
+			</html>
+			
