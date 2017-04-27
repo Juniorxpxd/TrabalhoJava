@@ -50,8 +50,6 @@
   </div>
 </nav>
 <h:form acceptcharset="ISO-8859-1">
-	<ui:composition template="Template.xhtml">
-		<ui:define name="conteudo">
 		<fieldset>
 			<h1>Contato</h1>
 			• E-mail:
@@ -63,10 +61,8 @@
 			• Telefone:
 			<p:inputText id="telefone" pt:placeholder="Digite o telefone"></p:inputText>
 			<br /> <br />
-			<p:commandButton value="Enviar" action="#"></p:commandButton>
+			<p:commandButton value="Enviar" action="Index.xhtml"></p:commandButton>
 			</fieldset>
-		</ui:define>
-	</ui:composition>
 </h:form>	
 </body>
 </html>

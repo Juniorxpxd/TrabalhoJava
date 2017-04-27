@@ -69,7 +69,7 @@
 			<br/>
 			<b:icon name="glyphicon-user"/> 
 			<p:outputLabel value="Saldo atual: "></p:outputLabel>
-			<p:outputLabel value="R$#{mCadastroBean.cadastro.saldo}"></p:outputLabel>
+			<p:outputLabel value="R$#{mDepositoBean.resultado}"></p:outputLabel>
 			<br/>
 			<br/>
 			<h:selectOneMenu value="#{mDepositoBean.idCad}">
@@ -80,15 +80,14 @@
 			<br/> 
 			<b:icon name="glyphicon-user"/> 
 			<h:outputText value="Valor a ser depositado: "/>
-			<p:inputText id="vtrans" pt:placeholder="Digite o valor" value="#{mDepositoBean.deposito.quantidade}"></p:inputText>
+			<p:inputText id="vtrans" pt:placeholder="Digite o valor" value="#{mDepositoBean.depositado}"></p:inputText>
 			<br/>
 			<br/>
-			<h:commandButton value="Depositar" action="#{mDepositoBean.gravarDeposito(mDepositoBean.deposito)}"></h:commandButton>
+			<h:commandButton value="Depositar" action="#{mDepositoBean.Calcular(mDepositoBean.deposito)}"></h:commandButton>
 			<br/>
 			<br/>
 			<h:commandButton value="Retornar" action="AreaCliente.xhtml?faces-redirect=true"></h:commandButton>
 			</fieldset>
 			</h:form>
 			</h:body>
-			
 </html>

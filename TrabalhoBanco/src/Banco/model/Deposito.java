@@ -13,28 +13,17 @@ public class Deposito {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idDeposito;
-	private float quantidade;
+	private double quantidade;
+	private double resultado;
 	@OneToOne
 	private Cadastro cadastro;
-	@OneToOne
-	private Cadastro cadastro2;
-	@OneToOne
-	private Agencia agencia;
-	
-	public Agencia getAgencia() {
-		return agencia;
+
+	public double getResultado() {
+		return resultado;
 	}
 
-	public void setAgencia(Agencia agencia) {
-		this.agencia = agencia;
-	}
-
-	public Cadastro getCadastro2() {
-		return cadastro2;
-	}
-
-	public void setCadastro2(Cadastro cadastro2) {
-		this.cadastro2 = cadastro2;
+	public void setResultado(double resultado) {
+		this.resultado = resultado;
 	}
 
 	public Cadastro getCadastro() {
@@ -53,11 +42,11 @@ public class Deposito {
 		this.idDeposito = idDeposito;
 	}
 
-	public float getQuantidade() {
+	public double getQuantidade() {
 		return quantidade;
 	}
 
-	public void setQuantidade(float quantidade) {
-		this.quantidade = quantidade;
+	public void setQuantidade(double resultado) {
+		this.quantidade = resultado;
 	}
 }

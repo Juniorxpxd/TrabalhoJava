@@ -54,10 +54,6 @@ public class MDepositoBean {
 	}
 	public String gravarDeposito(Deposito d){
 		Cadastro e = CadastroDAO.buscarCadastroPorId(idCad);
-		Cadastro f = CadastroDAO.buscarCadastroPorId(conta);
-		Agencia g = AgenciaDAO.buscarAgenciaPorId(agencia);
-		d.setAgencia(g);
-		d.setCadastro2(f);
 		d.setCadastro(e);
 		DepositoDAO.adicionarDeposito(d);
 		deposito = new Deposito();
@@ -65,6 +61,40 @@ public class MDepositoBean {
 	}
 	public String removerDeposito(Deposito d) {
 		DepositoDAO.removerDeposito(d);
+		deposito = new Deposito();
+		return "ComprovanteDep.xhtml?faces-redirect=true";
+	}
+	private Cadastro cadastro = new Cadastro();
+	private double depositado;
+	private double saldo;
+	private double resultado;
+	public double getDepositado() {
+		return depositado =  deposito.getQuantidade();
+	}
+	public double getSaldo() {
+		return saldo = cadastro.getSaldo();
+	}
+	public double getResultado() {
+		return resultado;
+	}
+	public void setDepositado(double depositado) {
+		this.depositado = depositado;
+	}
+	public void setSaldo(double saldo) {
+		this.saldo = saldo;
+	}
+	public void setResultado(double resultado) {
+		this.resultado = resultado;
+	}
+	public String Calcular(Deposito d){
+		resultado = saldo+=depositado;
+		deposito.setQuantidade(resultado);
+		Cadastro e = CadastroDAO.buscarCadastroPorId(idCad);
+		e.setSaldo(e.getSaldo() + depositado);
+		CadastroDAO.alterarCadastro(e);
+		cadastro.setSaldo(saldo+depositado);
+		d.setCadastro(e);
+		DepositoDAO.adicionarDeposito(d);
 		deposito = new Deposito();
 		return "ComprovanteDep.xhtml?faces-redirect=true";
 	}

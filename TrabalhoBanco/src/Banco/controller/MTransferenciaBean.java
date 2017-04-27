@@ -56,10 +56,6 @@ public class MTransferenciaBean {
 	}
 	public String gravarTransferencia(Transferencia t){
 		Cadastro e = CadastroDAO.buscarCadastroPorId(idCad);
-		Cadastro f = CadastroDAO.buscarCadastroPorId(conta);
-		Agencia g = AgenciaDAO.buscarAgenciaPorId(agencia);
-		t.setAgencia(g);
-		t.setCadastro2(f);
 		t.setCadastro(e);
 		TransferenciaDAO.adicionarTransferencia(t);
 		transferencia = new Transferencia();

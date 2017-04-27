@@ -16,26 +16,6 @@ public class Transferencia {
 	private float quantidade;
 	@OneToOne
 	private Cadastro cadastro;
-	@OneToOne
-	private Cadastro cadastro2;
-	@OneToOne
-	private Agencia agencia;
-	
-	public Agencia getAgencia() {
-		return agencia;
-	}
-
-	public void setAgencia(Agencia agencia) {
-		this.agencia = agencia;
-	}
-
-	public Cadastro getCadastro2() {
-		return cadastro2;
-	}
-
-	public void setCadastro2(Cadastro cadastro2) {
-		this.cadastro2 = cadastro2;
-	}
 
 	public Cadastro getCadastro() {
 		return cadastro;

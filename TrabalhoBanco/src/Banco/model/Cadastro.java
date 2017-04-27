@@ -14,7 +14,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "Cadastro")
 public class Cadastro{
-	
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="idCad", nullable=false, unique=true)
