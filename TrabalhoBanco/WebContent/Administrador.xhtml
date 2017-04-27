@@ -50,8 +50,6 @@
   </div>
 </nav>
 	<h:form acceptcharset="ISO-8859-1">
-	<ui:composition template="Template.xhtml">
-		<ui:define name="conteudo">
 		<h1>• Área do Administrador</h1>
 		<h:inputHidden value="#{mAdministradorBean.administrador.idAdm}"></h:inputHidden>
 		<p:outputLabel value="Nome: "></p:outputLabel>
@@ -86,9 +84,10 @@
 		<p:menuitem value="Agências" url="BuscarAgencia.xhtml"></p:menuitem>
 		</p:submenu>
 	</p:menubar>
-	</nav>	
-	</ui:define>
-	</ui:composition>				
+	</nav>
+	<br/>
+	<br/>		
+	<p:commandButton value="Logout" action="#{mAdministradorBean.logout}"></p:commandButton>				
 		</h:form>
 	</h:body>
 </html>
