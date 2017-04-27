@@ -50,11 +50,25 @@
 <h:body>
 	<h:form acceptcharset="ISO-8859-1">
 		<fieldset>
-		<h1>Cadastrar Usúario</h1>
+		<h1>Comprovante de pagamento</h1>
+		<br />
+		<br />
+		<h2>Sistema de infomaçoes EvilMoney </h2>
+		<br/>
+		<br/>
+		<h3>Comprovante de pagamento</h3>
+		<br>
+		<br/>
 			<b:icon name="glyphicon-user"/> 
-			<h:outputText value="Cliente: "/>
-			<p:inputText id="Cliente" required="true" pt:placeholder="Digite a agencia" value="#{mCadastroBean.cadastro.agencia}"></p:inputText>
+			<h:inputHidden value="#{mAgenciaBean.agencia.idAgen}"></h:inputHidden>
+		<p:outputLabel style="font-size: 25px;" value="Agencia: "></p:outputLabel>
+		<p:outputLabel style="font-size: 20px;" value="#{mAgenciaBean.agencia.agencia}"></p:outputLabel>
+		<br/><br/> 
 			<br/> 
+			<h:inputHidden value="#{mCadastroBean.cadastro.idCad}"></h:inputHidden>
+		<p:outputLabel style="font-size: 25px;" value="Valor: "></p:outputLabel>
+		<p:outputLabel style="font-size: 20px;" value="#{mCadastroBean.cadastro.deposito}"></p:outputLabel>
+		<br/><br/> 
 			<br/> 
 		</fieldset>
 		</h:form>
