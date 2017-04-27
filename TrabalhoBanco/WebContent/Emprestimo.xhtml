@@ -49,26 +49,31 @@
   </div>
 </nav>
 <h:form acceptcharset="ISO-8859-1">
-<fieldset>
-	<h1>Empréstimo do Cliente</h1>
+	<fieldset>
+		<h1>Empréstimo do Cliente</h1>
+			<h:selectOneMenu value="#{mEmprestimoBean.idCad}">
+			<f:selectItem itemLabel="Selecione o cadastro" itemValue="0"></f:selectItem>
+			<f:selectItems value="#{mCadastroBean.cadastros}" var="cadastro" itemLabel="#{cadastro.nome}" itemValue="#{cadastro.idCad}"></f:selectItems>
+			</h:selectOneMenu>
+			<br/>
+			<br/>
 			<h:outputText value=" Emprestimo avaliado: "/>
-			<p:inputText id="emprestimo" pt:placeholder=""></p:inputText>
+			<p:inputText id="emprestimo" pt:placeholder="Digite o quanto vai ser emprestado" value="#{mEmprestimoBean.emprestimo.saldoE}"></p:inputText>
 			<br/>
 			<br/>
 			<h:outputText value=" Motivo: "/>
-			<p:inputText id="motivo"  pt:placeholder=""></p:inputText>
+			<p:inputText id="motivo"  pt:placeholder="Digite o motivo do emprestimo" value="#{mEmprestimoBean.emprestimo.motivo}"></p:inputText>
 			<br/>
 			<br/>
 			<h:outputText value=" Tempo do Emprestimo: "/>
-			<p:inputText id="tempo"  pt:placeholder=""></p:inputText>
+			<p:inputText id="tempo"  pt:placeholder="Digite o tempo do emprestimo a ser pagado" value="#{mEmprestimoBean.emprestimo.data}"></p:inputText>
 			<br/>
 			<br/>
-			<h:commandButton value="Efetuar empréstimo"></h:commandButton>
+			<h:commandButton value="Efetuar empréstimo" action="#{mEmprestimoBean.gravarEmprestimo(mEmprestimoBean.emprestimo)}"></h:commandButton>
 			<br/>
 			<br/>
 			<h:commandButton value="Retornar" action="AreaCliente.xhtml?faces-redirect=true"></h:commandButton>
 			</fieldset>
 	</h:form>
 </h:body>
-</html>
-			
+</html>		

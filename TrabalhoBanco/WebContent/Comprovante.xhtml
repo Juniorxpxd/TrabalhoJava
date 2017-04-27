@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	  xmlns:h="http://java.sun.com/jsf/html"
-	  xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
-	  xmlns:f= "http://java.sun.com/jsf/core"
-	  xmlns:b= "http://bootsfaces.net/ui"
-	  xmlns:p="http://primefaces.org/ui"
-	  xmlns:ui="http://java.sun.com/jsf/facelets">
-	<h:head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<link rel="stylesheet" type="text/css" href="bootstrap.css"/>
-		<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
-		<script type="text/javascript" src="Script.js"></script>
-		<title>Alterar Administrador</title>
-	</h:head>
-<body>
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:b="http://bootsfaces.net/ui" 
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="bootstrap.css" />
+	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="Script.js"></script>
+	<title>Comprovante</title>
+</h:head>
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -49,22 +47,26 @@
     </div>
   </div>
 </nav>
-	<h:form acceptcharset="ISO-8859-1" id="Adm">
-	<h:panelGrid columns="1">
-	<h:inputHidden value="#{mAdministradorBean.administrador.idAdm}"></h:inputHidden>
-	<p:outputLabel value="Nome: "></p:outputLabel>
-	<p:inputText pt:placeholder="Digite o nome" value="#{mAdministradorBean.administrador.nome}"></p:inputText>
-	<br/>
-	<br/>
-	<p:outputLabel value="Email: "></p:outputLabel>
-	<p:inputText pt:placeholder="Digite o email" value="#{mAdministradorBean.administrador.email}"></p:inputText>
-	<br/>
-	<br/>
-	<p:commandButton value="Alterar" action="#{mAdministradorBean.alterarAdm(mAdministradorBean.administrador)}"></p:commandButton>
-	<br/>
-	<br/>
-	<p:commandButton value="Retornar" action="ListarAdm.xhtml?faces-redirect=true"></p:commandButton>
-	</h:panelGrid>
-	</h:form>
-</body>
-</html>
+<h:body>
+	<h:form acceptcharset="ISO-8859-1">
+		<fieldset>
+		<h1>Comprovantes</h1>
+			<b:icon name="glyphicon-user"/> 
+			<h:inputHidden value="#{mCadastroBean.cadastro.idCad}"></h:inputHidden>
+			<p:outputLabel value="Nome: "></p:outputLabel>
+			<p:outputLabel value="#{mCadastroBean.cadastro.nome}"></p:outputLabel>
+			<li><a href="ComprovanteEmp.xhtml">Empréstimo</a></li>
+			<br/>						
+			<li><a href="ComprovanteTra.xhtml">Transferência</a></li>
+			<br/>		
+			<li><a href="ComprovanteDep.xhtml">Depósito</a></li>
+			<br/>		
+			<li><a href="ComprovantePag.xhtml">Pagamentos</a></li>
+			<br/> 
+			<br/> 
+		</fieldset>
+		</h:form>
+		</h:body>
+		</html>
+		
+		
