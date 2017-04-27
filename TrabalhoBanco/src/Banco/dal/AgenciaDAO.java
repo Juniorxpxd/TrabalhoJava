@@ -10,6 +10,7 @@ import javax.persistence.RollbackException;
 
 import Banco.model.Agencia;
 import Banco.model.Cadastro;
+import Banco.model.Cartao;
 
 public class AgenciaDAO {
 	private static ArrayList<Agencia> agencias = new ArrayList<Agencia>();
@@ -24,6 +25,7 @@ public class AgenciaDAO {
 		try{
 			EntityManager em = Conexao.getEntityManager();
 			em.getTransaction().begin();
+			a = em.getReference(Agencia.class, a.getIdAgen());
 			em.remove(a);
 			em.getTransaction().commit();
 			em.close();

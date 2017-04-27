@@ -11,9 +11,17 @@ import javax.faces.context.FacesContext;
 import Banco.dal.AgenciaDAO;
 import Banco.dal.CadastroDAO;
 import Banco.dal.CartaoDAO;
+import Banco.dal.DepositoDAO;
+import Banco.dal.EmprestimoDAO;
+import Banco.dal.PagamentoDAO;
+import Banco.dal.TransferenciaDAO;
 import Banco.model.Agencia;
 import Banco.model.Cadastro;
 import Banco.model.Cartao;
+import Banco.model.Deposito;
+import Banco.model.Emprestimo;
+import Banco.model.Pagamento;
+import Banco.model.Transferencia;
 
 @SessionScoped
 @ManagedBean(name = "mCadastroBean")
@@ -91,6 +99,11 @@ public class MCadastroBean {
 		CadastroDAO.removerCadastro(c);
 		cadastro = new Cadastro();
 		return "ListarCliente.xhtml?faces-redirect=true";
+	}
+	public String removerCadastro2(Cadastro c) {
+		CadastroDAO.removerCadastro(c);
+		cadastro = new Cadastro();
+		return "ListarSaldo.xhtml?faces-redirect=true";
 	}
 	public String gravarCadastro(Cadastro c){
 		Agencia a = AgenciaDAO.buscarAgenciaPorId(idAgen);

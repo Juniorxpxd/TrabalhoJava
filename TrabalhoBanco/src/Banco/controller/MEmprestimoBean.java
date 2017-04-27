@@ -8,9 +8,11 @@ import javax.faces.bean.SessionScoped;
 
 import Banco.dal.AgenciaDAO;
 import Banco.dal.CadastroDAO;
+import Banco.dal.DepositoDAO;
 import Banco.dal.EmprestimoDAO;
 import Banco.model.Agencia;
 import Banco.model.Cadastro;
+import Banco.model.Deposito;
 import Banco.model.Emprestimo;
 
 @SessionScoped
@@ -42,6 +44,11 @@ public class MEmprestimoBean {
 		Cadastro c = CadastroDAO.buscarCadastroPorId(idCad);
 		e.setCadastro(c);
 		EmprestimoDAO.adicionarEmprestimo(e);
+		emprestimo = new Emprestimo();
+		return "ComprovanteEmp.xhtml?faces-redirect=true";
+	}
+	public String removerEmprestimo(Emprestimo e) {
+		EmprestimoDAO.removerEmprestimo(e);
 		emprestimo = new Emprestimo();
 		return "ComprovanteEmp.xhtml?faces-redirect=true";
 	}

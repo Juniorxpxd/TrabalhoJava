@@ -6,7 +6,12 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import javax.persistence.RollbackException;
 
+import Banco.model.Agencia;
+import Banco.model.Cadastro;
 import Banco.model.Deposito;
+import Banco.model.Emprestimo;
+import Banco.model.Pagamento;
+import Banco.model.Transferencia;
 
 public class DepositoDAO {
 	private static ArrayList<Deposito> deposito = new ArrayList<Deposito>();
@@ -29,6 +34,7 @@ public class DepositoDAO {
 				System.out.println(e.toString());
 			}
 		}
+
 	public static List<Deposito> retornarLista(){
 		EntityManager em = Conexao.getEntityManager();
 		Query d = em.createQuery("SELECT d FROM Deposito d");

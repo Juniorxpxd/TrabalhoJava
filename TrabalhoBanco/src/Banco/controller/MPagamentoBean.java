@@ -7,8 +7,10 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import Banco.dal.CadastroDAO;
+import Banco.dal.DepositoDAO;
 import Banco.dal.PagamentoDAO;
 import Banco.model.Cadastro;
+import Banco.model.Deposito;
 import Banco.model.Pagamento;
 
 @SessionScoped
@@ -40,6 +42,11 @@ public class MPagamentoBean {
 		Cadastro e = CadastroDAO.buscarCadastroPorId(idCad);
 		p.setCadastro(e);
 		PagamentoDAO.adicionarPagamento(p);
+		pagamento = new Pagamento();
+		return "ComprovantePag.xhtml?faces-redirect=true";
+	}
+	public String removerPagamento(Pagamento p) {
+		PagamentoDAO.removerPagamento(p);
 		pagamento = new Pagamento();
 		return "ComprovantePag.xhtml?faces-redirect=true";
 	}

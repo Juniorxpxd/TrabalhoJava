@@ -62,6 +62,9 @@
 	<p:column><f:facet name="header">Data do vencimento</f:facet>
 	<h:outputText value="#{cadastroPagamento.data}"></h:outputText>
 	</p:column>
+	<p:column><f:facet name="header">Remover</f:facet>
+	<p:commandButton value="Remover" action="#{mPagamentoBean.removerPagamento(cadastroPagamento)}"></p:commandButton>
+	</p:column>
 	<p:column><f:facet name="header">Retornar</f:facet>
 	<p:commandButton value="Retornar" action="Comprovante.xhtml?faces-redirect=true"></p:commandButton>
 	</p:column>

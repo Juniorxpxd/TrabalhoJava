@@ -63,4 +63,9 @@ public class MDepositoBean {
 		deposito = new Deposito();
 		return "ComprovanteDep.xhtml?faces-redirect=true";
 	}
+	public String removerDeposito(Deposito d) {
+		DepositoDAO.removerDeposito(d);
+		deposito = new Deposito();
+		return "ComprovanteDep.xhtml?faces-redirect=true";
+	}
 }

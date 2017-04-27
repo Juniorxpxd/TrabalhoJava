@@ -8,9 +8,11 @@ import javax.faces.bean.SessionScoped;
 
 import Banco.dal.AgenciaDAO;
 import Banco.dal.CadastroDAO;
+import Banco.dal.DepositoDAO;
 import Banco.dal.TransferenciaDAO;
 import Banco.model.Agencia;
 import Banco.model.Cadastro;
+import Banco.model.Deposito;
 import Banco.model.Transferencia;
 
 @SessionScoped
@@ -60,6 +62,11 @@ public class MTransferenciaBean {
 		t.setCadastro2(f);
 		t.setCadastro(e);
 		TransferenciaDAO.adicionarTransferencia(t);
+		transferencia = new Transferencia();
+		return "ComprovanteTra.xhtml?faces-redirect=true";
+	}
+	public String removerTransferencia(Transferencia t) {
+		TransferenciaDAO.removerTransferencia(t);
 		transferencia = new Transferencia();
 		return "ComprovanteTra.xhtml?faces-redirect=true";
 	}

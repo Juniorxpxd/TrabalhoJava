@@ -8,6 +8,9 @@ import javax.persistence.Query;
 import javax.persistence.RollbackException;
 
 import Banco.model.Cadastro;
+import Banco.model.Emprestimo;
+import Banco.model.Pagamento;
+import Banco.model.Transferencia;
 
 public class CadastroDAO {
 	private static ArrayList<Cadastro> cadastros = new ArrayList<Cadastro>();
